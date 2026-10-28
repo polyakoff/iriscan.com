@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261028b">
+<link rel="stylesheet" href="../assets/style.css?v=20261028c">
 <link rel="canonical" href="https://www.iriscan.com/post/demystifying-biometric-security-what-is-iris-scanning">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/demystifying-biometric-security-what-is-iris-scanning">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-scanning-human-eyes-closeup.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "What Is Iris Scanning? Answers for People Who Have to Deploy It", "datePublished": "2023-09-10", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-scanning-human-eyes-closeup.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/demystifying-biometric-security-what-is-iris-scanning", "description": "What an iris scanner actually captures, who it works for, what it costs, what gets stored, and where iris scanning is already used at scale."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "What Is Iris Scanning? Answers for People Who Have to Deploy It", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-scanning-human-eyes-closeup.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/demystifying-biometric-security-what-is-iris-scanning", "description": "What an iris scanner actually captures, who it works for, what it costs, what gets stored, and where iris scanning is already used at scale."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -50,45 +50,49 @@
           <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
         </div>
       </div>
+      <a href="https://docs.iriscan.net/">Docs</a>
       <a class="btn" href="/get-started">Contact us</a>
     </nav>
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Sep 10, 2023 &middot; 4 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>Oct 28, 2026 &middot; 4 min read</span><span class="dots">&#8942;</span></div>
 <h1>What Is Iris Scanning? Answers for People Who Have to Deploy It</h1>
 <figure><img src="../assets/img/blog/iris-scanning-human-eyes-closeup.jpg" alt="Close-up of human eyes" loading="lazy"></figure>
-<p class="lead">Iris scanning means photographing the coloured ring of the eye in infrared light and using its texture to recognise a person. When we at Iriscan talk to project teams, the questions are rarely about the algorithm. Is it safe for the eyes? Will it work with glasses? What hardware is needed and what exactly is stored? I collected the answers below.</p>
+
+<p class="lead">Iris scanning means photographing the colored ring of the eye in infrared light and using its texture to recognize a person. When we at Iriscan talk to project teams, the questions are rarely about the algorithm. Is it safe for the eyes? Will it work with glasses? What hardware is needed and what exactly is stored? I collected the answers below.</p>
 
 <h2>Is it a laser? Is it safe?</h2>
-<p>No laser is involved. An iris scanner is a camera with near-infrared LEDs, similar in power to the illumination of a security camera or a TV remote. The light levels are limited by eye-safety standards (IEC 62471), and the exposure lasts a second or two. It is often confused with retina scanning, an older and rarer technique that looked at blood vessels at the back of the eye and needed the eye close to an eyepiece.</p>
+<p>No laser is involved. An iris scanner is a camera with near-infrared LEDs, similar in power to the illumination of a security camera or a TV remote. The light levels are limited by the eye safety standard IEC 62471, and the exposure lasts a second or two. Iris scanning is often confused with retina scanning, an older and rarer technique which looked at the blood vessels at the back of the eye and required putting the eye close to an eyepiece.</p>
 
 <h2>What does the scanner see?</h2>
-<p>A greyscale image of the eye in which the iris shows its fine structure: crypts, furrows, rings and freckles. Eye colour plays no role, because in infrared light dark and light irises both show texture. From that image the software builds an iris code, a string of bits, and the image itself can be discarded. How that works is described in <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>.</p>
+<p>A grayscale image of the eye in which the iris shows its fine structure: crypts, furrows, rings and freckles. Eye color plays no role, because in infrared light both dark and light irises show their texture. From this image the software builds an iris code, a string of bits, and the image itself can be discarded. How it works is described in <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>.</p>
 
-<figure><img src="../assets/img/iris-recognition-options/iris-recognition-option-01-natural-iris-closeup.jpg" alt="Close-up of a human iris" loading="lazy"><figcaption>In visible light the iris shows colour; scanners use infrared, where its structure is visible even in very dark eyes.</figcaption></figure>
+<figure><img src="../assets/img/iris-recognition-options/iris-recognition-option-01-natural-iris-closeup.jpg" alt="Close-up of a human iris" loading="lazy"><figcaption>In visible light the iris shows its color. Scanners use infrared, where the structure is visible even in very dark eyes.</figcaption></figure>
 
 <h2>Who does it work for?</h2>
-<p>Almost everyone with eyes. Glasses are usually fine; the subject may need to tilt their head to move a reflection off the iris. Clear contact lenses are fine. Patterned cosmetic lenses are not, because they print a fake texture over the real one. People with some eye conditions (aniridia, certain cataract surgeries, severe nystagmus) may not be enrollable, so every system needs a fallback such as face or fingerprint.</p>
-<p>Fingerprints of manual workers, farmers and the elderly are often worn down; their irises are not. That is one reason humanitarian agencies and national ID programmes add iris: it closes the gap where fingerprints fail. Small children can be enrolled from around two or three years old, mainly limited by how still they can keep.</p>
+<p>Almost everyone. Glasses are usually fine, although the person may need to tilt the head to move a reflection off the iris. Clear contact lenses are fine as well. Patterned cosmetic lenses are not, because they print a fake texture over the real one. People with some eye conditions (aniridia, certain cataract surgeries, severe nystagmus) may not be enrollable, so every system needs a fallback such as face or fingerprint.</p>
+<p>Consider manual workers, farmers and the elderly: their fingerprints are often worn down, while their irises are not. This is one of the reasons why humanitarian agencies and national ID programs add iris to fingerprints. Small children can be enrolled from around two or three years old, mainly limited by how long they can keep still.</p>
 
 <h2>How long does it take?</h2>
-<p>With a cooperative person and a decent scanner, two to five seconds per eye including positioning. Dual-iris cameras take both eyes at once. Matching is fast: comparing iris codes is bit counting, and a single CPU core gets through about a million comparisons a second.</p>
+<p>With a cooperative person and a decent scanner, it takes two to five seconds per eye, including positioning. Dual-iris cameras capture both eyes at once. Matching is fast: comparing iris codes is bit counting, and a single CPU core gets through about a million comparisons per second.</p>
 
-<h2>What hardware do I need?</h2>
-<p>For enrolment and verification at a desk or a field station, a USB scanner costing a few hundred dollars is enough. Monocular handheld units such as the Iritech IriShield plug into a laptop, a tablet or an Android phone. Dual-eye and iris-plus-face cameras, such as the <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY2</a>, cost more and are faster. Rugged tablets like <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID</a> combine capture with card reading in the field.</p>
-<p>Standard phone cameras do not have infrared illumination and do not resolve the iris well enough, so mobile apps use face recognition instead. Our <a href="https://docs.iriscan.net/sdk.html">Biometric SDK</a> covers both: face on the phone, iris with a connected scanner.</p>
+<h2>What hardware is needed?</h2>
+<p>For enrollment and verification at a desk or at a field station, a USB scanner costing a few hundred dollars is enough. Monocular handheld units such as Iritech IriShield plug into a laptop, a tablet or an Android phone. Dual-eye and iris-plus-face cameras, such as <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY2</a>, cost more and work faster. Rugged tablets like <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID</a> combine biometric capture with card reading in the field.</p>
+<p>Standard phone cameras have no infrared illumination and do not resolve the iris well enough, so mobile apps use face recognition instead. Our <a href="https://docs.iriscan.net/sdk">Biometric SDK</a> covers both: face on the phone, iris with a connected scanner.</p>
 
 <h2>What gets stored?</h2>
-<p>A well-designed system stores iris codes, not photos, and keeps them apart from names and other personal data. An iris code cannot be turned back into an image of the eye. The original images may still be worth keeping in some programmes, for re-processing with a better algorithm later, but that is a decision to take deliberately, with encryption and a retention period.</p>
-<p>Use standard formats (ISO/IEC 19794-6 or 39794-6) for anything you keep. Templates locked into one vendor's format tie the database to that vendor's matcher for good.</p>
+<p>A well-designed system stores iris codes, not photos, and keeps them apart from names and other personal data. An iris code cannot be turned back into an image of the eye. Some programs still keep the original images, to be able to re-process them with a better algorithm later. This is a decision to take deliberately, with encryption and a defined retention period.</p>
+<p>In addition, use standard formats (ISO/IEC 19794-6 or 39794-6) for everything you keep. Templates in a vendor's own format tie the database to this vendor's matcher.</p>
 
 <h2>Where is it used already?</h2>
-<p>India's Aadhaar uses iris alongside fingerprints to de-duplicate more than a billion residents. The UAE has screened arriving travellers by iris since the early 2000s. UNHCR and WFP use it to register refugees and deliver food and cash assistance (more in <a href="/post/biometrics-in-the-humanitarian-sector">biometrics in the humanitarian sector</a>). Lenders in countries with weak ID documents use it to stop the same person from borrowing under several names (see <a href="/post/enhancing-security-the-advantages-of-biometric-verification">biometric verification against identity fraud</a>).</p>
+<p>India's Aadhaar uses iris together with fingerprints to de-duplicate more than a billion residents. The UAE has been screening arriving travelers by iris since the early 2000s. UNHCR and WFP use it to register refugees and to deliver food and cash assistance (more on this in <a href="/post/biometrics-in-the-humanitarian-sector">biometrics in the humanitarian sector</a>). Lenders in countries with weak ID documents use it to stop the same person from borrowing under several names (see <a href="/post/enhancing-security-the-advantages-of-biometric-verification">biometric verification against identity fraud</a>).</p>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
 
 <aside class="cta">
 <h3>Planning an iris deployment?</h3>
-<p>We help pick scanners, set up enrolment stations with the <a href="https://docs.iriscan.net/edge.html">Edge service</a>, which works offline, and connect them to your database or ours. Start with a small pilot and real numbers.</p>
+<p>We help to choose scanners, set up enrollment stations with the <a href="https://docs.iriscan.net/edge">Edge service</a>, which works offline, and connect them to your database or ours. The best start is a small pilot with real numbers.</p>
 <p><a class="btn" href="/get-started">Plan a pilot</a> <a class="btn ghost" href="/post/iriscan-becomes-the-official-reseller-of-cardlogix">See devices</a></p>
 </aside>
 <div class="readnext"><h3>Read next</h3><ul>

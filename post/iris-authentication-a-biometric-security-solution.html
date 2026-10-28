@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261028b">
+<link rel="stylesheet" href="../assets/style.css?v=20261028c">
 <link rel="canonical" href="https://www.iriscan.com/post/iris-authentication-a-biometric-security-solution">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/iris-authentication-a-biometric-security-solution">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-authentication-professional-woman-portrait.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Iris Authentication: How Accurate It Is and How to Tune It", "datePublished": "2023-09-30", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-authentication-professional-woman-portrait.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/iris-authentication-a-biometric-security-solution", "description": "Why iris has so few false matches, what decides the error rates in a real system, and how to set the threshold for verification and for 1:N search."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Iris Authentication: How Accurate It Is and How to Tune It", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-authentication-professional-woman-portrait.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/iris-authentication-a-biometric-security-solution", "description": "Why iris has so few false matches, what decides the error rates in a real system, and how to set the threshold for verification and for 1:N search."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -50,48 +50,52 @@
           <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
         </div>
       </div>
+      <a href="https://docs.iriscan.net/">Docs</a>
       <a class="btn" href="/get-started">Contact us</a>
     </nav>
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Sep 30, 2023 &middot; 4 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>Oct 28, 2026 &middot; 5 min read</span><span class="dots">&#8942;</span></div>
 <h1>Iris Authentication: How Accurate It Is and How to Tune It</h1>
 <figure><img src="../assets/img/blog/iris-authentication-professional-woman-portrait.jpg" alt="Portrait of a woman for an article on iris authentication" loading="lazy"></figure>
-<p class="lead">Why do the largest identity programmes, from India's Aadhaar to the UAE border control, rely on iris? The answer is statistical. Iris separates different people with a margin that other common modalities do not have, and this is what allows searching a database of millions without drowning in false matches. Below I explain where this margin comes from, what reduces it in real deployments and which settings are in your hands.</p>
+
+<p class="lead">Why do the largest identity programs, from India's Aadhaar to the UAE border control, rely on iris? The answer is statistical. Iris separates different people with a margin that other common biometric modalities do not have, and this is what allows searching a database of millions without drowning in false matches. Below I explain where this margin comes from, what reduces it in real deployments and which settings are in your hands.</p>
 
 <h2>Why iris separates people so well</h2>
-<p>An iris code is a long string of bits (see <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>). Compare codes from two different eyes and about half the bits differ, simply because unrelated bits agree by chance half the time. The spread around that half is narrow: with hundreds of effectively independent bits, it is very unlikely for two different irises to agree on, say, 70% of them.</p>
-<p>Codes from the same eye, taken on different days, differ much less, usually in 10–20% of bits. Blur, eyelids and a different pupil size push that number up, but rarely anywhere near the impostor range.</p>
+<p>An iris code is a long string of bits (see <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>). Compare codes from two different eyes, and about half of the bits differ, simply because unrelated bits agree by chance half of the time. The spread around that half is narrow. With hundreds of effectively independent bits, it is very unlikely that two different irises agree on, say, 70% of them.</p>
+<p>Codes from the same eye, taken on different days, differ much less, usually in 10–20% of bits. Blur, eyelids and a different pupil size push this number up, but rarely anywhere near the range of different eyes.</p>
 
 <figure><img src="../assets/img/iris-hamming-distance-distributions.jpg" alt="Hamming distance distributions for comparisons of the same eye and of different eyes" loading="lazy"><figcaption>Comparisons of the same eye (left) and of different eyes (right). The threshold sits in the gap.</figcaption></figure>
 
-<p>Large evaluations bear this out. Daugman's analysis of 200 billion comparisons from the UAE border system, and NIST's IREX programme, both show impostor distributions so tight that a threshold can be placed with a false match rate well below one in a million per comparison while still accepting the great majority of genuine attempts.</p>
+<p>Large evaluations confirm this. Daugman analyzed 200 billion comparisons from the UAE border system, and NIST ran its IREX program on several vendors' matchers. Both show the distribution of different eyes so tight that a threshold can be set with a false match rate well below one in a million per comparison, while the great majority of genuine attempts are still accepted.</p>
 
 <h2>Verification and identification are different problems</h2>
-<p><b>Verification (1:1)</b> answers "is this the person they claim to be?" One comparison, one decision. A false match rate of one in a million is far more than enough.</p>
-<p><b>Identification (1:N)</b> answers "who is this?" or "is this person already enrolled?" The probe is compared with everyone in the database, so the chance of at least one false match grows with N. A false match rate of one in a million per comparison means roughly one false hit per search in a database of a million people. For 1:N the threshold has to be stricter, and it should tighten as the database grows. Iris works well here because its impostor distribution is narrow enough to allow a strict threshold without rejecting too many genuine users.</p>
+<p><b>Verification (1:1)</b> answers the question "is this the person they claim to be?" It is one comparison and one decision, so a false match rate of one in a million is more than enough.</p>
+<p><b>Identification (1:N)</b> answers the question "who is this?" or "is this person already enrolled?" The probe is compared with everyone in the database, so the chance of at least one false match grows with N. Consider a false match rate of one in a million per comparison and a database of a million people: this gives roughly one false hit per search. This way for 1:N the threshold has to be stricter, and it should become stricter as the database grows. Iris works well here because its distribution of different eyes is narrow enough to allow a strict threshold without rejecting too many genuine users.</p>
 
 <h2>What actually drives errors</h2>
 <ul>
-<li><b>Capture quality.</b> Most false rejections come from blurred frames, half-closed eyes and off-axis gaze. A scanner that checks quality before accepting a frame, plus an operator who knows to ask for a second look, does more for accuracy than any matcher upgrade.</li>
-<li><b>Usable iris area.</b> When eyelids and lashes cover a large part of the iris, fewer bits are compared and the score becomes less reliable. Our Cloud Iris API returns the occluded share with every enrolment, so you can retake an image before it becomes a bad template.</li>
+<li><b>Capture quality.</b> Most false rejections come from blurred frames, half-closed eyes and gaze to the side. A scanner that checks quality before accepting a frame, plus an operator who asks for a second look, does more for accuracy than any matcher upgrade.</li>
+<li><b>Usable iris area.</b> When eyelids and lashes cover a large part of the iris, fewer bits are compared and the score is less reliable. Our Cloud Iris API returns the occluded share with every enrollment, so the operator can retake the image before it becomes a bad template.</li>
 <li><b>Enrolling both eyes.</b> Two irises give two independent chances. Search with either eye, and require both when the stakes are high.</li>
-<li><b>Cross-device use.</b> Templates captured on one scanner and compared with templates from another score slightly worse. Test with the actual hardware mix you will deploy.</li>
-<li><b>Time.</b> The iris is stable, but match scores drift a little over years, mostly due to changing pupil dynamics and different cameras. Long-running systems refresh templates when a person is verified anyway.</li>
+<li><b>Cross-device use.</b> Templates captured on one scanner and compared with templates from another score slightly worse. Test with the actual mix of hardware you will deploy.</li>
+<li><b>Time.</b> The iris is stable, but match scores drift a little over the years, mostly because of changing pupil dynamics and different cameras. Long-running systems refresh templates when a person is verified anyway.</li>
 </ul>
 
 <h2>Spoofing</h2>
-<p>Iris is hard to spoof covertly: you cannot lift an iris from a glass the way you can a fingerprint. Known attacks use printed iris images, patterned contact lenses and replayed video. Countermeasures check for things a print cannot do: pupil reaction to light, specular reflections in the right places, texture of a real cornea. If your threat model includes deliberate attacks, require presentation attack detection tested against ISO/IEC 30107-3 and keep an operator in the loop where you can.</p>
+<p>It is hard to spoof an iris covertly: unlike a fingerprint, it cannot be lifted from a glass. Known attacks use printed iris images, patterned contact lenses and replayed video. Countermeasures check things a print cannot do: pupil reaction to light, reflections in the right places, the texture of a real cornea. If your threat model includes deliberate attacks, require presentation attack detection tested according to ISO/IEC 30107-3, and keep an operator in the loop where possible.</p>
 
 <h2>How to choose the threshold</h2>
-<p>Do not take a threshold from a datasheet. Run the system on a sample of your own population and hardware: enrol a few hundred people, collect genuine attempts on a different day, and compute the two distributions. Choose the false match rate your use case can tolerate, read the threshold off the impostor curve, and check what false rejection rate it gives you. For 1:N, repeat the check whenever the database grows by an order of magnitude.</p>
+<p>We do not recommend taking a threshold from a datasheet. Run the system on a sample of your own population and hardware instead. Enroll a few hundred people, collect genuine attempts on a different day and compute the two distributions. Then choose the false match rate your use case can tolerate, read the threshold off the curve of different eyes, and check which false rejection rate it gives. For 1:N, repeat the check whenever the database grows by an order of magnitude.</p>
 <p>We run this kind of evaluation with customers before a rollout: their data, our open-source matcher, and a report with the curves and the proposed operating point.</p>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
 
 <aside class="cta">
 <h3>Need numbers for your population?</h3>
-<p>We run accuracy evaluations on your own captures and hardware, tune thresholds for verification and for de-duplication, and hand over the curves so the decision is yours to defend.</p>
-<p><a class="btn" href="/get-started">Request an evaluation</a> <a class="btn ghost" href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a></p>
+<p>We run accuracy evaluations on your own captures and hardware, tune thresholds for verification and for de-duplication, and hand over the curves, so the decision is yours to defend.</p>
+<p><a class="btn" href="/get-started">Request an evaluation</a> <a class="btn ghost" href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a></p>
 </aside>
 <div class="readnext"><h3>Read next</h3><ul>
 <li><a href="/post/demystifying-biometric-security-what-is-iris-scanning">What is Iris Scanning?</a></li>

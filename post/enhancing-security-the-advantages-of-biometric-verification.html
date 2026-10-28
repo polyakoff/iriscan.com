@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261028b">
+<link rel="stylesheet" href="../assets/style.css?v=20261028c">
 <link rel="canonical" href="https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Verification Against Identity Fraud: A Guide for Lenders", "datePublished": "2023-08-22", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification", "description": "How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Verification Against Identity Fraud: A Guide for Lenders", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification", "description": "How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -50,46 +50,49 @@
           <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
         </div>
       </div>
+      <a href="https://docs.iriscan.net/">Docs</a>
       <a class="btn" href="/get-started">Contact us</a>
     </nav>
   </div>
 </header>
 <div class="article-outer"><article class="article article-narrow">
-<div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Aug 22, 2023 &middot; 3 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>Oct 28, 2026 &middot; 4 min read</span><span class="dots">&#8942;</span></div>
 <h1>Biometric Verification Against Identity Fraud: A Guide for Lenders</h1>
 <figure><img src="../assets/img/blog/iris-biometric-abstract-reserve.jpg" alt="Abstract iris artwork" loading="lazy"></figure>
 
 <p class="lead">Iriscan started from a lending problem. Consider a microfinance company in a country where a national ID card proves little: cards are forged, bought or borrowed, one person can hold several, and many borrowers have none at all. The loss here is very specific: the same person takes loans under different names and never repays any of them. Biometric verification is the cheapest reliable fix we know, as long as it is designed for this problem and not copied from a bank in a country with good ID documents.</p>
 
 <h2>Three checks, three different problems</h2>
-<p><b>Is this the account holder?</b> Verification, 1:1. At login or before a payout, compare a selfie with the face enrolled at onboarding. This stops account takeover and someone else collecting the loan.</p>
-<p><b>Is this the person in the document?</b> Compare the selfie with the photo in the ID card or in a digital credential. Useful where documents are reliable; weak where they are not.</p>
-<p><b>Have we seen this person before under another name?</b> Identification, 1:N. Compare a new applicant with every borrower already enrolled. This is the check that stops serial fraud, and the one most onboarding flows skip because it needs a database search rather than a single comparison.</p>
+<p><b>Is this the account holder?</b> This is verification, 1:1. At login or before a payout, a selfie is compared with the face enrolled at onboarding. It stops account takeover and someone else collecting the loan.</p>
+<p><b>Is this the person in the document?</b> The selfie is compared with the photo in the ID card or in a digital credential. This is useful where documents are reliable, and weak where they are not.</p>
+<p><b>Have we seen this person before under another name?</b> This is identification, 1:N: a new applicant is compared with every borrower already enrolled. This check stops serial fraud, and most onboarding flows skip it, because it needs a database search rather than a single comparison.</p>
 
 <h2>Face or iris?</h2>
-<p>Face works on any phone, so it is the natural choice for self-service apps and for 1:1 checks. Its weakness is 1:N at scale: as the database grows, look-alikes and family members start producing false hits, and a skilled fraudster changes appearance.</p>
-<p>Iris needs a scanner, but it separates people far better, which makes it the right tool for de-duplication. A handheld USB scanner costs a few hundred dollars and plugs into the laptop or Android tablet that an agent or branch already uses. A lender with a network of agents can enrol each borrower once by iris and use face on the phone for everything after that.</p>
+<p>Face works on any phone, so it is the natural choice for self-service apps and for 1:1 checks. Its weakness is 1:N search at scale: as the database grows, look-alikes and family members start producing false hits, and a skilled fraudster can change appearance.</p>
+<p>Iris needs a scanner, but it separates people far better, which makes it the right tool for de-duplication. A handheld USB scanner costs a few hundred dollars and plugs into the laptop or the Android tablet that an agent or a branch already uses. This way a lender with a network of agents can enroll each borrower once by iris and use face on the phone for everything after that.</p>
 
 <figure><img src="../assets/img/far-frr-eer-diagram.svg" alt="False acceptance and false rejection rates plotted against the acceptance threshold" loading="lazy"><figcaption>Every matcher trades false acceptance for false rejection. Where to sit on this curve is a business decision.</figcaption></figure>
 
 <h2>Liveness</h2>
-<p>A face check without liveness detection can be beaten with a printed photo or a video on another phone. At minimum, run a passive liveness model on the selfie; for higher-risk actions add a challenge such as "turn your head left", checked from head pose. Iris capture with a dedicated scanner and an operator present is much harder to fool.</p>
+<p>A face check without liveness detection can be passed with a printed photo or with a video played on another phone. At minimum, a passive liveness model should run on the selfie. For higher-risk actions, add a challenge such as "turn your head left", checked from the head pose. Iris capture with a dedicated scanner and an operator present is much harder to fool.</p>
 
 <h2>Sharing without sharing data</h2>
-<p>Fraudsters move between lenders. A borrower blocked by one microfinance institution goes to the next one. The useful answer is a shared check: can lenders ask "has this person got an open loan elsewhere?" without handing each other names, photos or iris images? Iris codes help here, because they are compact, standard and cannot be turned back into a picture. We worked on this in INGRESS, a microlending project funded by the EU's NGI ONTOCHAIN programme: borrowers were identified by biometrics, and a hash of every loan was written to the public iExec blockchain, so that a credit history could be checked for tampering without disclosing anyone's private data.</p>
+<p>Fraudsters move between lenders: a borrower blocked by one microfinance institution goes to the next one. How can lenders ask "does this person have an open loan elsewhere?" without handing each other names, photos or iris images? This is the question we worked on in INGRESS, a project funded by the EU's NGI ONTOCHAIN program. INGRESS had two services. A biometric bureau issued W3C Verifiable Credentials bound to the borrower's biometrics, so a person who lost a private key could prove their identity and get a new one. A credit bureau kept the loan history and wrote a hash of every loan to the public iExec blockchain. This way a credit history could be checked for tampering without disclosing anyone's private data.</p>
 
 <h2>Doing it on a small budget</h2>
 <ul>
-<li><b>Onboarding app:</b> face capture, passive liveness and selfie-to-document comparison on the phone with the open-source <a href="https://docs.iriscan.net/sdk.html">Iriscan Biometric SDK</a> (Android, iOS, React Native). No per-check fees, and images do not have to leave the device.</li>
-<li><b>Agent or branch:</b> an iris scanner and the <a href="https://docs.iriscan.net/edge.html">Edge service</a>, which keeps working when the connection drops and syncs later.</li>
-<li><b>Back office:</b> 1:N search with the <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> or the same matcher on your own servers if regulation requires data to stay in the country.</li>
+<li><b>Onboarding app:</b> face capture, passive liveness and selfie-to-document comparison on the phone with the open-source <a href="https://docs.iriscan.net/sdk">Iriscan Biometric SDK</a> (Android, iOS, React Native). There are no per-check fees, and images do not have to leave the device.</li>
+<li><b>Agent or branch:</b> an iris scanner and the <a href="https://docs.iriscan.net/edge">Edge service</a>, which keeps working when the connection drops and synchronizes later.</li>
+<li><b>Back office:</b> 1:N search with the <a href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a>, or the same matcher on your own servers if regulation requires the data to stay in the country.</li>
 </ul>
-<p>Start by measuring: enrol a few thousand existing borrowers and run de-duplication against them. The number of duplicates you find gives you the business case.</p>
+<p>We recommend starting with a measurement: enroll a few thousand existing borrowers and run de-duplication against them. The number of duplicates you find gives you the business case.</p>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
 
 <aside class="cta">
 <h3>Losing money to duplicate borrowers?</h3>
-<p>We help lenders and fintechs add face and iris verification to onboarding and agent networks, and run a de-duplication audit on your existing base.</p>
-<p><a class="btn" href="/get-started">Discuss your use case</a> <a class="btn ghost" href="https://docs.iriscan.net/sdk.html">Biometric SDK docs</a></p>
+<p>We help lenders and fintechs add face and iris verification to onboarding and agent networks, and run a de-duplication audit of the existing customer base.</p>
+<p><a class="btn" href="/get-started">Discuss your use case</a> <a class="btn ghost" href="https://docs.iriscan.net/sdk">Biometric SDK docs</a></p>
 </aside>
 <div class="readnext"><h3>Read next</h3><ul>
 <li><a href="/post/how-does-iris-recognition-work">How Does Iris Recognition Work</a></li>

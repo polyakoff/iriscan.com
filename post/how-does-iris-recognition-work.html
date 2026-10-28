@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261028b">
+<link rel="stylesheet" href="../assets/style.css?v=20261028c">
 <link rel="canonical" href="https://www.iriscan.com/post/how-does-iris-recognition-work">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/how-does-iris-recognition-work">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-recognition-device-tabletop-vista-ey2.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How Iris Recognition Works", "datePublished": "2023-07-07", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-recognition-device-tabletop-vista-ey2.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/how-does-iris-recognition-work", "description": "From an eye image to a match decision: capture, segmentation, unwrapping, encoding and comparison, and the choices that matter when you deploy it."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How Iris Recognition Works", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-recognition-device-tabletop-vista-ey2.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/how-does-iris-recognition-work", "description": "From an eye image to a match decision: capture, segmentation, unwrapping, encoding and comparison, and the choices that matter when you deploy it."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -50,51 +50,55 @@
           <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
         </div>
       </div>
+      <a href="https://docs.iriscan.net/">Docs</a>
       <a class="btn" href="/get-started">Contact us</a>
     </nav>
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Jul 7, 2023 &middot; 5 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>Oct 28, 2026 &middot; 5 min read</span><span class="dots">&#8942;</span></div>
 <h1>How Iris Recognition Works</h1>
 <figure><img src="../assets/img/blog/iris-recognition-device-tabletop-vista-ey2.jpg" alt="Vista EY2 iris recognition camera on a desk" loading="lazy"></figure>
-<p class="lead">How does a machine recognise a person by the eye? The approach has not changed much since John Daugman described it in the 1990s, and our Cloud Iris API follows it too: take a near-infrared picture of the eye, find the iris, unroll it into a rectangle, turn its texture into bits and compare these bits with the bits of other people. Each step is simple to describe. The accuracy of the whole system depends on how carefully each one is implemented, so below I go through them one by one.</p>
+
+<p class="lead">How does a machine recognize a person by the eye? The approach has not changed much since John Daugman described it in the 1990s, and our Cloud Iris API follows it too. The system takes a near-infrared picture of the eye, finds the iris, unrolls it into a rectangle, turns its texture into bits and compares these bits with the bits of other people. Each step is simple to describe. The accuracy of the whole system depends on how carefully each one is implemented, so below I go through them one by one.</p>
 
 <h2>1. Capture</h2>
-<p>Iris cameras photograph the eye in near-infrared light, roughly 700–900 nm. In visible light a dark brown iris looks almost uniform. In infrared the same iris shows its crypts, furrows and rings, because melanin absorbs much less infrared than visible light. Infrared also takes ambient lighting out of the equation: the camera brings its own illumination, so a picture taken in a sunny office and one taken in a dim tent look alike.</p>
-<p>The standards ask for about 150–200 pixels across the iris. A dedicated scanner, such as an Iritech IriShield on a USB cable or a <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY2</a> on a desk, gets there at 20–40 cm. A phone camera, without infrared illumination, usually does not, which is why phones use face rather than iris.</p>
-<p>A good capture device also checks quality before it keeps a frame: focus, motion blur, how open the eye is, gaze direction. Most errors in iris recognition start at this stage, so a scanner that refuses a blurry frame saves a lot of trouble later.</p>
+<p>Iris cameras photograph the eye in near-infrared light, roughly 700–900 nm. Why not in normal light? In visible light a dark brown iris looks almost uniform, and most people in the world have brown eyes. In infrared the same iris shows its crypts, furrows and rings, because melanin absorbs much less infrared than visible light. On top of that, the camera brings its own illumination, so a picture taken in a sunny office and one taken in a dim tent look alike.</p>
+<p>The standards ask for about 150–200 pixels across the iris. A dedicated scanner, such as an Iritech IriShield on a USB cable or a <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY2</a> on a desk, gets there at 20–40 cm. A phone camera without infrared illumination usually does not, which is why phones use face recognition rather than iris.</p>
+<p>A good scanner also checks quality before it keeps a frame: focus, motion blur, how open the eye is, gaze direction. Most errors in iris recognition start at this stage. This way a scanner that refuses a blurry frame saves a lot of trouble later.</p>
 
 <h2>2. Segmentation</h2>
-<p>The software then locates two boundaries: the pupil (inner) and the limbus, where the iris meets the white of the eye (outer). Classic algorithms fit circles with an integro-differential operator or a Hough transform. Newer ones use neural networks and fit ellipses, which handles off-axis gaze better.</p>
-<p>It also marks what is not iris: eyelids, eyelashes, reflections of the illuminator. These areas go into a mask. They are not deleted, just excluded from comparison later.</p>
+<p>Then the software locates two boundaries: the pupil (inner) and the limbus, where the iris meets the white of the eye (outer). Classic algorithms fit circles with an integro-differential operator or a Hough transform. Newer ones use neural networks and fit ellipses, which works better when the person does not look straight into the camera.</p>
+<p>It also marks what is not iris: eyelids, eyelashes, reflections of the illuminator. These areas go into a mask. They are not deleted, just excluded from the comparison later.</p>
 
 <figure><img src="../assets/img/iris-recognition-pipeline.jpg" alt="Iris recognition pipeline: capture, segmentation, unwrapping and encoding into an iris code" loading="lazy"><figcaption>From an eye image to an iris code and its mask.</figcaption></figure>
 
 <h2>3. Unwrapping</h2>
-<p>The pupil dilates and contracts, and the eye is never at exactly the same distance from the camera. To compare two irises, the ring between the two boundaries is mapped onto a fixed rectangle: angle along one axis, distance from pupil to limbus along the other. This is John Daugman's "rubber sheet" model. After it, a point on the iris lands in the same cell of the rectangle whatever the pupil size.</p>
+<p>The pupil dilates and contracts, and the eye is never at exactly the same distance from the camera. So how to compare two irises? The ring between the two boundaries is mapped onto a fixed rectangle: angle along one axis, distance from pupil to limbus along the other. This is Daugman's "rubber sheet" model. After it, a point on the iris lands in the same cell of the rectangle regardless of the pupil size.</p>
 
 <h2>4. Encoding</h2>
-<p>The rectangle is filtered with Gabor or similar wavelets, and for each point the sign of the filter response is kept as a bit or two. Only the phase survives; contrast and brightness are thrown away, which makes the code robust to lighting and camera differences. The result is an iris code, a fixed-length string of bits (2048 in Daugman's original design) plus a mask of the same length.</p>
-<p>An iris code is not an image. You cannot turn it back into a picture of the eye, and it contains no name, age or eye colour. This way a template can be stored and exchanged with much lower privacy risk than the eye image itself.</p>
+<p>The rectangle is filtered with Gabor or similar wavelets, and for each point only the sign of the filter response is kept, as one or two bits. Contrast and brightness are thrown away. This way the code does not depend on lighting or on a particular camera. The result is an iris code, a fixed-length string of bits (2048 in Daugman's original design) plus a mask of the same length.</p>
+<p>An iris code is not an image. It is not possible to turn it back into a picture of the eye, and it contains no name, age or eye color. This way a template can be stored and exchanged with much lower privacy risk than the eye image itself.</p>
 
 <h2>5. Comparison</h2>
-<p>Two iris codes are compared by Hamming distance: the share of bits that differ, counted only where both masks say the bits are valid. Codes from the same eye typically differ in 10–20% of bits. Codes from different eyes differ in close to half, because unrelated bits agree by chance half the time. To allow for head tilt, the comparison is repeated with one code shifted a few positions left and right, and the best result is taken.</p>
-<p>A threshold decides between match and non-match. Because the two distributions are so far apart, iris can search very large databases with few false matches. How to choose the threshold is a separate topic, covered in <a href="/post/iris-authentication-a-biometric-security-solution">Iris authentication: how accurate it is and how to tune it</a>.</p>
+<p>Two iris codes are compared by Hamming distance: the share of bits that differ, counted only where both masks say the bits are valid. Codes from the same eye typically differ in 10–20% of bits. Codes from different eyes differ in close to half, because unrelated bits agree by chance half of the time. Since the head can be slightly tilted, the comparison is repeated with one code shifted a few positions left and right, and the best result is taken.</p>
+<p>A threshold decides between match and non-match. The two distributions are far apart, and this is why iris can search very large databases with few false matches. How to choose the threshold is a separate topic, I described it in <a href="/post/iris-authentication-a-biometric-security-solution">Iris authentication: how accurate it is and how to tune it</a>.</p>
 
 <h2>How this maps to our components</h2>
-<p>In a real deployment these steps are spread between hardware and software, and this split decides a lot about cost and vendor lock-in. In our stack it looks as follows:</p>
+<p>In a real deployment these steps are split between hardware and software, and this split decides a lot about cost and vendor lock. In our stack it looks as follows:</p>
 <ul>
-<li><b>Capture</b> happens on the scanner and in its driver. Our <a href="https://docs.iriscan.net/edge.html">Edge service</a> wraps Iritech scanners and gives a web page a local API for live preview, quality score and capture.</li>
-<li><b>Segmentation, unwrapping and encoding</b> can run on the edge device, on a phone or on a server. The open-source <a href="https://docs.iriscan.net/sdk.html">Iriscan Biometric SDK</a> does it on Android, iOS and the JVM.</li>
-<li><b>Comparison</b> against a database runs where the database is. The <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> enrols left and right eyes per person and offers 1:N search and 1:1 verification; the Edge service keeps an encrypted local copy so matching works offline.</li>
+<li><b>Capture</b> happens on the scanner and in its driver. Our <a href="https://docs.iriscan.net/edge">Edge service</a> works with Iritech scanners and gives a web page a local API for live preview, quality score and capture.</li>
+<li><b>Segmentation, unwrapping and encoding</b> can run on the edge device, on a phone or on a server. The open-source <a href="https://docs.iriscan.net/sdk">Iriscan Biometric SDK</a> does it on Android, iOS and the JVM.</li>
+<li><b>Comparison</b> against a database runs where the database is. The <a href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a> enrolls left and right eyes of each person and offers 1:N search and 1:1 verification. The Edge service keeps an encrypted local copy, so matching works offline as well.</li>
 </ul>
-<p>Whatever runs where, we recommend keeping templates in a standard record format (ISO/IEC 19794-6 or its successor 39794-6). If templates are stored in a vendor's private format, changing the matcher later means re-enrolling everyone.</p>
+<p>Whatever runs where, we recommend keeping templates in a standard record format, ISO/IEC 19794-6 or its successor 39794-6. If templates are stored in a vendor's own format, changing the matcher later means re-enrolling everyone.</p>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
 
 <aside class="cta">
 <h3>Building on iris recognition?</h3>
 <p>The SDK and the converter are open source, the Cloud Iris API and Edge service we provide for pilots. Write us whom you need to identify, how many people and on what hardware, and we will propose a setup.</p>
-<p><a class="btn" href="/get-started">Talk to an engineer</a> <a class="btn ghost" href="https://docs.iriscan.net/cloud-api.html">Read the API docs</a></p>
+<p><a class="btn" href="/get-started">Talk to an engineer</a> <a class="btn ghost" href="https://docs.iriscan.net/cloud-api">Read the API docs</a></p>
 </aside>
 <div class="readnext"><h3>Read next</h3><ul>
 <li><a href="/post/the-power-of-the-eye-iris-identification">The Power of the Eye: Iris Identification</a></li>

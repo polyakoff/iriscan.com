@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261028b">
+<link rel="stylesheet" href="../assets/style.css?v=20261028c">
 <link rel="canonical" href="https://www.iriscan.com/post/biometric-authentication">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/biometric-authentication">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/biometric-fingerprint-scan-blue.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Authentication: Modalities, Templates and Lock-in", "datePublished": "2023-11-17", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/biometric-fingerprint-scan-blue.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-authentication", "description": "How face, fingerprint and iris authentication work, what a biometric template is, why template formats decide who controls your system, and how to stay vendor-neutral."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Authentication: Modalities, Templates and Lock-in", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/biometric-fingerprint-scan-blue.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-authentication", "description": "How face, fingerprint and iris authentication work, what a biometric template is, why template formats decide who controls your system, and how to stay vendor-neutral."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -50,49 +50,52 @@
           <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
         </div>
       </div>
+      <a href="https://docs.iriscan.net/">Docs</a>
       <a class="btn" href="/get-started">Contact us</a>
     </nav>
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Nov 17, 2023 &middot; 4 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>Oct 28, 2026 &middot; 4 min read</span><span class="dots">&#8942;</span></div>
 <h1>Biometric Authentication: Modalities, Templates and Lock-in</h1>
 <figure><img src="../assets/img/biometric-fingerprint-scan-blue.jpg" alt="Abstract fingerprint scan" loading="lazy"></figure>
 
-<p class="lead">Biometric authentication checks who someone is by something they are, not something they know or carry. Every system does it the same way: capture a sample, reduce it to a template, compare templates. The modality decides accuracy and cost. The template format decides something less obvious: whether the organisation will ever be able to change its supplier. Using biometrics in a business process often means a vendor lock, and this is the problem we have been working on at Iriscan for years.</p>
+<p class="lead">Biometric authentication checks who someone is by something they are, not by something they know or carry. Every system does it the same way: capture a sample, reduce it to a template, compare templates. The biometric modality decides accuracy and cost. The template format decides something less obvious: whether the organization will ever be able to change its supplier. Using biometrics in a business process often means a vendor lock, and this is the problem we have been working on at Iriscan for years.</p>
 
 <h2>The three modalities that matter</h2>
-<p><b>Face.</b> Works with any camera, which makes it the default for phones and self-service. A neural network turns an aligned face into an embedding, a vector of a few hundred numbers; two faces match when their vectors are close. Good for 1:1 verification. Weaker for searching large databases, and needs liveness detection, because a photo of a face is easy to get.</p>
-<p><b>Fingerprint.</b> The most widely deployed modality, with forty years of standards behind it. Templates store minutiae: the points where ridges end or split, with their positions and angles. Accurate and cheap to capture, but quality drops for manual workers and the elderly, and contact sensors need cleaning.</p>
-<p><b>Iris.</b> The most distinctive of the three. A near-infrared camera captures the iris texture, which is encoded into a bit string and compared by Hamming distance. Best for de-duplicating large populations, contactless, stable over life. Needs a dedicated scanner. (Details: <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>.)</p>
-<p>Voice, vein and behavioural biometrics exist and have their niches, but national ID, banking and humanitarian programmes are built almost entirely on these three, often combined.</p>
+<p><b>Face.</b> It works with any camera, which makes it the default choice for phones and self-service. A neural network turns an aligned face into an embedding, a vector of a few hundred numbers, and two faces match when their vectors are close. Face is good for 1:1 verification and weaker for searching large databases. It also needs liveness detection, since a photo of a face is easy to get.</p>
+<p><b>Fingerprint.</b> The most widely deployed modality, with forty years of standards behind it. Templates store minutiae: the points where ridges end or split, with their positions and angles. Fingerprint is accurate and cheap to capture, but the quality drops for manual workers and the elderly, and contact sensors need cleaning.</p>
+<p><b>Iris.</b> The most distinctive of the three. A near-infrared camera captures the iris texture, which is encoded into a bit string and compared by Hamming distance. Iris is the best choice for de-duplicating large populations, it is contactless and stable over life, but it needs a dedicated scanner. Details are in <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>.</p>
+<p>Voice, vein and behavioral biometrics exist and have their niches. Still, national ID, banking and humanitarian programs are built almost entirely on these three, often combined.</p>
 
 <figure><img src="../assets/img/biometrics-market-2025-analyst-estimates.jpg" alt="Global biometrics market size and fingerprint share in 2025 according to four market research firms" loading="lazy"><figcaption>Fingerprint still takes roughly a third of biometrics revenue; analysts differ on the rest.</figcaption></figure>
 
 <h2>Templates, not images</h2>
-<p>After enrolment, a biometric system mostly works with templates. A fingerprint template is a list of minutiae; an iris template is a bit string with a mask; a face template is an embedding. Templates are small, fast to compare, and cannot be turned back into the original image, which makes them the safer thing to store and exchange.</p>
-<p>That raises the question that decides the long-term cost of the system: in what format are the templates stored?</p>
+<p>After enrollment, a biometric system mostly works with templates. A fingerprint template is a list of minutiae, an iris template is a bit string with a mask, a face template is an embedding. Templates are small and fast to compare, and they cannot be turned back into the original image. This way they are the safer thing to store and to exchange.</p>
+<p>This raises the question that decides the long-term cost of the system: in which format are the templates stored?</p>
 
 <figure><img src="../assets/img/fingerprint-minutiae-cover.jpg" alt="Fingerprint with minutiae extracted by the Iriscan biometric converter" loading="lazy"><figcaption>A fingerprint template is a list of minutiae: ridge endings (red) and bifurcations (blue) from a NIST sample.</figcaption></figure>
 
-<h2>Where lock-in comes from</h2>
-<p>Many vendors store templates in a proprietary format that only their own matcher reads. As long as you stay, it works. If you want a better matcher, a cheaper scanner or a second supplier, you find that your database is useless to anyone else. You either re-enrol everyone or keep paying.</p>
-<p>The fix has existed for years: international standards for template interchange.</p>
+<h2>Where the vendor lock comes from</h2>
+<p>Many vendors store templates in their own format which only their matcher reads. As long as the customer stays, it works. But what happens when the customer wants a better matcher, a cheaper scanner or a second supplier? The database turns out to be useless to anyone else, and the choice is between re-enrolling everyone and paying further.</p>
+<p>The solution has existed for years: international standards for biometric data interchange.</p>
 <ul>
 <li>Fingerprint minutiae: ISO/IEC 19794-2 and ANSI INCITS 378;</li>
 <li>Face images: ISO/IEC 19794-5;</li>
 <li>Iris images: ISO/IEC 19794-6;</li>
-<li>and the newer ISO/IEC 39794 series that replaces them with an extensible encoding.</li>
+<li>and the newer ISO/IEC 39794 series, which replaces them with an extensible encoding.</li>
 </ul>
-<p>Even within standards, details differ: ISO stores minutia angles in units of about 1.4°, ANSI in 2°, and coordinates depend on the declared resolution. Converting correctly between them is fiddly but routine, and it should not require a licence.</p>
+<p>Even within the standards, details differ. ISO stores minutia angles in units of about 1.4°, ANSI in units of 2°, and coordinates depend on the declared resolution. Converting correctly between them is fiddly but routine, and it should not require a license.</p>
 
-<figure><img src="../assets/img/biometric-converter-browser-demo.jpg" alt="Iriscan biometric converter running in the browser: fingerprint image and ISO/IEC 19794-2 template" loading="lazy"><figcaption>The <a href="/biometric-data-interchange#demo">converter demo</a>: a WSQ fingerprint becomes an ISO/IEC 19794-2 template, and back to ANSI 378, without leaving the browser.</figcaption></figure>
+<figure><img src="../assets/img/biometric-converter-browser-demo.jpg" alt="Iriscan biometric converter running in the browser: fingerprint image and ISO/IEC 19794-2 template" loading="lazy"><figcaption>The <a href="/biometric-data-interchange#demo">converter demo</a>: a WSQ fingerprint becomes an ISO/IEC 19794-2 template, and then an ANSI 378 one, without leaving the browser.</figcaption></figure>
 
 <h2>On the device or on the server</h2>
-<p>Matching on the user's phone keeps biometric data off your servers entirely, works offline and costs nothing per check. It is the right choice for 1:1 verification in an app. Searching a database (1:N) has to happen where the database is, on your servers or a trusted service. Most real systems combine both: enrol once with a search for duplicates, then verify on the device.</p>
+<p>Matching on the user's phone keeps biometric data off your servers, works offline and costs nothing per check. This is the right choice for 1:1 verification in an app. Searching a database (1:N) has to happen where the database is, on your servers or in a trusted service. Most real systems combine both: they enroll once with a search for duplicates, and then verify on the device.</p>
 
 <h2>What we build</h2>
-<p>Our open-source components use standard formats everywhere. This way the data stays usable whichever matcher or scanner you choose later. The <a href="https://docs.iriscan.net/sdk.html">Biometric SDK</a> does face, liveness and iris on Android, iOS, JVM and React Native. The <a href="https://docs.iriscan.net/converter.html">Biometric Converter</a> turns fingerprint images into ISO or ANSI templates and converts templates between the two; it runs as a C library, a Docker service or in the browser. The <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> handles iris enrolment and search.</p>
+<p>Our open-source components use standard formats everywhere. This way the data stays usable whichever matcher or scanner you choose later. The <a href="https://docs.iriscan.net/sdk">Biometric SDK</a> does face, liveness and iris on Android, iOS, JVM and React Native. The <a href="https://docs.iriscan.net/converter">Biometric Converter</a> turns fingerprint images into ISO or ANSI templates and converts templates between the two formats; it runs as a C library, as a Docker service or in the browser. The <a href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a> handles iris enrollment and search.</p>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
 
 <aside class="cta">
 <h3>Stuck with a proprietary template format?</h3>
