@@ -110,16 +110,8 @@ document.getElementById('ckok').onclick=function(){localStorage.setItem('ck-ok',
 <script>
 (function(){
   var f=document.getElementById('contact-form'), st=document.getElementById('form-status');
-  if(location.search.indexOf('sent=1')>-1){st.textContent='Thank you! Your message has been sent.';}
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var b=f.querySelector('button[type=submit]'); b.disabled=true; st.style.color=''; st.textContent='Sending…';
-    fetch('https://formsubmit.co/ajax/afb9b53507b65ad2197cd0aa91cf08e7',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
-      .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=='true')throw new Error(j.message||'Error');});})
-      .then(function(){f.reset();st.textContent='Thank you! Your message has been sent.';})
-      .catch(function(){st.style.color='#fd6262';st.innerHTML='Sorry, something went wrong. Please email us at <a href="mailto:info@iriscan.net">info@iriscan.net</a>.';})
-      .finally(function(){b.disabled=false;});
-  });
+  if(/[?&]sent=1/.test(location.search)){st.textContent='Thank you! Your message has been sent.';}
+  f.addEventListener('submit',function(){var b=f.querySelector('button[type=submit]');b.disabled=true;st.textContent='Sending…';});
 })();
 </script>
 </body></html>
