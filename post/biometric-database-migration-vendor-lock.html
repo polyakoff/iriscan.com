@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migrating a Biometric Database Without Losing Identities or Getting Locked In | Iriscan</title>
+<meta name="description" content="Why biometric database migrations are hard, what HART and the ICAO move to ISO/IEC 39794 show, and how to audit, convert and verify before switching vendors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/img/iriscan-logo-icon.png">
+<link rel="stylesheet" href="../assets/style.css?v=20261028e">
+<link rel="canonical" href="https://www.iriscan.com/post/biometric-database-migration-vendor-lock">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iriscan">
+<meta property="og:title" content="Migrating a Biometric Database Without Losing Identities or Getting Locked In | Iriscan">
+<meta property="og:description" content="Why biometric database migrations are hard, what HART and the ICAO move to ISO/IEC 39794 show, and how to audit, convert and verify before switching vendors.">
+<meta property="og:url" content="https://www.iriscan.com/post/biometric-database-migration-vendor-lock">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/biometric-database-migration.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Migrating a Biometric Database Without Losing Identities or Getting Locked In", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/biometric-database-migration.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-database-migration-vendor-lock", "description": "Why biometric database migrations are hard, what HART and the ICAO move to ISO/IEC 39794 show, and how to audit, convert and verify before switching vendors."}</script>
+</head>
+<body class="post-page">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+    <input type="checkbox" id="navtoggle">
+    <label class="burger" for="navtoggle">&#9776;</label>
+    <nav class="menu">
+      <div class="has-sub">
+        <a href="/solutions/fintech">Solutions</a>
+        <div class="sub">
+          <a href="/solutions/fintech">Fintech &amp; microfinance</a>
+          <a href="/solutions/health-insurance">Health insurance</a>
+          <a href="/solutions/insurance">Insurance</a>
+          <a href="/solutions/healthcare">Hospitals &amp; medical records</a>
+          <a href="/solutions/data-migration">Database migration</a>
+        </div>
+      </div>
+      <a href="/services">Services</a>
+      <a href="/iris-recognition-software">Iris Recognition Software</a>
+      <div class="has-sub">
+        <a href="/post/iriscan-becomes-the-official-reseller-of-cardlogix">Devices</a>
+        <div class="sub">
+          <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID Tablet</a>
+          <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a>
+          <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY-2</a>
+          <a href="/post/vista-ey2-02-ey2p-dual-iris-face-camera">Vista EY2-02 (EY2P)</a>
+          <a href="/post/vista-ey2h-handheld-dual-iris-camera">Vista EY2H</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/blog">More</a>
+        <div class="sub">
+          <a href="/biometric-data-interchange">Biometric Data Conversion</a>
+          <a href="/biometrics-identity-verification-system">Biometrics Identity Verification System</a>
+          <a href="/blog">Blog</a>
+          <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
+        </div>
+      </div>
+      <a href="https://docs.iriscan.net/">Docs</a>
+      <a class="btn" href="/get-started">Contact us</a>
+    </nav>
+  </div>
+</header>
+<div class="article-outer"><article class="article">
+<div class="meta-top"><span>Oct 28, 2026 &middot; 5 min read</span><span class="dots">&#8942;</span></div>
+<h1>Migrating a Biometric Database Without Losing Identities or Getting Locked In</h1>
+
+<p class="lead">Who owns a national biometric database? On paper, the government or the institution that collected it. In practice, often the vendor whose matcher is the only software able to read it. This becomes visible at the worst moment: when the contract ends, when the hardware has to be replaced or when a new standard arrives. In countries with high identity fraud a biometric register is the main defense against duplicate and fake identities, so losing part of it in a migration is not an option. Below I describe what makes these migrations hard and how to plan one.</p>
+
+<h2>Why migrations happen</h2>
+<p>There are four usual reasons. A contract with a vendor ends and the new tender is won by another company. The system is old, and the vendor no longer supports it or asks too much for it. A new modality is added, for example iris to a fingerprint register. Or the standard changes. The last one is happening right now: ICAO requires that from 1 January 2030 travel documents encode biometric data in ISO/IEC 39794 instead of ISO/IEC 19794, and the new format is not backward compatible with the old one. Every system that reads, issues or stores passport biometrics has to be ready for both.</p>
+
+<h2>Even the best-funded projects struggle</h2>
+<p>Consider the US Department of Homeland Security. Its biometric system IDENT, in use since 1994, held more than 268 million identities in 2021. Its replacement, HART, was planned for years, and GAO reports describe the result: the transition of users from IDENT to HART slipped three years against the original plan, technical challenges included the approach to customer migration and biometric matching, and IDENT had to stay in operation longer, with additional cost. In 2023 GAO reported that the 2022 rebaseline added $354 million to the cost estimate and pushed initial capabilities 33 months past the 2019 plan.</p>
+<p>If a project of this scale, with a large budget and experienced contractors, struggles with migration, a ministry with a smaller team and a single vendor contract has every reason to plan it carefully.</p>
+
+<h2>What is actually in the database</h2>
+<p>A biometric database is not one thing. Typically it contains:</p>
+<ul>
+<li><b>Raw images</b> of fingerprints, irises and faces, sometimes in a standard container, sometimes in a vendor variant of it.</li>
+<li><b>Proprietary templates</b>, the vendor's own mathematical representation used for fast matching. Another vendor's matcher cannot read them, and they cannot be converted.</li>
+<li><b>Standard templates</b>, such as ISO/IEC 19794-2 or ANSI 378 fingerprint minutiae, which other systems can read with some loss of accuracy.</li>
+<li><b>Biographic data</b>, sometimes stored inside the biometric files themselves, which matters for data protection.</li>
+<li><b>Transaction history</b>: enrollments, verifications, de-duplication decisions.</li>
+</ul>
+<p>The key point is the second item. If the original images were not kept, or were kept in a quality that is too low, the only way to move a person to a new system is to enroll them again. For a national register this means millions of people coming back to an enrollment site. This is the real vendor lock, and it is decided on the day the first system is designed, not on the day of migration.</p>
+
+<figure><img src="../assets/img/biometric-database-migration.svg" alt="Migration steps: audit, convert, verify, switch" loading="lazy"><figcaption>Audit, convert, verify, switch: the old system keeps running until the new one gives the same answers.</figcaption></figure>
+
+<h2>Standards help, but variants remain</h2>
+<p>ISO/IEC 19794 was created exactly for interoperability, and NIST ran its IREX I evaluation in 2009 to show that standardized iris image formats can be interoperable and compact. Still, a standard leaves room for interpretation, and in our conversion work we regularly see files that follow a vendor's variant of a format and are rejected by other systems. Systems that exchange data with several agencies meet several generations of formats at once. A migration therefore needs a converter that understands the variants, not only the standard.</p>
+
+<h2>How to plan a migration</h2>
+<ol>
+<li><b>Audit first.</b> Take a representative sample, a few thousand records from different years and enrollment sites, and measure: which formats and variants are there, what is the image quality, how many records have only proprietary templates, how many contain personal data inside the files.</li>
+<li><b>Convert to open standards.</b> Images go to standard containers, templates are re-extracted from images where needed, biographic data is separated from biometric files.</li>
+<li><b>Verify on both systems.</b> Match the same sample on the old and the new system, and explain every difference. De-duplication results should be compared as well, otherwise duplicates appear or disappear silently.</li>
+<li><b>Switch over in stages.</b> Keep the old system running until the new one gives the same answers. Archive the original images, because they are the only thing that will make the next migration possible.</li>
+</ol>
+<p>On top of that, write the exit into the contract with the next vendor: standard formats for storage, access to images, and a test conversion as part of acceptance.</p>
+
+<h2>How we help</h2>
+<p>At Iriscan we built BDI, a biometric data interchange converter based on the NIST NBIS and BiomDI libraries. It converts fingerprint and iris data between vendor variants of the baseline image formats, extracts and converts minutiae templates and extracts biographic data from biometric files. Its engine is open source, and you can try it in your browser on the <a href="/biometric-data-interchange">biometric data conversion page</a> without uploading anything. For large registers it runs on the customer's premises.</p>
+
+<p class="sources">Sources: <a href="https://www.gao.gov/assets/d21386.pdf">GAO-21-386, DHS Needs to Fully Implement Key Practices in Acquiring Biometric Identity Management System, 2021</a>; <a href="https://idtechwire.com/gao-holds-hart-to-account-again-990913">ID Tech, GAO holds HART to account (again), on GAO-23-105959, 2023</a>; <a href="https://rvig.nl/new-encoding-biometric-data">RvIG, New encoding of biometric data (ICAO transition to ISO/IEC 39794)</a>; <a href="https://www.nist.gov/publications/irex-i-performance-iris-recognition-algorithms-standard-images">NIST, IREX I: Performance of iris recognition algorithms on standard images, 2009</a>.</p>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
+
+<aside class="cta">
+<h3>Planning a change of biometric vendor?</h3>
+<p>We audit biometric databases, convert them to open standards and verify the result before switch-over, on your premises or as a service.</p>
+<p><a class="btn" href="/get-started">Plan an audit</a> <a class="btn ghost" href="/solutions/data-migration">Migration solutions</a></p>
+</aside>
+<div class="readnext"><h3>Read next</h3><ul>
+<li><a href="/solutions/data-migration">Biometric database migration</a></li>
+<li><a href="/biometric-data-interchange">Try the biometric data converter</a></li>
+<li><a href="/post/biometric-authentication">Biometric Authentication: Modalities, Templates and Lock-in</a></li>
+</ul></div>
+</article></div>
+<footer>
+  <div class="wrap cols">
+    <div>
+      <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+      <p style="margin-top:1.6rem">Biometric Technologies O&Uuml;<br><a href="mailto:info@iriscan.net">info@iriscan.net</a><br>Estonia, Tallinn, Ahtri 12, 10151</p>
+    </div>
+    <div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://www.iubenda.com/privacy-policy/46323344">Privacy Policy</a></li>
+        <li><a href="/eula">EULA</a></li>
+        <li><a class="btn" style="margin-top:1rem" href="/get-started">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="margin-bottom:.6rem;color:#fff">Follow Us On:</p>
+      <p class="socials">
+        <a href="https://www.linkedin.com/company/iriscan"><img src="../assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
+        <a href="https://www.facebook.com/iriscan.net/"><img src="../assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
+        <a href="https://twitter.com/IriscanNet"><img src="../assets/img/social-twitter.png" alt="Iriscan Twitter profile"></a>
+      </p>
+      <p class="copyright">&copy; 2019&ndash;<span class="yr">2026</span> Biometric<br>Technologies O&Uuml;</p>
+    </div>
+  </div>
+</footer>
+<div id="ckbar" hidden><span>We use minimal cookies. <a href="https://www.iubenda.com/privacy-policy/46323344">Privacy</a></span><button id="ckok" aria-label="Accept">OK</button></div>
+<script>(function(){try{var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();
+if(!localStorage.getItem('ck-ok')){var b=document.getElementById('ckbar');b.hidden=false;
+document.getElementById('ckok').onclick=function(){localStorage.setItem('ck-ok','1');b.hidden=true};}}catch(e){}})();</script>
+</body></html>

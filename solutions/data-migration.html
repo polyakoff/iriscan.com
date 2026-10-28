@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biometric Database Migration Without Vendor Lock | Iriscan</title>
+<meta name="description" content="Audit, conversion and verification of biometric databases when changing vendors or standards, for national ID, voter, health and banking registers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/img/iriscan-logo-icon.png">
+<link rel="stylesheet" href="/assets/style.css?v=20261028e">
+<link rel="canonical" href="https://www.iriscan.com/solutions/data-migration">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iriscan">
+<meta property="og:title" content="Biometric Database Migration Without Vendor Lock | Iriscan">
+<meta property="og:description" content="Audit, conversion and verification of biometric databases when changing vendors or standards, for national ID, voter, health and banking registers.">
+<meta property="og:url" content="https://www.iriscan.com/solutions/data-migration">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/biometric-database-migration.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+    <input type="checkbox" id="navtoggle">
+    <label class="burger" for="navtoggle">&#9776;</label>
+    <nav class="menu">
+      <div class="has-sub">
+        <a href="/solutions/fintech">Solutions</a>
+        <div class="sub">
+          <a href="/solutions/fintech">Fintech &amp; microfinance</a>
+          <a href="/solutions/health-insurance">Health insurance</a>
+          <a href="/solutions/insurance">Insurance</a>
+          <a href="/solutions/healthcare">Hospitals &amp; medical records</a>
+          <a href="/solutions/data-migration">Database migration</a>
+        </div>
+      </div>
+      <a href="/services">Services</a>
+      <a href="/iris-recognition-software">Iris Recognition Software</a>
+      <div class="has-sub">
+        <a href="/post/iriscan-becomes-the-official-reseller-of-cardlogix">Devices</a>
+        <div class="sub">
+          <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID Tablet</a>
+          <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a>
+          <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY-2</a>
+          <a href="/post/vista-ey2-02-ey2p-dual-iris-face-camera">Vista EY2-02 (EY2P)</a>
+          <a href="/post/vista-ey2h-handheld-dual-iris-camera">Vista EY2H</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/blog">More</a>
+        <div class="sub">
+          <a href="/biometric-data-interchange">Biometric Data Conversion</a>
+          <a href="/biometrics-identity-verification-system">Biometrics Identity Verification System</a>
+          <a href="/blog">Blog</a>
+          <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
+        </div>
+      </div>
+      <a href="https://docs.iriscan.net/">Docs</a>
+      <a class="btn" href="/get-started">Contact us</a>
+    </nav>
+  </div>
+</header>
+<section class="hero pxwin sol-hero">
+<div class="px-media fx-hero" style="background-image:url(/assets/img/iriscan-red-particle-wave-background.jpg)"></div>
+<div class="wrap">
+<p class="sol-eyebrow">Solutions · Biometric database migration</p>
+<h1 class="anim a-left">Change the vendor, keep every identity</h1>
+<p class="lead lead-big anim a-left" style="--d:.2s">Audit and conversion of biometric databases between vendors and standards, for national ID, voter, health and banking registers that should not be held hostage by one supplier.</p>
+<p class="sol-actions"><a class="btn" href="/get-started">Discuss your migration</a> <a class="btn ghost" href="/post/biometric-database-migration-vendor-lock">Read: migration without vendor lock</a></p>
+</div></section>
+
+<section><div class="wrap sol">
+
+<h2>The problem</h2>
+<p class="sol-intro">What do you actually own after ten years with one biometric vendor? Often a database whose templates only that vendor's matcher can read, images in a variant of a standard that other systems reject, and personal data hidden inside the files. When the contract ends, the hardware is outdated or the regulator changes the format, all of this has to move, and it has to move without losing a single person.</p>
+<div class="sol-stats">
+<div><b>268 million</b><span>identities in the US DHS biometric system IDENT, whose migration to its replacement HART slipped three years</span><a href="https://www.gao.gov/assets/d21386.pdf">GAO-21-386, 2021</a></div>
+<div><b>+$354 million</b><span>added to the HART cost estimate in the 2022 rebaseline, with initial capabilities 33 months late</span><a href="https://idtechwire.com/gao-holds-hart-to-account-again-990913">GAO-23-105959 via ID Tech</a></div>
+<div><b>2030</b><span>from this year travel documents must encode biometric data in ISO/IEC 39794, which is not backward compatible with 19794</span><a href="https://rvig.nl/new-encoding-biometric-data">RvIG, ICAO transition</a></div>
+</div>
+
+<h2>What you get</h2>
+<div class="sol-cards">
+<div class="sol-card"><h3>Database audit</h3><p>We inventory what is really stored: formats and their vendor variants, image quality, templates that cannot be moved, duplicates and personal data inside biometric files. You get a report before any decision about the new vendor.</p></div>
+<div class="sol-card"><h3>Batch conversion</h3><p>Fingerprint and iris records converted between vendor variants of ISO/IEC 19794, ANSI/NIST-ITL, ANSI 378 and ISO card formats, with templates re-extracted from images where proprietary templates cannot be reused.</p></div>
+<div class="sol-card"><h3>Verification before switch-over</h3><p>A sample is matched on the old and the new system, and differences are explained before the new system goes live. Nobody discovers missing identities after cutover.</p></div>
+<div class="sol-card"><h3>Privacy clean-up</h3><p>Biographic data embedded in biometric files is extracted or removed, so the converted database stores only what it should. This supports data portability and minimization under GDPR and similar laws.</p></div>
+</div>
+
+<figure class="sol-fig"><img src="/assets/img/biometric-database-migration.svg" alt="Migration steps: audit, convert, verify, switch" loading="lazy"><figcaption>Proprietary templates cannot be moved. Images and standard templates can.</figcaption></figure>
+
+<h2>Why us</h2>
+<p>Our BDI converter is built on the NIST NBIS and BiomDI libraries, the reference implementations of the standards, and its engine is open source. You can try it on the <a href="/biometric-data-interchange">biometric data conversion page</a>: the same engine runs in your browser and converts a fingerprint image to an ISO or ANSI template without uploading anything. We are not a matcher vendor in your tender, so we have no interest in locking the converted data to anyone.</p>
+
+<h2>Deployment</h2>
+<div class="sol-cards two">
+<div class="sol-card"><h3>On your premises</h3><p>For national registers the conversion runs inside your data center or in an isolated environment, and no biometric data leaves it. We provide the software, scripts and engineers.</p></div>
+<div class="sol-card"><h3>As a service</h3><p>For smaller databases, encrypted batches are converted in our cloud and returned with a conversion report, including the records that could not be converted and why.</p></div>
+</div>
+
+<h2>How we start</h2>
+<p>We recommend starting with an audit of a representative sample, usually a few thousand records from different years and enrollment sites. In a few weeks you know which share of the database converts cleanly, which records need re-extraction from images and which need re-enrollment. This gives you a realistic plan and a stronger position in negotiations with the new vendor.</p>
+
+<aside class="cta">
+<h3>Changing a biometric vendor or format?</h3>
+<p>Tell us the size of the database, the modalities and the current vendor. We will propose an audit and a migration plan.</p>
+<p><a class="btn" href="/get-started">Plan an audit</a> <a class="btn ghost" href="/biometric-data-interchange">Try the converter</a></p>
+</aside>
+
+</div></section>
+<footer>
+  <div class="wrap cols">
+    <div>
+      <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+      <p style="margin-top:1.6rem">Biometric Technologies O&Uuml;<br><a href="mailto:info@iriscan.net">info@iriscan.net</a><br>Estonia, Tallinn, Ahtri 12, 10151</p>
+    </div>
+    <div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://www.iubenda.com/privacy-policy/46323344">Privacy Policy</a></li>
+        <li><a href="/eula">EULA</a></li>
+        <li><a class="btn" style="margin-top:1rem" href="/get-started">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="margin-bottom:.6rem;color:#fff">Follow Us On:</p>
+      <p class="socials">
+        <a href="https://www.linkedin.com/company/iriscan"><img src="/assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
+        <a href="https://www.facebook.com/iriscan.net/"><img src="/assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
+        <a href="https://twitter.com/IriscanNet"><img src="/assets/img/social-twitter.png" alt="Iriscan Twitter profile"></a>
+      </p>
+      <p class="copyright">&copy; 2019&ndash;<span class="yr">2026</span> Biometric<br>Technologies O&Uuml;</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/fx.js" defer></script>
+<div id="ckbar" hidden><span>We use minimal cookies. <a href="https://www.iubenda.com/privacy-policy/46323344">Privacy</a></span><button id="ckok" aria-label="Accept">OK</button></div>
+<script>(function(){try{var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();
+if(!localStorage.getItem('ck-ok')){var b=document.getElementById('ckbar');b.hidden=false;
+document.getElementById('ckok').onclick=function(){localStorage.setItem('ck-ok','1');b.hidden=true};}}catch(e){}})();</script>
+</body></html>
