@@ -58,7 +58,7 @@
 <div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Sep 30, 2023 &middot; 4 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
 <h1>Iris Authentication: How Accurate It Is and How to Tune It</h1>
 <figure><img src="../assets/img/blog/iris-authentication-professional-woman-portrait.jpg" alt="Portrait of a woman for an article on iris authentication" loading="lazy"></figure>
-<p class="lead">We usually recommend iris when the database is large and a false match is expensive. The reason is statistical. Below I explain it, and also what goes wrong in real deployments and which settings you can change.</p>
+<p class="lead">Why do the largest identity programmes, from India's Aadhaar to the UAE border control, rely on iris? The answer is statistical. Iris separates different people with a margin that other common modalities do not have, and this is what allows searching a database of millions without drowning in false matches. Below I explain where this margin comes from, what reduces it in real deployments and which settings are in your hands.</p>
 
 <h2>Why iris separates people so well</h2>
 <p>An iris code is a long string of bits (see <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>). Compare codes from two different eyes and about half the bits differ, simply because unrelated bits agree by chance half the time. The spread around that half is narrow: with hundreds of effectively independent bits, it is very unlikely for two different irises to agree on, say, 70% of them.</p>

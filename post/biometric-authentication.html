@@ -59,7 +59,7 @@
 <h1>Biometric Authentication: Modalities, Templates and Lock-in</h1>
 <figure><img src="../assets/img/biometric-fingerprint-scan-blue.jpg" alt="Abstract fingerprint scan" loading="lazy"></figure>
 
-<p class="lead">Biometric authentication checks who someone is by something they are, not something they know or carry. Every system does it the same way: capture a sample, reduce it to a template, compare templates. The modality you choose decides accuracy and cost. The template format you choose decides whether you can ever change suppliers.</p>
+<p class="lead">Biometric authentication checks who someone is by something they are, not something they know or carry. Every system does it the same way: capture a sample, reduce it to a template, compare templates. The modality decides accuracy and cost. The template format decides something less obvious: whether the organisation will ever be able to change its supplier. Using biometrics in a business process often means a vendor lock, and this is the problem we have been working on at Iriscan for years.</p>
 
 <h2>The three modalities that matter</h2>
 <p><b>Face.</b> Works with any camera, which makes it the default for phones and self-service. A neural network turns an aligned face into an embedding, a vector of a few hundred numbers; two faces match when their vectors are close. Good for 1:1 verification. Weaker for searching large databases, and needs liveness detection, because a photo of a face is easy to get.</p>
@@ -92,7 +92,7 @@
 <p>Matching on the user's phone keeps biometric data off your servers entirely, works offline and costs nothing per check. It is the right choice for 1:1 verification in an app. Searching a database (1:N) has to happen where the database is, on your servers or a trusted service. Most real systems combine both: enrol once with a search for duplicates, then verify on the device.</p>
 
 <h2>What we build</h2>
-<p>We started Iriscan's open-source components exactly because of this problem, so they use standard formats everywhere. The <a href="https://docs.iriscan.net/sdk.html">Biometric SDK</a> does face, liveness and iris on Android, iOS, JVM and React Native. The <a href="https://docs.iriscan.net/converter.html">Biometric Converter</a> turns fingerprint images into ISO or ANSI templates and converts templates between the two; it runs as a C library, a Docker service or in the browser. The <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> handles iris enrolment and search.</p>
+<p>Our open-source components use standard formats everywhere. This way the data stays usable whichever matcher or scanner you choose later. The <a href="https://docs.iriscan.net/sdk.html">Biometric SDK</a> does face, liveness and iris on Android, iOS, JVM and React Native. The <a href="https://docs.iriscan.net/converter.html">Biometric Converter</a> turns fingerprint images into ISO or ANSI templates and converts templates between the two; it runs as a C library, a Docker service or in the browser. The <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> handles iris enrolment and search.</p>
 
 <aside class="cta">
 <h3>Stuck with a proprietary template format?</h3>

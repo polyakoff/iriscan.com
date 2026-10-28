@@ -58,7 +58,7 @@
 <div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Jul 7, 2023 &middot; 5 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
 <h1>How Iris Recognition Works</h1>
 <figure><img src="../assets/img/blog/iris-recognition-device-tabletop-vista-ey2.jpg" alt="Vista EY2 iris recognition camera on a desk" loading="lazy"></figure>
-<p class="lead">When we built the Iriscan Cloud Iris API, the pipeline was the same as in most iris systems: take a near-infrared picture of the eye, find the iris in it, unroll it into a rectangle, turn the texture into bits and compare these bits with others. Each step is simple to describe, but the accuracy of the whole system depends on how carefully each one is done. Below I go through them one by one.</p>
+<p class="lead">How does a machine recognise a person by the eye? The approach has not changed much since John Daugman described it in the 1990s, and our Cloud Iris API follows it too: take a near-infrared picture of the eye, find the iris, unroll it into a rectangle, turn its texture into bits and compare these bits with the bits of other people. Each step is simple to describe. The accuracy of the whole system depends on how carefully each one is implemented, so below I go through them one by one.</p>
 
 <h2>1. Capture</h2>
 <p>Iris cameras photograph the eye in near-infrared light, roughly 700–900 nm. In visible light a dark brown iris looks almost uniform. In infrared the same iris shows its crypts, furrows and rings, because melanin absorbs much less infrared than visible light. Infrared also takes ambient lighting out of the equation: the camera brings its own illumination, so a picture taken in a sunny office and one taken in a dim tent look alike.</p>
@@ -76,7 +76,7 @@
 
 <h2>4. Encoding</h2>
 <p>The rectangle is filtered with Gabor or similar wavelets, and for each point the sign of the filter response is kept as a bit or two. Only the phase survives; contrast and brightness are thrown away, which makes the code robust to lighting and camera differences. The result is an iris code, a fixed-length string of bits (2048 in Daugman's original design) plus a mask of the same length.</p>
-<p>An iris code is not an image. You cannot turn it back into a picture of the eye, and it contains no name, age or eye colour. That matters for privacy and for where templates are allowed to travel.</p>
+<p>An iris code is not an image. You cannot turn it back into a picture of the eye, and it contains no name, age or eye colour. This way a template can be stored and exchanged with much lower privacy risk than the eye image itself.</p>
 
 <h2>5. Comparison</h2>
 <p>Two iris codes are compared by Hamming distance: the share of bits that differ, counted only where both masks say the bits are valid. Codes from the same eye typically differ in 10–20% of bits. Codes from different eyes differ in close to half, because unrelated bits agree by chance half the time. To allow for head tilt, the comparison is repeated with one code shifted a few positions left and right, and the best result is taken.</p>
