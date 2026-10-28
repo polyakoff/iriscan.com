@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Person, One Identity: Biometrics in Elections and at the Border | Iriscan</title>
+<meta name="description" content="What Nigeria&#x27;s voter register, the UAE&#x27;s iris border system and the EU Entry/Exit System show about de-duplication, verification and fallback procedures in public registers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/img/iriscan-logo-icon.png">
+<link rel="stylesheet" href="../assets/style.css?v=20261028e">
+<link rel="canonical" href="https://www.iriscan.com/post/biometrics-elections-border-control">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iriscan">
+<meta property="og:title" content="One Person, One Identity: Biometrics in Elections and at the Border | Iriscan">
+<meta property="og:description" content="What Nigeria&#x27;s voter register, the UAE&#x27;s iris border system and the EU Entry/Exit System show about de-duplication, verification and fallback procedures in public registers.">
+<meta property="og:url" content="https://www.iriscan.com/post/biometrics-elections-border-control">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/public-register-biometrics.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "One Person, One Identity: Biometrics in Elections and at the Border", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/public-register-biometrics.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometrics-elections-border-control", "description": "What Nigeria's voter register, the UAE's iris border system and the EU Entry/Exit System show about de-duplication, verification and fallback procedures in public registers."}</script>
+</head>
+<body class="post-page">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+    <input type="checkbox" id="navtoggle">
+    <label class="burger" for="navtoggle">&#9776;</label>
+    <nav class="menu">
+      <div class="has-sub">
+        <a href="/solutions/fintech">Solutions</a>
+        <div class="sub">
+          <a href="/solutions/fintech">Fintech &amp; microfinance</a>
+          <a href="/solutions/health-insurance">Health insurance</a>
+          <a href="/solutions/insurance">Insurance</a>
+          <a href="/solutions/healthcare">Hospitals &amp; medical records</a>
+          <a href="/solutions/data-migration">Database migration</a>
+          <a href="/solutions/government">Elections &amp; borders</a>
+        </div>
+      </div>
+      <a href="/services">Services</a>
+      <a href="/iris-recognition-software">Iris Recognition Software</a>
+      <div class="has-sub">
+        <a href="/post/iriscan-becomes-the-official-reseller-of-cardlogix">Devices</a>
+        <div class="sub">
+          <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID Tablet</a>
+          <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a>
+          <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY-2</a>
+          <a href="/post/vista-ey2-02-ey2p-dual-iris-face-camera">Vista EY2-02 (EY2P)</a>
+          <a href="/post/vista-ey2h-handheld-dual-iris-camera">Vista EY2H</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/blog">More</a>
+        <div class="sub">
+          <a href="/biometric-data-interchange">Biometric Data Conversion</a>
+          <a href="/biometrics-identity-verification-system">Biometrics Identity Verification System</a>
+          <a href="/blog">Blog</a>
+          <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
+        </div>
+      </div>
+      <a href="https://docs.iriscan.net/">Docs</a>
+      <a class="btn" href="/get-started">Contact us</a>
+    </nav>
+  </div>
+</header>
+<div class="article-outer"><article class="article">
+<div class="meta-top"><span>Oct 28, 2026 &middot; 5 min read</span><span class="dots">&#8942;</span></div>
+<h1>One Person, One Identity: Biometrics in Elections and at the Border</h1>
+
+<p class="lead">What do a voter register and a border have in common? Both are public registers that work only if each person appears in them once, and both are checked at a single moment of decision: a polling station on election day or a passport booth at arrival. In countries with high identity fraud both fail in the same way, through duplicate records and impersonation. Below I look at three experiences, Nigeria's elections, the UAE border and the new EU Entry/Exit System, and what a government can take from them.</p>
+
+<h2>Nigeria: cleaning the register and checking the voter</h2>
+<p>Before Nigeria adopted technology, its voter register was compiled manually, and it was widely believed to be bloated with under-age and duplicate registrations. For the 2015 general elections the Independent National Electoral Commission (INEC) introduced permanent voter cards with biometrics and smart card readers at polling units.</p>
+<p>The first lesson came from the readers. According to International IDEA, a mock accreditation exercise showed success rates of up to 92% in some states, around 36% in others and only 3.4% in one. Authentication of fingerprints was more difficult for some voters, there were cards with faulty chip encoding and cards that were mishandled. A technology that fails for a third of voters in one state and works in another is not neutral: it changes who can vote.</p>
+<p>The second lesson came from the register. Before the 2023 elections INEC ran new registrations through its Automated Biometric Identification System. In October 2022 its chairman announced that 2.78 million registrations had been removed as invalid, including double and multiple registrations, under-age persons and fake records, and that 9.5 million new valid registrations brought the register to 93.5 million voters. This is exactly what biometric de-duplication is for: catching the same person under different names before the register is published.</p>
+
+<h2>The UAE: iris at the border since 2001</h2>
+<p>The United Arab Emirates started using iris recognition at its air, land and sea ports in 2001 to stop expelled foreigners from coming back under new names and passports. According to John Daugman of the University of Cambridge, whose algorithms the system uses, about 12,000 arriving travelers are compared against a watch list of about a million iris templates every day, which is about 12 billion comparisons per day. The system has found 73,180 people on the list trying to re-enter.</p>
+<p>This case is important for one reason: it shows that an exhaustive search against a large watch list is practical without drowning border officers in false alarms. A new passport does not help a person whose iris is already in the list.</p>
+
+<h2>The EU: from stamps to biometric records</h2>
+<p>On 12 October 2025 the European Union started the Entry/Exit System at the external borders of 29 countries. Non-EU travelers on short stays now register their passport data, a facial image and fingerprints at their first crossing, and later crossings need only a quick verification. Since 10 April 2026 the system works at all external border crossing points and has replaced passport stamps. Among its stated purposes are detecting overstayers and cases of document and identity fraud.</p>
+<p>The EU had passport stamps and document checks for decades. It moved to biometrics because a stamp in a forged or second passport tells nothing about the person.</p>
+
+<figure><img src="../assets/img/public-register-biometrics.svg" alt="Public register: enroll, de-duplicate, verify, audit" loading="lazy"><figcaption>One person, one identity: duplicates are stopped at enrollment, impersonation at the checkpoint.</figcaption></figure>
+
+<h2>Lessons for governments</h2>
+<ul>
+<li><b>De-duplicate before you verify.</b> A checkpoint can only confirm that a person matches a record. If the register already contains the same person twice, verification will confirm both.</li>
+<li><b>Measure failures by region.</b> The Nigerian numbers show that failure rates differ hugely by location, hardware and population. Pilot in the hardest region, not the easiest.</li>
+<li><b>Plan a fallback that cannot be abused.</b> A voter whose fingerprints fail must still be able to vote, and a traveler must still be processed. The fallback should be logged and reviewed, otherwise it becomes the new route for fraud.</li>
+<li><b>Use more than one modality.</b> Iris for the people whose fingerprints are worn, face for compatibility with travel documents, fingerprints for compatibility with existing registers.</li>
+<li><b>Keep control of the data.</b> A register is a national asset. Open standards and open platforms such as MOSIP mean that the next government can change the vendor without re-enrolling the country.</li>
+<li><b>Make it auditable.</b> In elections trust matters as much as accuracy. Observers should be able to see how many records were removed and why.</li>
+</ul>
+
+<h2>What biometrics does not solve</h2>
+<p>Biometrics cannot fix a vote count, prevent vote buying or decide who is entitled to cross a border. It answers one question, whether this person is the person in the record, and it answers it only as well as the register is built. Biometric registers of whole populations also carry obvious risks for privacy and civil liberties, so the legal basis, the limits of use and the retention rules have to be set by law before the first person is enrolled, not after.</p>
+
+<h2>How we help</h2>
+<p>At Iriscan we provide iris and multimodal enrollment, de-duplication and verification components that run on the state's own infrastructure, store data in ISO formats and integrate with MOSIP. I wrote about the national scale in <a href="/post/the-power-of-the-eye-iris-identification">Iris Identification at National Scale</a> and about changing vendors in <a href="/post/biometric-database-migration-vendor-lock">the article on database migration</a>.</p>
+
+<p class="sources">Sources: <a href="https://www.idea.int/sites/default/files/publications/introducing-biometric-technology-in-elections-reissue.pdf">International IDEA, Introducing Biometric Technology in Elections, 2017</a>; <a href="https://www.primebusiness.africa/?p=52082">Prime Business Africa, 93.5m to vote in 2023 elections, as 2.78m discarded, says INEC, 2022</a>; <a href="https://www.cl.cam.ac.uk/~jgd1000/deployments.html">J. Daugman, United Arab Emirates deployment of iris recognition</a>; <a href="https://home-affairs.ec.europa.eu/news/new-entryexit-system-went-live-12-october-2025-10-13_en">European Commission, The new Entry/Exit System went live on 12 October 2025</a>.</p>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
+
+<aside class="cta">
+<h3>Working on a voter register, a civil registry or a border system?</h3>
+<p>We help governments build biometric registers that are de-duplicated, verifiable at the checkpoint and kept under national control, starting with a pilot in one region.</p>
+<p><a class="btn" href="/get-started">Plan a pilot</a> <a class="btn ghost" href="/solutions/government">Government solutions</a></p>
+</aside>
+<div class="readnext"><h3>Read next</h3><ul>
+<li><a href="/solutions/government">Elections and borders solutions</a></li>
+<li><a href="/post/the-power-of-the-eye-iris-identification">Iris Identification at National Scale</a></li>
+<li><a href="/post/biometric-database-migration-vendor-lock">Migrating a Biometric Database Without Losing Identities or Getting Locked In</a></li>
+</ul></div>
+</article></div>
+<footer>
+  <div class="wrap cols">
+    <div>
+      <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+      <p style="margin-top:1.6rem">Biometric Technologies O&Uuml;<br><a href="mailto:info@iriscan.net">info@iriscan.net</a><br>Estonia, Tallinn, Ahtri 12, 10151</p>
+    </div>
+    <div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://www.iubenda.com/privacy-policy/46323344">Privacy Policy</a></li>
+        <li><a href="/eula">EULA</a></li>
+        <li><a class="btn" style="margin-top:1rem" href="/get-started">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="margin-bottom:.6rem;color:#fff">Follow Us On:</p>
+      <p class="socials">
+        <a href="https://www.linkedin.com/company/iriscan"><img src="../assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
+        <a href="https://www.facebook.com/iriscan.net/"><img src="../assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
+        <a href="https://twitter.com/IriscanNet"><img src="../assets/img/social-twitter.png" alt="Iriscan Twitter profile"></a>
+      </p>
+      <p class="copyright">&copy; 2019&ndash;<span class="yr">2026</span> Biometric<br>Technologies O&Uuml;</p>
+    </div>
+  </div>
+</footer>
+<div id="ckbar" hidden><span>We use minimal cookies. <a href="https://www.iubenda.com/privacy-policy/46323344">Privacy</a></span><button id="ckok" aria-label="Accept">OK</button></div>
+<script>(function(){try{var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();
+if(!localStorage.getItem('ck-ok')){var b=document.getElementById('ckbar');b.hidden=false;
+document.getElementById('ckok').onclick=function(){localStorage.setItem('ck-ok','1');b.hidden=true};}}catch(e){}})();</script>
+</body></html>
