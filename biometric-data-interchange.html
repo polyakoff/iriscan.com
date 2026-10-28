@@ -20,6 +20,44 @@
 <meta property="og:url" content="https://www.iriscan.com/biometric-data-interchange">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/online-wsq-biometric-data-conversion-logo.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<style>
+.bdi [hidden]{display:none!important}
+.bdi-head{max-width:820px;margin:0 auto 2.2rem;text-align:center}
+.bdi-head h2{margin-top:0}
+.bdi-head p{color:var(--muted)}
+.bdi{display:grid;grid-template-columns:minmax(0,1fr) 230px minmax(0,1fr);gap:1.2rem;align-items:start}
+.bdi-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:1.4rem;min-width:0}
+.bdi-title{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:.9rem}
+.bdi-title h3{margin:0;color:var(--label)}
+.bdi-title span{color:var(--muted);font-size:.78rem}
+.bdi-stage{background:#0f0f11;border-radius:8px;display:flex;align-items:center;justify-content:center;min-height:260px;overflow:hidden}
+.bdi-stage canvas{display:block;max-width:100%;max-height:440px;height:auto;width:auto}
+.bdi-empty{color:var(--muted);font-size:.9rem;text-align:center;padding:1.5rem}
+.bdi-meta{color:var(--muted);font-size:.82rem;margin:.6rem 0 0;word-break:break-word}
+.bdi-check{display:flex;align-items:center;flex-wrap:wrap;gap:.45rem;color:var(--muted);font-size:.82rem;margin-top:.7rem}
+.bdi-check input{width:auto;accent-color:var(--accent)}
+.dot{display:inline-block;width:.7rem;height:.7rem;border:2px solid;border-radius:50%;margin-left:.5rem}
+.dot.re{border-color:#fd6262}.dot.bi{border-color:#889ce7}
+.bdi-row{display:flex;align-items:center;gap:.7rem;margin-top:.6rem}
+.bdi-row label{color:var(--muted);font-size:.82rem;margin:0}
+.bdi-row input{width:6.5rem;padding:.35rem .5rem;background:transparent;border:1px solid #6e7178;border-radius:4px;color:#fff}
+.bdi-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.bdi .btn{font-size:.85rem;padding:.55rem .95rem;border:1px solid var(--accent);cursor:pointer;font-family:inherit;border-radius:5px}
+.bdi .btn.ghost{background:transparent;color:var(--accent)}
+.bdi .btn:disabled{opacity:.35;cursor:default;filter:none}
+.bdi-mid{align-self:center;display:flex;flex-direction:column;gap:.6rem}
+.bdi-mid label{color:var(--muted);font-size:.82rem}
+.bdi-mid select{background:var(--bg-soft);color:#fff;border:1px solid #6e7178;border-radius:4px;padding:.5rem;font:inherit;font-size:.9rem}
+.bdi-mid .btn{width:100%;padding:.8rem 1rem;font-size:.95rem}
+.bdi-note{color:var(--muted);font-size:.78rem;line-height:1.55;margin:.4rem 0 0}
+.bdi-dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;font-size:.85rem;margin:0 0 .9rem}
+.bdi-dl dt{color:var(--muted)}.bdi-dl dd{color:#fff;word-break:break-word}
+.bdi .blob{max-height:150px}
+.bdi-status{grid-column:1/-1;min-height:1.5em;margin:0;color:var(--muted);font-size:.9rem;text-align:center}
+.bdi-status.err{color:var(--accent)}
+.bdi-foot{max-width:820px;margin:1.6rem auto 0;text-align:center;color:var(--muted);font-size:.9rem}
+@media(max-width:900px){.bdi{grid-template-columns:minmax(0,1fr)}.bdi-mid{order:0}}
+</style>
 </head>
 <body>
 <header>
@@ -77,18 +115,69 @@
 <div class="img-tile pxwin"><div class="px-media px-wide fx-band" style="background-image:url(assets/img/iriscan-red-particle-wave-background.jpg)"></div><h2>Right to data portability</h2></div>
 </div></section>
 
-<section><div class="wrap prose">
-<h3>Conversion demonstration</h3>
-<p>Due to privacy reasons, we do not allow to upload and download of any biometric data. Therefore, conversion is performed only for demonstration reasons.</p>
-<figure style="max-width:360px"><img src="assets/img/online-wsq-biometric-data-conversion-logo.jpg" alt="onlineWSQ biometric data conversion software logo" loading="lazy"></figure>
-<code class="blob">Rk1SACAyMAAJKAABAAEAAAIhAm4Bw5kBw5kBAAAAAHBAAAAAITVAAAAAADtAAAAAITVAAAAAeydAAAAACzRAAAAAewrDhAAAAMOhCkAAAABUJ0AAAAAhNkAAAABJEUAAAADDoQrDhAAAAEMPQAAAAHsPQAAAAE4oQAAAAHsPQAAAAFQ0QAAAACEQQAAAAEMOQAAAAMKuKEAAAABOJ0AAAAB7D0AAAABOD0AAAABUEsOEAAAAOA5AAAAAw4Y0QAAAABYzQAAAAMOGJ0AAAABwNMOEAAAATgxAAAAAVCVAAAAAw60RQAAAAFQnQAAAAMKuDEAAAAARO0AAAADDhgxAAAAAwqMQQAAAAE4Ow4QAAADDpSlAAAAAVAxAAAAAwq4zQAAAABYQQAAAAMKuDsOEAAAAw4Y0w4QAAABOD0AAAADDhg9AAAAAw4YnQAAAABYPQAAAAFQnw4QAAAAFEcOEAAAAcCjDhAAAAAURQAAAAAAPQAAAAGsPQAAAAHYnQAAAAF87w4QAAAAFJ8OEAAAAwq4nQAAAAGsRw4QAAABlNUAAAADDhg7DhAAAAMOlNUAAAADDhg9AAAAAw4U1w4QAAABwEMOEAAAAdihAAAAAAApAAAAABRDDhAAAAMOhKEAAAADCozVAAAAAVDVAAAAAw4YPw4QAAAAAKEAAAABUKcOEAAAAexJAAAAAABBAAAAAw4YpQAAAAMOhKcOEAAAAexFAAAAAwq4SQAAAAAAOQAAAABYQQAAAAEkQw4QAAAAAKUAAAADDrQ5AAAAACw7DhAAAAMKjD0AAAAARD8OEAAAASQ9AAAAAWjtAAAAAwq41w4QAAAB7DkAAAAALO0AAAADDshDDhAAAABwOw4QAAAARKMOEAAAAEQ9AAAAAZTTDhAAAAD4OQAAAAGs1QAAAAEM0QAAAAMOtD8OEAAAAFjNAAAAAw6EoQAAAAC02QAAAADg1QAAAAC02w4QAAADDoTRAAAAALTRAAAAALTdAAAAAw602QAAAAMOhN0AAAAAyOQZoAAEGaAABAgABBQIB</code>
-<p>Convert WSQ to ISO</p>
-<div class="grid g2" style="max-width:640px;margin-top:1rem">
+<section id="demo"><div class="wrap">
+<div class="bdi-head">
+<h2>Conversion demonstration</h2>
+<p>Convert a fingerprint image to a minutiae template and templates between standards. The converter is the WebAssembly build of the engine behind Iriscan BDI (NIST NBIS and BiomDI), and it runs entirely in your browser: files are processed on your device and are never uploaded.</p>
+</div>
+<div id="bdi" class="bdi">
+<div class="bdi-card">
+<div class="bdi-title"><h3>Fingerprint image</h3><span>WSQ · PNG · JPEG · BMP</span></div>
+<div class="bdi-stage"><canvas id="bdi-canvas" hidden></canvas><p id="bdi-img-empty" class="bdi-empty">Loading the converter…</p></div>
+<label class="bdi-check"><input type="checkbox" id="bdi-overlay" checked> Show minutiae <i class="dot re"></i>ridge ending <i class="dot bi"></i>bifurcation</label>
+<p id="bdi-img-meta" class="bdi-meta">No image loaded</p>
+<div id="bdi-ppi-row" class="bdi-row" hidden><label for="bdi-ppi">Scan resolution, ppi</label><input id="bdi-ppi" type="number" min="250" max="1000" step="1" value="500"></div>
+<div class="bdi-actions">
+<button type="button" class="btn ghost" id="bdi-sample">Sample</button>
+<button type="button" class="btn ghost" id="bdi-open-img">Open image…</button>
+<input type="file" id="bdi-file-img" accept=".wsq,image/png,image/jpeg,image/bmp,image/gif,image/webp" hidden>
+</div>
+<div class="bdi-actions">
+<button type="button" class="btn ghost" id="bdi-save-wsq" disabled>Save as WSQ</button>
+<button type="button" class="btn ghost" id="bdi-save-png" disabled>Save as PNG</button>
+</div>
+</div>
+<div class="bdi-mid">
+<label for="bdi-fmt">Template format</label>
+<select id="bdi-fmt"><option value="ISO">ISO/IEC 19794-2</option><option value="ANSI">ANSI INCITS 378</option></select>
+<button type="button" class="btn" id="bdi-extract" disabled>Extract minutiae <span aria-hidden="true">→</span></button>
+<p class="bdi-note">Back from a template you get its minutiae, drawn on the left. The fingerprint itself cannot be rebuilt from a template, and that is why templates are the privacy-safe format to exchange.</p>
+</div>
+<div class="bdi-card">
+<div class="bdi-title"><h3>Minutiae template</h3><span>ISO 19794-2 · ANSI 378</span></div>
+<p id="bdi-tpl-empty" class="bdi-empty">Extract minutiae from the image or open a template file.</p>
+<div id="bdi-tpl" hidden>
+<dl class="bdi-dl">
+<dt>Standard</dt><dd id="bdi-tpl-std"></dd>
+<dt>Record</dt><dd id="bdi-tpl-len"></dd>
+<dt>Image</dt><dd id="bdi-tpl-size"></dd>
+<dt>Resolution</dt><dd id="bdi-tpl-res"></dd>
+<dt>Minutiae</dt><dd id="bdi-tpl-n"></dd>
+<dt>Finger quality</dt><dd id="bdi-tpl-q"></dd>
+</dl>
+<code class="blob" id="bdi-b64"></code>
+</div>
+<div class="bdi-actions">
+<button type="button" class="btn ghost" id="bdi-to-iso" disabled>To ISO 19794-2</button>
+<button type="button" class="btn ghost" id="bdi-to-ansi" disabled>To ANSI 378</button>
+</div>
+<div class="bdi-actions">
+<button type="button" class="btn ghost" id="bdi-open-tpl">Open template…</button>
+<input type="file" id="bdi-file-tpl" hidden>
+<button type="button" class="btn ghost" id="bdi-save-tpl" disabled>Save</button>
+<button type="button" class="btn ghost" id="bdi-copy" disabled>Copy Base64</button>
+</div>
+</div>
+<p id="bdi-status" class="bdi-status" role="status" aria-live="polite"></p>
+</div>
+<p class="bdi-foot">Production BDI converts enterprise batches through the same engine on-premise or in the cloud, including ANSI/NIST-ITL records and ISO card formats. <a href="https://github.com/biometric-technologies/biometric-converter">Source on GitHub</a>.</p>
+<div class="grid g2" style="max-width:640px;margin:2.5rem auto 0">
 <figure style="margin:0"><img src="assets/img/european-union-emblem.jpg" alt="European Union emblem for NGI supported biometric data portability project" loading="lazy"></figure>
 <figure style="margin:0"><img src="assets/img/ngi-supported-by-logo.png" alt="Next Generation Internet NGI supported by logo" loading="lazy"></figure>
 </div>
-<p style="margin-top:1rem"><a class="btn" href="/get-started">Sign Up</a></p>
+<p style="margin-top:1.5rem;text-align:center"><a class="btn" href="/get-started">Request Conversion</a></p>
 </div></section>
+<script src="assets/bdi/demo.js" defer></script>
 <footer>
   <div class="wrap cols">
     <div>
