@@ -80,14 +80,14 @@
 <p class="sol-intro">How does an insurer know that the patient in a clinic is the member on the card, or that the patient came at all? A membership card proves only that someone holds it. Cards are lent to relatives, claims are filed for visits that never took place, and the insurer finds out months later, if ever. In schemes that cover millions of people, these losses decide whether the scheme is sustainable.</p>
 <div class="sol-stats">
 <div><b>5–10%</b><span>of claim costs estimated as fraudulent claims by providers in Ghana's national scheme</span><a href="https://aisel.aisnet.org/amcis2018/GlobalDev/Presentations/8/">Owusu-Oware, Effah, Boateng, AMCIS 2018</a></div>
-<div><b>15–16%</b><span>fewer claims after biometric verification was introduced, according to Ghana's NHIA</span><a href="https://aisel.aisnet.org/amcis2018/GlobalDev/Presentations/8/">Ghana's experience, AMCIS 2018</a></div>
-<div><b>1 day</b><span>claims processing time with biometric patient authentication at Kenyan hospitals, down from four months</span><a href="https://www.biometricupdate.com/202105/startups-biometric-system-facilitates-health-insurance-claims-in-kenya">Biometric Update, LCT Africa</a></div>
+<div><b>15–16%</b><span>fewer claims after biometric verification was introduced in Ghana, as estimated by an NHIA official</span><a href="https://aisel.aisnet.org/amcis2018/GlobalDev/Presentations/8/">Ghana's experience, AMCIS 2018</a></div>
+<div><b>1 day</b><span>claims processing with LCT Africa's fingerprint authentication at Kenyan hospitals, down from four months</span><a href="https://www.biometricupdate.com/202105/startups-biometric-system-facilitates-health-insurance-claims-in-kenya">Biometric Update, LCT Africa</a></div>
 </div>
 
 <h2>What you get</h2>
 <div class="sol-cards">
-<div class="sol-card"><h3>Member enrollment without documents</h3><p>Members and their dependants are enrolled once with iris, face or fingerprint. The system checks that the person is not already registered under another number, so one person cannot hold two memberships.</p></div>
-<div class="sol-card"><h3>Verification at the point of care</h3><p>The clinic scans the member at the visit, and the verified encounter is attached to the claim. A borrowed card or a phantom visit does not pass this step.</p></div>
+<div class="sol-card"><h3>Member enrollment without documents</h3><p>Members and their dependants are enrolled once with iris, face or fingerprint. The system checks that the person is not already registered under another number, so a second membership for the same person is flagged before it is issued.</p></div>
+<div class="sol-card"><h3>Verification at the point of care</h3><p>The clinic scans the member at the visit, and the verified encounter is attached to the claim. This is the step where borrowed cards and phantom visits are stopped.</p></div>
 <div class="sol-card"><h3>Works where the internet does not</h3><p>Rugged tablets and USB scanners with the <a href="https://docs.iriscan.net/edge">Edge service</a> keep verifying offline and synchronize when the connection is back. Existing smart cards are still supported.</p></div>
 <div class="sol-card"><h3>Integration with claims systems</h3><p>Verification results go into your claims management or e-claims platform over an API, so the payment rule becomes simple: verified encounters are paid, the rest are reviewed.</p></div>
 </div>
@@ -100,7 +100,7 @@
 <h2>Deployment</h2>
 <div class="sol-cards two">
 <div class="sol-card"><h3>Hardware</h3><p>USB iris scanners from a few hundred dollars for clinics with a PC, rugged <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID</a> tablets with fingerprint, iris, face and smart card reading for field enrollment and rural facilities.</p></div>
-<div class="sol-card"><h3>Where the data lives</h3><p>On your servers or in a national data center, with templates in ISO formats. Biometric data is stored apart from medical and personal records, encrypted and pseudonymized.</p></div>
+<div class="sol-card"><h3>Where the data lives</h3><p>On your servers or in a national data center, with biometric images in ISO formats. Biometric data is stored apart from medical and personal records, encrypted and pseudonymized.</p></div>
 </div>
 
 <h2>How we start</h2>

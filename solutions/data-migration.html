@@ -77,25 +77,25 @@
 <section><div class="wrap sol">
 
 <h2>The problem</h2>
-<p class="sol-intro">What do you actually own after ten years with one biometric vendor? Often a database whose templates only that vendor's matcher can read, images in a variant of a standard that other systems reject, and personal data hidden inside the files. When the contract ends, the hardware is outdated or the regulator changes the format, all of this has to move, and it has to move without losing a single person.</p>
+<p class="sol-intro">What do you actually own after ten years with one biometric vendor? Often a database whose templates only that vendor's matcher can read, images in a variant of a standard that other systems reject, and personal data hidden inside the files. When the contract ends, the hardware is outdated or the regulator changes the format, all of this has to move, and nobody can be lost on the way.</p>
 <div class="sol-stats">
-<div><b>268 million</b><span>identities in the US DHS biometric system IDENT, whose migration to its replacement HART slipped three years</span><a href="https://www.gao.gov/assets/d21386.pdf">GAO-21-386, 2021</a></div>
+<div><b>268 million</b><span>identities in the US DHS biometric system IDENT in 2021, when the move to its replacement HART was already three years behind plan</span><a href="https://www.gao.gov/assets/d21386.pdf">GAO-21-386, 2021</a></div>
 <div><b>+$354 million</b><span>added to the HART cost estimate in the 2022 rebaseline, with initial capabilities 33 months late</span><a href="https://idtechwire.com/gao-holds-hart-to-account-again-990913">GAO-23-105959 via ID Tech</a></div>
-<div><b>2030</b><span>from this year travel documents must encode biometric data in ISO/IEC 39794, which is not backward compatible with 19794</span><a href="https://rvig.nl/new-encoding-biometric-data">RvIG, ICAO transition</a></div>
+<div><b>2030</b><span>from this year newly issued travel documents must encode biometric data in ISO/IEC 39794, which is not backward compatible with 19794</span><a href="https://rvig.nl/new-encoding-biometric-data">RvIG, ICAO transition</a></div>
 </div>
 
 <h2>What you get</h2>
 <div class="sol-cards">
 <div class="sol-card"><h3>Database audit</h3><p>We inventory what is really stored: formats and their vendor variants, image quality, templates that cannot be moved, duplicates and personal data inside biometric files. You get a report before any decision about the new vendor.</p></div>
 <div class="sol-card"><h3>Batch conversion</h3><p>Fingerprint and iris records converted between vendor variants of ISO/IEC 19794, ANSI/NIST-ITL, ANSI 378 and ISO card formats, with templates re-extracted from images where proprietary templates cannot be reused.</p></div>
-<div class="sol-card"><h3>Verification before switch-over</h3><p>A sample is matched on the old and the new system, and differences are explained before the new system goes live. Nobody discovers missing identities after cutover.</p></div>
+<div class="sol-card"><h3>Verification before switch-over</h3><p>A sample is matched on the old and the new system, and differences are explained before the new system goes live. Missing identities are found before cutover, not after.</p></div>
 <div class="sol-card"><h3>Privacy clean-up</h3><p>Biographic data embedded in biometric files is extracted or removed, so the converted database stores only what it should. This supports data portability and minimization under GDPR and similar laws.</p></div>
 </div>
 
 <figure class="sol-fig"><img src="/assets/img/biometric-database-migration.svg?v=2" alt="What moves to the new system and what does not: proprietary templates are replaced by templates extracted from images" loading="lazy"><figcaption>Proprietary templates cannot be moved. Images and standard templates can.</figcaption></figure>
 
 <h2>Why us</h2>
-<p>Our BDI converter is built on the NIST NBIS and BiomDI libraries, the reference implementations of the standards, and its engine is open source. You can try it on the <a href="/biometric-data-interchange">biometric data conversion page</a>: the same engine runs in your browser and converts a fingerprint image to an ISO or ANSI template without uploading anything. We are not a matcher vendor in your tender, so we have no interest in locking the converted data to anyone.</p>
+<p>Our BDI converter is built on NIST's open-source NBIS and BiomDI libraries, and its engine is open source. You can try it on the <a href="/biometric-data-interchange">biometric data conversion page</a>: the same engine runs in your browser and converts a fingerprint image to an ISO or ANSI template without uploading anything. We are not a matcher vendor in your tender, so we have no interest in locking the converted data to anyone.</p>
 
 <h2>Deployment</h2>
 <div class="sol-cards two">

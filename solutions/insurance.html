@@ -86,21 +86,21 @@
 
 <h2>What you get</h2>
 <div class="sol-cards">
-<div class="sol-card"><h3>Verification at sale</h3><p>The policyholder is enrolled with iris or face when the policy is sold, and the system checks the new person against everyone already enrolled. An agent cannot sell a policy to a person who does not exist or to the same person under a second name.</p></div>
-<div class="sol-card"><h3>Protected policy changes</h3><p>A change of beneficiary, bank account or contact details requires the policyholder to confirm with the same biometric. This closes the most common route to taking over someone else's policy.</p></div>
-<div class="sol-card"><h3>Claimant verification</h3><p>Beneficiaries are enrolled when they are named, so at claim time the insurer knows that the person collecting the payout is the person the policyholder chose.</p></div>
+<div class="sol-card"><h3>Verification at sale</h3><p>The policyholder is enrolled with iris or face when the policy is sold, and the system checks the new person against everyone already enrolled. A policy for a person who does not exist, or for the same person under a second name, is flagged at enrollment.</p></div>
+<div class="sol-card"><h3>Protected policy changes</h3><p>A change of beneficiary, bank account or contact details requires the policyholder to confirm with the same biometric. This closes an easy route to taking over someone else's policy.</p></div>
+<div class="sol-card"><h3>Claimant verification</h3><p>Beneficiaries are enrolled when they are named, so at claim time the insurer can check that the person collecting the payout is the person the policyholder chose.</p></div>
 <div class="sol-card"><h3>Proof of life for annuities</h3><p>Annuitants and pensioners confirm they are alive with a short scan at a branch, an agent or on the phone, instead of a paper life certificate that anyone can bring.</p></div>
 </div>
 
-<figure class="sol-fig"><img src="/assets/img/insurance-policy-lifecycle.svg?v=2" alt="Biometric checks at sale, policy changes, claim and payout" loading="lazy"><figcaption>The same template is used at every step, so a policy cannot quietly change hands.</figcaption></figure>
+<figure class="sol-fig"><img src="/assets/img/insurance-policy-lifecycle.svg?v=2" alt="Biometric checks at sale, policy changes, claim and payout" loading="lazy"><figcaption>The same template is used at every step, so a policy does not quietly change hands.</figcaption></figure>
 
 <h2>Why iris</h2>
-<p>A national register answers the question "does this ID number exist?", and where it supports biometrics, "does this face match the photo on record?". It does not tell the insurer that the person in front of the agent is the same person who signed the policy ten years ago. Iris is stable over decades, does not wear like fingerprints of manual workers and separates people well enough to de-duplicate a whole portfolio. We use it together with face, so the remote flows on the phone and the assisted flows at agents use the same identity.</p>
+<p>A national register answers the question "does this ID number exist?", and where it supports biometrics, "does this face match the photo on record?". It does not tell the insurer that the person in front of the agent is the same person who signed the policy ten years ago. Iris stays usable for decades, does not wear like fingerprints of manual workers and separates people well enough to de-duplicate a whole portfolio. We use it together with face, so the remote flows on the phone and the assisted flows at agents use the same identity.</p>
 
 <h2>Deployment</h2>
 <div class="sol-cards two">
 <div class="sol-card"><h3>Channels</h3><p>Face capture with liveness inside your app with the open-source <a href="https://docs.iriscan.net/sdk">Biometric SDK</a>, USB iris scanners for branches and agents, rugged <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID</a> tablets for field sales. Offline agents work through the <a href="https://docs.iriscan.net/edge">Edge service</a>.</p></div>
-<div class="sol-card"><h3>Where the data lives</h3><p>On your servers or with our <a href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a>, with templates in ISO formats. Biometric data is stored apart from policy records, encrypted and pseudonymized, with a defined retention period.</p></div>
+<div class="sol-card"><h3>Where the data lives</h3><p>On your servers or with our <a href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a>, with biometric images in ISO formats. Biometric data is stored apart from policy records, encrypted and pseudonymized, with a defined retention period.</p></div>
 </div>
 
 <h2>How we start</h2>

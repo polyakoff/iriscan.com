@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/biometric-database-migration-vendor-lock">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/biometric-database-migration.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Migrating a Biometric Database Without Losing Identities or Getting Locked In", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/biometric-database-migration.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-database-migration-vendor-lock", "description": "Why biometric database migrations are hard, what HART and the ICAO move to ISO/IEC 39794 show, and how to audit, convert and verify before switching vendors."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Migrating a Biometric Database Without Losing Identities or Getting Locked In", "datePublished": "2026-10-08", "dateModified": "2026-10-08", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/biometric-database-migration.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-database-migration-vendor-lock", "description": "Why biometric database migrations are hard, what HART and the ICAO move to ISO/IEC 39794 show, and how to audit, convert and verify before switching vendors."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -67,16 +67,16 @@
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>Oct 28, 2026 &middot; 5 min read</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>Oct 8, 2026 &middot; 5 min read</span><span class="dots">&#8942;</span></div>
 <h1>Migrating a Biometric Database Without Losing Identities or Getting Locked In</h1>
 
 <p class="lead">Who owns a national biometric database? On paper, the government or the institution that collected it. In practice, often the vendor whose matcher is the only software able to read it. This becomes visible at the worst moment: when the contract ends, when the hardware has to be replaced or when a new standard arrives. In countries with high identity fraud a biometric register is the main defense against duplicate and fake identities, so losing part of it in a migration is not an option. Below I describe what makes these migrations hard and how to plan one.</p>
 
 <h2>Why migrations happen</h2>
-<p>There are four usual reasons. A contract with a vendor ends and the new tender is won by another company. The system is old, and the vendor no longer supports it or asks too much for it. A new modality is added, for example iris to a fingerprint register. Or the standard changes. The last one is happening right now: ICAO requires that from 1 January 2030 travel documents encode biometric data in ISO/IEC 39794 instead of ISO/IEC 19794, and the new format is not backward compatible with the old one. Every system that reads, issues or stores passport biometrics has to be ready for both.</p>
+<p>There are four usual reasons. A contract with a vendor ends and the new tender is won by another company. The system is old, and the vendor no longer supports it or asks too much for it. A new modality is added, for example iris to a fingerprint register. Or the standard changes. The last one is happening right now: ICAO requires that from 1 January 2030 newly issued travel documents encode biometric data in ISO/IEC 39794 instead of ISO/IEC 19794, and the new format is not backward compatible with the old one. Inspection systems have had to read it since 1 January 2026, while documents with the old encoding stay in circulation for years. Every system that reads, issues or stores passport biometrics has to be ready for both.</p>
 
 <h2>Even the best-funded projects struggle</h2>
-<p>Consider the US Department of Homeland Security. Its biometric system IDENT, in use since 1994, held more than 268 million identities in 2021. Its replacement, HART, was planned for years, and GAO reports describe the result: the transition of users from IDENT to HART slipped three years against the original plan, technical challenges included the approach to customer migration and biometric matching, and IDENT had to stay in operation longer, with additional cost. In 2023 GAO reported that the 2022 rebaseline added $354 million to the cost estimate and pushed initial capabilities 33 months past the 2019 plan.</p>
+<p>Consider the US Department of Homeland Security. Its biometric system IDENT, in use since 1994, held more than 268 million identities in 2021. Its replacement, HART, was planned for years, and GAO reports describe the result: the transition of users from IDENT to HART slipped three years against the original plan, technical challenges included the approach to customer migration and biometric matching, and IDENT had to stay in operation longer, with additional cost. In 2023 GAO reported that the 2022 rebaseline added $354 million to the cost estimate and pushed initial capabilities 33 months past the 2019 plan, with the full program schedule not yet planned.</p>
 <p>If a project of this scale, with a large budget and experienced contractors, struggles with migration, a ministry with a smaller team and a single vendor contract has every reason to plan it carefully.</p>
 
 <h2>What is actually in the database</h2>
@@ -105,11 +105,11 @@
 <p>On top of that, write the exit into the contract with the next vendor: standard formats for storage, access to images, and a test conversion as part of acceptance.</p>
 
 <h2>How we help</h2>
-<p>At Iriscan we built BDI, a biometric data interchange converter based on the NIST NBIS and BiomDI libraries. It converts fingerprint and iris data between vendor variants of the baseline image formats, extracts and converts minutiae templates and extracts biographic data from biometric files. Its engine is open source, and you can try it in your browser on the <a href="/biometric-data-interchange">biometric data conversion page</a> without uploading anything. For large registers it runs on the customer's premises.</p>
+<p>At Iriscan we built BDI, a biometric data interchange converter based on NIST's open-source NBIS and BiomDI libraries. It converts fingerprint and iris data between vendor variants of the baseline image formats, extracts and converts minutiae templates and extracts biographic data from biometric files. Its engine is open source, and you can try it in your browser on the <a href="/biometric-data-interchange">biometric data conversion page</a> without uploading anything. For large registers it runs on the customer's premises.</p>
 
 <p class="sources">Sources: <a href="https://www.gao.gov/assets/d21386.pdf">GAO-21-386, DHS Needs to Fully Implement Key Practices in Acquiring Biometric Identity Management System, 2021</a>; <a href="https://idtechwire.com/gao-holds-hart-to-account-again-990913">ID Tech, GAO holds HART to account (again), on GAO-23-105959, 2023</a>; <a href="https://rvig.nl/new-encoding-biometric-data">RvIG, New encoding of biometric data (ICAO transition to ISO/IEC 39794)</a>; <a href="https://www.nist.gov/publications/irex-i-performance-iris-recognition-algorithms-standard-images">NIST, IREX I: Performance of iris recognition algorithms on standard images, 2009</a>.</p>
 
-<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan.</p>
 
 <aside class="cta">
 <h3>Planning a change of biometric vendor?</h3>

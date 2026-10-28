@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/web3-biometric-bureau-verifiable-credit-history">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/web3-biometric-bureau-architecture.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Web 3.0 Identity for the Unbanked: Biometric DIDs and Verifiable Credit Histories", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/web3-biometric-bureau-architecture.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/web3-biometric-bureau-verifiable-credit-history", "description": "How a biometric bureau solves private key recovery in self-sovereign identity, and how a blockchain-anchored credit bureau lets lenders trust a credit history without seeing private data."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Web 3.0 Identity for the Unbanked: Biometric DIDs and Verifiable Credit Histories", "datePublished": "2026-08-06", "dateModified": "2026-08-06", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/web3-biometric-bureau-architecture.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/web3-biometric-bureau-verifiable-credit-history", "description": "How a biometric bureau solves private key recovery in self-sovereign identity, and how a blockchain-anchored credit bureau lets lenders trust a credit history without seeing private data."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -67,18 +67,18 @@
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>Oct 28, 2026 &middot; 6 min read</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>Aug 6, 2026 &middot; 6 min read</span><span class="dots">&#8942;</span></div>
 <h1>Web 3.0 Identity for the Unbanked: Biometric DIDs and Verifiable Credit Histories</h1>
 
 <p class="lead">What happens to a person's digital identity when the phone is lost? In the Web 3.0 model the user holds the private key and the credentials, and nobody else can restore them. For a crypto enthusiast this is a feature. For a refugee or a farmer who needs a loan, it means losing their identity and credit history together with the phone. In INGRESS we proposed a solution to this problem: a biometric bureau that binds the key to the person, and a credit history that can be verified on a blockchain without disclosing private data.</p>
 
 <h2>Self-sovereign identity in two paragraphs</h2>
 <p>Self-sovereign identity (SSI) is the Web 3.0 approach to identity. Instead of storing personal data in the databases of every service provider, the user keeps it on their own device, in a digital wallet. A trusted party, the issuer, signs a credential about the user: a proof of identity, education, salary or a bank statement. The user presents this credential to anyone who needs it, the verifier, and the verifier checks the issuer's signature cryptographically, without calling the issuer. The W3C standardized both parts: Decentralized Identifiers (DIDs) and Verifiable Credentials.</p>
-<p>This way the user decides what to share and with whom, and a service provider does not have to store data it does not need. It is not a theory anymore. The EU obliges member states to offer citizens a European Digital Identity Wallet by the end of 2026, and MOSIP's Inji wallet already carries verifiable credentials of national ID programs.</p>
+<p>This way the user decides what to share and with whom, and a service provider does not have to store data it does not need. It is not a theory anymore. The EU obliges member states to offer citizens a European Digital Identity Wallet by the end of 2026, and MOSIP's open-source Inji wallet has been piloted for national ID credentials, for example in Peru.</p>
 
 <h2>The weak point: the private key</h2>
 <p>A wallet is only as reliable as the private key inside it. If the key is lost, the user cannot prove that the credentials are theirs. If the key is stolen, someone else can present them. How to get a new key and keep the identity and the history connected to it? Crypto wallets answer with seed phrases and social recovery, and both assume a user who can safely store twelve words or has several trusted contacts with smartphones. The people who need financial inclusion the most are exactly the people for whom these assumptions do not hold.</p>
-<p>When we started working on this in 2021, Microsoft's white paper on decentralized identity described key recovery as an open challenge. To the best of our knowledge, it is still not solved for users without technical skills.</p>
+<p>When we started working on this in 2021, the question that Microsoft's 2018 white paper on decentralized identity had left open, how users recover their keys, was still unresolved. To the best of our knowledge, it is still not solved for users without technical skills.</p>
 
 <figure><img src="../assets/img/web3-biometric-bureau-architecture.jpg" alt="Architecture of INGRESS: biometric bureau, user wallet, lender, credit bureau and public blockchain" loading="lazy"><figcaption>INGRESS: the biometric bureau binds the key to the person, the credit bureau keeps the history, the blockchain proves it was not changed.</figcaption></figure>
 
@@ -110,7 +110,7 @@
 
 <p class="sources">Sources: <a href="https://www.w3.org/TR/vc-data-model-2.0/">W3C Verifiable Credentials Data Model 2.0</a>; <a href="https://www.w3.org/TR/did-core/">W3C Decentralized Identifiers</a>; <a href="https://www.garrigues.com/en_GB/garrigues-digital/european-digital-identity-wallet-now-has-timetable-tasks-be-completed-december">Garrigues, EU Digital Identity Wallet timetable</a>; <a href="https://ontochain.ngi.eu/">NGI ONTOCHAIN</a>.</p>
 
-<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with AI assistance.</p>
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan.</p>
 
 <aside class="cta">
 <h3>Building a wallet, a lending platform or a credit bureau?</h3>

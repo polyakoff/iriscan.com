@@ -80,14 +80,14 @@
 <p class="sol-intro">How does a registration desk find the right record? Usually by name, date of birth and sometimes a card number. When two patients share a name, the wrong record opens. When the desk finds nothing, a second record is created, and the patient's history is split in two. When a patient uses someone else's card, the history of two people is mixed in one. Each of these errors ends up at the bedside or in a claim.</p>
 <div class="sol-stats">
 <div><b>16–41%</b><span>of records shared an exact first and last name with another patient in a study of five US health organizations</span><a href="https://qualitysafety.bmj.com/content/22/3/219">McCoy et al., BMJ Quality &amp; Safety</a></div>
-<div><b>~18%</b><span>duplicate patient records in hospitals before they introduced patient matching tools, according to a survey of 1,392 health IT managers</span><a href="https://www.healthcarefinancenews.com/news/patient-matching-hospitals-can-save-millions-improving-it">Black Book, 2018</a></div>
-<div><b>3.56 lakh</b><span>claims worth Rs 643 crore rejected for fraud in India's AB-PMJAY, where beneficiary impersonation is one of the flagged patterns</span><a href="https://www.theweek.in/wire-updates/national/2025/03/11/del42-rsq-health-ayushman-bharat.html">Rajya Sabha reply, 2025</a></div>
+<div><b>~18%</b><span>duplicate patient records reported by hospitals before they introduced patient matching tools, in a survey of 1,392 health IT managers</span><a href="https://www.healthcarefinancenews.com/news/patient-matching-hospitals-can-save-millions-improving-it">Black Book, 2018</a></div>
+<div><b>3.56 lakh</b><span>claims worth Rs 643 crore rejected for fraud in India's AB-PMJAY by March 2025, where beneficiary impersonation is one of the flagged patterns</span><a href="https://www.theweek.in/wire-updates/national/2025/03/11/del42-rsq-health-ayushman-bharat.html">Rajya Sabha reply, 2025</a></div>
 </div>
 
 <h2>What you get</h2>
 <div class="sol-cards">
 <div class="sol-card"><h3>Identification at registration</h3><p>The patient looks at a scanner, and the system returns the record. No spelling of names, no searching by date of birth, no card to forget.</p></div>
-<div class="sol-card"><h3>No duplicate records</h3><p>Every new registration is searched against all enrolled patients, so a returning patient cannot get a second record by accident or on purpose. Existing duplicates surface as patients come back.</p></div>
+<div class="sol-card"><h3>No duplicate records</h3><p>Every new registration is searched against all enrolled patients, so a returning patient does not get a second record by accident, and getting one on purpose becomes much harder. Existing duplicates surface as patients come back.</p></div>
 <div class="sol-card"><h3>Checks where errors are made</h3><p>The same identification before medication, transfusion, sample collection and procedures, on a tablet at the bedside or a scanner in the lab.</p></div>
 <div class="sol-card"><h3>Verified encounters for billing</h3><p>The visit record carries the biometric check, so claims to insurers and national schemes are backed by proof that the patient was there. See <a href="/solutions/health-insurance">health insurance</a>.</p></div>
 </div>
@@ -95,16 +95,16 @@
 <figure class="sol-fig"><img src="/assets/img/patient-identification-flow.svg?v=2" alt="Name search returns three records, iris search returns one" loading="lazy"><figcaption>The record is found by the person, not by a name, a card or a date of birth.</figcaption></figure>
 
 <h2>Why iris</h2>
-<p>A hospital needs contactless identification, and it needs it to work for the elderly, for manual workers with worn fingerprints and for patients who cannot hold a finger still. Iris is captured from a distance, does not change with age and separates people well enough to search a whole regional patient register. Face is available as a second modality for patients who cannot open their eyes for the scanner.</p>
+<p>A hospital needs contactless identification, and it needs it to work for the elderly, for manual workers with worn fingerprints and for patients who cannot hold a finger still. Iris is captured from a distance, changes little over adult life and separates people well enough to search a whole regional patient register. Face is available as a second modality for patients who cannot open their eyes for the scanner.</p>
 
 <h2>Deployment</h2>
 <div class="sol-cards two">
 <div class="sol-card"><h3>Integration</h3><p>An API and SDK for your hospital information system or EMR, including open-source systems, and an <a href="/post/the-power-of-the-eye-iris-identification">identity layer</a> that can be shared by a network of facilities. USB scanners at desks, tablets in wards, offline mode for rural clinics with the <a href="https://docs.iriscan.net/edge">Edge service</a>.</p></div>
-<div class="sol-card"><h3>Where the data lives</h3><p>On hospital or ministry servers. Biometric templates are kept apart from medical records and linked by a pseudonymous identifier, so a leak of one database does not expose the other.</p></div>
+<div class="sol-card"><h3>Where the data lives</h3><p>On hospital or ministry servers. Biometric templates are kept apart from medical records and linked by a pseudonymous identifier, so a leak of one database does not directly expose the other.</p></div>
 </div>
 
 <h2>How we start</h2>
-<p>We recommend starting with the registration desks of one facility. For a few weeks returning patients are enrolled as they come, and the system reports how many of them already have more than one record. This number is usually the clearest argument for the rest of the rollout.</p>
+<p>We recommend starting with the registration desks of one facility. For a few weeks returning patients are enrolled as they come, and the system reports how many of them already have more than one record. This number is a clear argument for the rest of the rollout.</p>
 
 <aside class="cta">
 <h3>Fighting duplicate records or patient impersonation?</h3>
