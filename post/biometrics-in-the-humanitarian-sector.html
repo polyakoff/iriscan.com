@@ -55,7 +55,7 @@
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>By Alex Borodin &middot; May 30, 2021 &middot; 5 min read</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>By Alex Borodin &middot; May 30, 2021 &middot; 5 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
 <h1>Biometrics in the humanitarian sector</h1>
 
 <p>With the recent technological progress, the applications and equipment for biometric identity management are getting more affordable and easier to deploy. These improvements allow organisations that need fast and reliable people identification to use biometric ID systems. Among these organisations are humanitarian and non-government, which have used this technology in different scenarios since the early 2000s.</p>
@@ -101,7 +101,7 @@
 <li>Storing biometric data apart from other personal data</li>
 <li>Data pseudonymisation or anonymisation</li>
 <li>Mandatory data retention period, upon expiry of which the data is deleted</li>
-<li>A&ccedil;cess logs for audit and incident response</li>
+<li>Access logs for audit and incident response</li>
 <li>Data breach notification procedures</li>
 </ul>
 <p>With the scrupulous implementation of these practices by skilled professionals, the probability and impact of data leaks reduce to the very minimum.</p>
@@ -120,10 +120,17 @@
 <p>Spoofing, otherwise known as imposter attack, is not common in humanitarian activities. Firstly, because usually, there is an operator who controls the process of biometric scanning. On top of that, biometric spoofing is comparatively hard to implement technically, and there is little incentive to do that.</p>
 <p>Still, iris recognition stands out with regards to anti-spoofing protection as well. There are software methods of liveness detection, which can distinguish fake irises from live ones and completely diminish spoofing risks.</p>
 
+<h2>What this means for tools</h2>
+<p>Most of the risks above are decided by how the system is built, not by the choice of biometric. Three properties help the most. Templates instead of images, so a leaked database cannot be turned back into pictures of people. Standard template formats, so an organisation can change its supplier or share a de-duplication check with a partner agency without handing over raw data. And offline operation, so registration does not stop when the connection does.</p>
+<p>These are the principles behind our own components: an open-source <a href="https://docs.iriscan.net/sdk.html">Biometric SDK</a> that matches on the device, an <a href="https://docs.iriscan.net/edge.html">Edge service</a> for iris scanners that keeps an encrypted local database and syncs when it can, and a <a href="/biometric-data-interchange">converter</a> between ISO and ANSI fingerprint templates.</p>
+
 <h2>Conclusion</h2>
 <p>Biometrics has its risks and caveats, just like any other technology. Knowing them and taking appropriate countermeasures leads to the effective usage of biometric technology with all its benefits and diminishes threats to human privacy and dignity. Working with experts in biometric and data security is the key.</p>
-<p>Contacts us if you need assistance &mdash; we are always happy to help!</p>
-<p style="margin-top:1rem"><a class="btn" href="/get-started">Contact us</a></p>
+<aside class="cta">
+<h3>Running a registration or assistance programme?</h3>
+<p>We help humanitarian and development organisations choose biometric hardware, set up offline enrolment and de-duplication, and write the data protection side of it down.</p>
+<p><a class="btn" href="/get-started">Contact us</a> <a class="btn ghost" href="https://docs.iriscan.net/edge.html">Field enrolment: Edge service</a></p>
+</aside>
 
 <h3>References</h3>
 <ol style="color:var(--muted);font-size:.85rem">

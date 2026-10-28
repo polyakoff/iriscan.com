@@ -5,8 +5,8 @@
 <script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Biometric Authentication | Iriscan</title>
-<meta name="description" content="Validating a user's identity by analysing unique physical or behavioural traits.">
+<title>Biometric Authentication: Modalities, Templates and Lock-in | Iriscan</title>
+<meta name="description" content="How face, fingerprint and iris authentication work, what a biometric template is, why template formats decide who controls your system, and how to stay vendor-neutral.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
@@ -15,12 +15,12 @@
 <link rel="canonical" href="https://www.iriscan.com/post/biometric-authentication">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
-<meta property="og:title" content="Biometric Authentication | Iriscan">
-<meta property="og:description" content="Validating a user's identity by analysing unique physical or behavioural traits.">
+<meta property="og:title" content="Biometric Authentication: Modalities, Templates and Lock-in | Iriscan">
+<meta property="og:description" content="How face, fingerprint and iris authentication work, what a biometric template is, why template formats decide who controls your system, and how to stay vendor-neutral.">
 <meta property="og:url" content="https://www.iriscan.com/post/biometric-authentication">
-<meta property="og:image" content="https://www.iriscan.com/assets/img/natural-human-iris-closeup.jpg">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/fingerprint-minutiae-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Authentication", "datePublished": "2023-11-17", "dateModified": "2023-11-17", "author": {"@type": "Person", "name": "Alex Borodin"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/natural-human-iris-closeup.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-authentication"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Authentication: Modalities, Templates and Lock-in", "datePublished": "2023-11-17", "dateModified": "2026-10-28", "author": {"@type": "Organization", "name": "Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/fingerprint-minutiae-cover.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-authentication", "description": "How face, fingerprint and iris authentication work, what a biometric template is, why template formats decide who controls your system, and how to stay vendor-neutral."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -55,88 +55,46 @@
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>By Alex Borodin &middot; Nov 17, 2023 &middot; 8 min read</span><span class="dots">&#8942;</span></div>
-<h1>Biometric Authentication</h1>
-<figure><img src="../assets/img/natural-human-iris-closeup.jpg" alt="Natural human iris close-up for biometric authentication" loading="lazy"><figcaption>An image of a human iris</figcaption></figure>
+<div class="meta-top"><span>By Iriscan team &middot; Nov 17, 2023 &middot; 4 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<h1>Biometric Authentication: Modalities, Templates and Lock-in</h1>
+<figure><img src="../assets/img/fingerprint-minutiae-cover.jpg" alt="Fingerprint with minutiae extracted by the Iriscan biometric converter" loading="lazy"><figcaption>Minutiae extracted from a NIST sample fingerprint: ridge endings in red, bifurcations in blue.</figcaption></figure>
 
+<p class="lead">Biometric authentication checks who someone is by something they are, not something they know or carry. Every system does it the same way: capture a sample, reduce it to a template, compare templates. The modality you choose decides accuracy and cost. The template format you choose decides whether you can ever change suppliers.</p>
 
-<h2>Introduction</h2>
-<p>Biometric authentication refers to the validation of a user's identity by analyzing unique physical or behavioural traits. This type of authentication is distinct from traditional authentication methods that rely on something a user knows (like a password) or possesses (like a key or a card). Biometrics authentication offers a more personalized and often more secure method of ensuring that the person accessing a system or location is truly who they claim to be.</p>
-<p>One of the primary reasons for the implementation of modern biometric authentication solutions is the difficulty in duplicating or stealing someone's unique biological characteristics or behavioural attributes. However, it's important to remember that like any technology, biometrics is not entirely foolproof. There are challenges, ranging from the potential for false positives or negatives to concerns about user privacy and the storage of biometric data.</p>
-<p>Despite these challenges, the growth of biometric authentication technology signifies a move towards a more secure and personalized world. It represents an intersection of biology and technology, a synthesis of physical and digital resources that could redefine how we think about security, privacy, and human-machine interactions.</p>
+<h2>The three modalities that matter</h2>
+<p><b>Face.</b> Works with any camera, which makes it the default for phones and self-service. A neural network turns an aligned face into an embedding, a vector of a few hundred numbers; two faces match when their vectors are close. Good for 1:1 verification. Weaker for searching large databases, and needs liveness detection, because a photo of a face is easy to get.</p>
+<p><b>Fingerprint.</b> The most widely deployed modality, with forty years of standards behind it. Templates store minutiae: the points where ridges end or split, with their positions and angles. Accurate and cheap to capture, but quality drops for manual workers and the elderly, and contact sensors need cleaning.</p>
+<p><b>Iris.</b> The most distinctive of the three. A near-infrared camera captures the iris texture, which is encoded into a bit string and compared by Hamming distance. Best for de-duplicating large populations, contactless, stable over life. Needs a dedicated scanner. (Details: <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>.)</p>
+<p>Voice, vein and behavioural biometrics exist and have their niches, but national ID, banking and humanitarian programmes are built almost entirely on these three, often combined.</p>
 
-<h2>What is a Biometric Login?</h2>
-<p>A biometric login is a security process that uses the unique biological or behavioural characteristics of an individual to grant them access to a system, application, or facility. Instead of typing in a password or swiping a card, users present a unique feature they possess, be it their face, fingerprint, voice, or even the way they type.</p>
-<p>The convenience factor is undeniable. Users do not need to remember complex passwords or carry around physical tokens. Furthermore, the risks associated with password breaches or lost access cards are mitigated. However, transitioning to a biometric system for logins also requires a shift in user mentality. Some might feel uneasy about having their biometric data stored, and there are concerns about what might happen if this data were to be compromised.</p>
-<p>While the concept might sound futuristic to some, many of us already use various types of biometric authentication and logins in our daily lives. From unlocking our smartphones with a fingerprint or face scan to voice-controlled smart home devices, biometric authentication options logins are becoming an integral part of modern technology.</p>
+<h2>Templates, not images</h2>
+<p>After enrolment, a biometric system mostly works with templates. A fingerprint template is a list of minutiae; an iris template is a bit string with a mask; a face template is an embedding. Templates are small, fast to compare, and cannot be turned back into the original image, which makes them the safer thing to store and exchange.</p>
+<p>That raises the question that decides the long-term cost of the system: in what format are the templates stored?</p>
 
-<h2>Biometric Authentication Example</h2>
-<p>The world of biometric authentication technology is vast and varied, with numerous real-world applications. One of the most commonly recognized examples is the fingerprint scanner on many smartphones and laptops. These devices use sensors to capture the unique patterns of a user's fingerprint, which is then used to unlock the device or authorize transactions.</p>
-<p>Another prevalent example is facial recognition technology. Some advanced security systems in buildings use iris scans, recognizing individuals based on the unique patterns in their eyes.</p>
-<p>Iris recognition is an advanced biometric authentication technique that is rapidly gaining traction in high-security sectors and in some consumer devices. This method revolves around the unique patterns found in the iris, the coloured part of the eye. Unlike fingerprints, which can change over time or get obscured by dirt or wear, the iris remains remarkably consistent throughout an individual's life, making it a highly reliable biometric.</p>
-<p>An exciting use case of a biometric authentication device is the Abu Dhabi Airport, which has introduced a state-of-the-art facial recognition robot designed to streamline the customs process and engage travellers more interactively. This technology has been a highlight at the UAE's aviation hub, enhancing the passenger experience with its advanced features. Outfitted with sophisticated cameras and sensors, the robot boasts the capability to read and interpret the body language and facial expressions of a group of five to seven people, even from a distance of up to six meters. This functionality not only speeds up the customs process but also adds a layer of security and efficiency.</p>
-<p>Other than brother control, biometric technology plays an important role in financial services, especially in fintech security. This innovation has a substantial impact on the banking and financial sectors, providing a robust shield against fraud and enhancing overall security measures. More than just a security feature, biometric authentication streamlines the transaction process, offering users a more seamless and efficient experience. Effective implementation of biometric authentication in fintech hinges not only on its technological prowess but also on its ability to safeguard user privacy, maintaining a delicate balance between convenience, security, and ethical responsibility.</p>
-
-<figure><img src="../assets/img/airport-passenger-terminal.jpg" alt="Busy airport terminal for biometric authentication use case" loading="lazy"></figure>
-
-<h2>Biometric Login</h2>
-<p>Biometric logins are steadily becoming the norm in various sectors due to their enhanced security and ease of use. A prime example is the fintech world. Many companies are integrating biometric logins into their systems to ensure that only authorized personnel can access sensitive information, and prevent fraud from happening. By doing away with passwords, they reduce the risk of data breaches caused by password-related vulnerabilities.</p>
-<p>On the consumer front, biometric logins are prevalent in personal devices. Many modern smartphones and tablets offer users the option to unlock their mobile devices using their fingerprints, facial scans, or even iris scans. These biometric systems not only enhance security but also significantly improve the user experience by offering a quick and intuitive way to access the device.</p>
-
-<h2>What Do Biometrics Use to Authenticate Identity?</h2>
-<p>Biometrics authenticate identity by analyzing distinct physiological or behavioural attributes. Physiological biometrics, as the name suggests, are based on physical characteristics. This includes fingerprints, facial structures, iris or retinal patterns, and even DNA. These attributes are unique to each individual and remain relatively constant over time, making them reliable markers for identification.</p>
-<p>Behavioural biometrics, on the other hand, focuses on the patterns of behaviour exhibited by individuals. This can include voice recognition, keystroke dynamics, or even gait analysis. While these biometric features might seem less tangible than physiological attributes, they can be equally effective in certain contexts. For instance, the rhythm and pressure someone uses when typing on a keyboard can be as distinctive as a fingerprint.</p>
-<p>To make an automated fingerprint identification system effective, biometrics require sophisticated technology that can accurately capture these attributes, convert them into a digital format, and then compare them against a stored template. Only when a match is found is the identity authenticated.</p>
-
-<h2>Biometric Authentication Device</h2>
-<p>Biometric authentication devices are specialized hardware designed to capture and process biometric data. These biometric devices vary in complexity and functionality based on the type of biometric information and data they are intended to process.</p>
-<p>For instance, fingerprint scanners, which are commonplace in many smartphones and security systems, use sensors to capture the unique ridge patterns of a user's finger. Facial recognition systems, on the other hand, might employ high-definition cameras combined with infrared sensors to accurately capture facial features and contours. Iris scanners use sophisticated imaging technology to capture the intricate patterns of the iris, which are unique to each individual.</p>
-
-<h2>Biometric Authentication Method</h2>
-<p>The realm of using biometric authentication solutions is diverse, with a multitude of methods catering to various needs and contexts. Physiological biometrics, such as fingerprints, facial recognition, and iris scans, are based on the physical characteristics of an individual. These methods are widely adopted due to their reliability and ease of use. For instance, fingerprint recognition is a staple in many consumer devices, while facial recognition is gaining traction in both consumer and security sectors.</p>
-<p>Behavioural biometrics, such as voice recognition or keystroke dynamics, offer a different approach. They focus on the unique ways an individual behaves. For example, voice recognition systems analyze the pitch, tone, and rhythm of a person's voice, while keystroke dynamics study the unique way a person types on a keyboard.</p>
-<p>Each method has its own set of advantages and potential challenges. While physiological biometrics might offer more consistency, behavioural biometrics can provide continuous authentication, monitoring a user's behaviour over time to ensure consistency.</p>
-
-<h2>How Does Biometric Authentication Work?</h2>
-<p>The process of biometric authentication can be segmented into two primary phases: enrollment and verification. During enrollment, an individual's biometric data is first captured using a suitable device. This raw data is then processed to extract essential features, creating a user's biometric data template. This template is stored securely, often in encrypted form, in a database or on the device itself.</p>
-<p>During the verification phase, when the individual attempts to gain access, their biometric data is captured again. The system then processes this data and compares it to the stored template. Sophisticated algorithms are employed to determine if the newly captured biometric data match matches the stored template closely enough. If a match is found within an acceptable threshold, the individual is authenticated and granted access.</p>
-<p>Two pivotal metrics are crucial for assessing system efficacy and user experience: the False Rejection Rate (FRR) and the False Acceptance Rate (FAR). The False Rejection Rate (FRR), also known as Type I error, is a measure of the frequency at which legitimate users are incorrectly denied access by the biometric system. A high FRR indicates a stringent system that, while secure, may lead to inconvenience and frustration due to frequent legitimate access denials. On the other hand, the False Acceptance Rate (FAR), or Type II error, quantifies the instances where unauthorized individuals are mistakenly granted access. A lower FAR is desirable for enhanced security, but overly strict criteria can inadvertently elevate the FRR.</p>
-<p>The delicate balance between FRR and FAR is crucial in biometric system design, ensuring both security and user convenience. Optimizing these rates often involves refining algorithms and improving sensor accuracy, tailoring the system to the specific context of use, whether it's high-security environments or everyday consumer applications.</p>
-
-<figure><img src="../assets/img/biometric-authentication-modalities-chart.jpg" alt="Biometric authentication modality chart" loading="lazy"></figure>
-
-<p>As mentioned, the biometric identification systems are designed to accommodate slight variations in data, ensuring that small changes in a user's biometric trait (like a minor cut on a fingertip) don't prevent them from being authenticated.</p>
-
-<h2>What is Biometric Authorization?</h2>
-<p>While authentication is about verifying the identity of a user, authorization determines what that authenticated user is allowed to do. Biometric authorization, then, is the process of granting or denying permissions to an authenticated user based on their biometric data. For instance, after a biometric security system verifies a user through a fingerprint scan, it might then determine what files, systems, or locations the user can access.</p>
-<p>This adds an extra layer of security, ensuring that even within a system, users only have access to the data and functionalities relevant to their role or needs. Biometric authorization can be particularly useful in high-security environments or scenarios where different tiers of access are required.</p>
-
-<h2>Types of Biometric Authentication</h2>
-<p>Biometric authentication methods can be broadly categorized into physiological and behavioural types, as mentioned earlier. However, within these categories, there's a plethora of methods, each suited to different contexts and needs.</p>
-<p>Physiological Biometrics:</p>
+<h2>Where lock-in comes from</h2>
+<p>Many vendors store templates in a proprietary format that only their own matcher reads. As long as you stay, it works. If you want a better matcher, a cheaper scanner or a second supplier, you find that your database is useless to anyone else. You either re-enrol everyone or keep paying.</p>
+<p>The fix has existed for years: international standards for template interchange.</p>
 <ul>
-<li>Fingerprint Recognition: Suitable for consumer devices and systems requiring quick authentication.</li>
-<li>Facial Recognition: Increasingly used in surveillance, consumer electronics, and security checkpoints.</li>
-<li>Iris and Retina Scans: Often used in high-security areas due to their high level of uniqueness and reliability.</li>
-<li>Hand Geometry: Employed in certain industrial sectors and security checkpoints where the size and shape of the hand can be used for quick identification.</li>
+<li>Fingerprint minutiae: ISO/IEC 19794-2 and ANSI INCITS 378;</li>
+<li>Face images: ISO/IEC 19794-5;</li>
+<li>Iris images: ISO/IEC 19794-6;</li>
+<li>and the newer ISO/IEC 39794 series that replaces them with an extensible encoding.</li>
 </ul>
+<p>Even within standards, details differ: ISO stores minutia angles in units of about 1.4°, ANSI in 2°, and coordinates depend on the declared resolution. Converting correctly between them is fiddly but routine, and it should not require a licence.</p>
 
-<figure><img src="../assets/img/fingerprint-minutiae-cover.jpg" alt="Fingerprint with minutiae extracted by the Iriscan biometric converter" loading="lazy"><figcaption>Minutiae extracted from a NIST sample fingerprint.</figcaption></figure>
+<figure><img src="../assets/img/biometric-converter-browser-demo.jpg" alt="Iriscan biometric converter running in the browser: fingerprint image and ISO/IEC 19794-2 template" loading="lazy"><figcaption>The <a href="/biometric-data-interchange#demo">converter demo</a>: a WSQ fingerprint becomes an ISO/IEC 19794-2 template, and back to ANSI 378, without leaving the browser.</figcaption></figure>
 
-<p>Behavioral Biometrics:</p>
-<ul>
-<li>Voice Recognition: Commonly integrated into customer service sectors, virtual assistants, and some security systems.</li>
-<li>Keystroke Dynamics: Employed mainly in continuous authentication systems, especially in secure computing environments.</li>
-<li>Gait Analysis: Still in its nascent stages but holds promise for security systems that can identify individuals based on their walking patterns.</li>
-<li>Signature Dynamics: Analyzes the way an individual signs, including the speed, pressure, and rhythm of the signature.</li>
-</ul>
-<p>Choosing the right type of biometric authentication depends on several factors, including the level of security required, the user base, the environment in which it will be used, and budget considerations.</p>
+<h2>On the device or on the server</h2>
+<p>Matching on the user's phone keeps biometric data off your servers entirely, works offline and costs nothing per check. It is the right choice for 1:1 verification in an app. Searching a database (1:N) has to happen where the database is, on your servers or a trusted service. Most real systems combine both: enrol once with a search for duplicates, then verify on the device.</p>
 
-<h2>Conclusion</h2>
-<p>In conclusion, biometric authentication is much more than a trend in the tech world; it's a practical response to the growing need for more secure and efficient ways to verify identity in our digitally interconnected lives. This field, with its myriad of methods&mdash;from the fingerprints we've used for years to the more recent exploration of behavioural patterns like typing rhythms&mdash;offers real solutions to a variety of security challenges.</p>
-<p>As we look ahead, it's clear that the journey of biometrics is just beginning. Technological advancements continue to push the boundaries of what's possible, making systems more accurate, faster, and even more integrated into our everyday devices.</p>
+<h2>What we build</h2>
+<p>Iriscan's components are open source and use standard formats throughout. The <a href="https://docs.iriscan.net/sdk.html">Biometric SDK</a> does face, liveness and iris on Android, iOS, JVM and React Native. The <a href="https://docs.iriscan.net/converter.html">Biometric Converter</a> turns fingerprint images into ISO or ANSI templates and converts templates between the two; it runs as a C library, a Docker service or in the browser. The <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> handles iris enrolment and search.</p>
 
-<p style="margin-top:1.5rem"><a class="btn" href="/get-started">Talk to us about biometrics</a></p>
+<aside class="cta">
+<h3>Stuck with a proprietary template format?</h3>
+<p>We migrate biometric databases to ISO and ANSI formats and build authentication on open components you can keep running without us. Try the converter on your own files first.</p>
+<p><a class="btn" href="/get-started">Talk to us</a> <a class="btn ghost" href="/biometric-data-interchange#demo">Try the converter</a></p>
+</aside>
 <div class="readnext"><h3>Read next</h3><ul>
 <li><a href="/post/iris-authentication-a-biometric-security-solution">Iris Authentication: A Biometric Security Solution</a></li>
 <li><a href="/post/demystifying-biometric-security-what-is-iris-scanning">What is Iris Scanning?</a></li>

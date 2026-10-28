@@ -5,8 +5,8 @@
 <script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Advantages of Biometric Verification | Iriscan</title>
-<meta name="description" content="Embrace biometric verification for unparalleled security and convenience.">
+<title>Biometric Verification Against Identity Fraud: A Guide for Lenders | Iriscan</title>
+<meta name="description" content="How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
@@ -15,12 +15,12 @@
 <link rel="canonical" href="https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
-<meta property="og:title" content="The Advantages of Biometric Verification | Iriscan">
-<meta property="og:description" content="Embrace biometric verification for unparalleled security and convenience.">
+<meta property="og:title" content="Biometric Verification Against Identity Fraud: A Guide for Lenders | Iriscan">
+<meta property="og:description" content="How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget.">
 <meta property="og:url" content="https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification">
-<meta property="og:image" content="https://www.iriscan.com/assets/img/fingerprint-minutiae-cover.jpg">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/iris-hamming-distance-distributions.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "The Advantages of Biometric Verification — Enhancing Security", "datePublished": "2023-08-22", "dateModified": "2023-08-22", "author": {"@type": "Person", "name": "Alex Borodin"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/fingerprint-minutiae-cover.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Verification Against Identity Fraud: A Guide for Lenders", "datePublished": "2023-08-22", "dateModified": "2026-10-28", "author": {"@type": "Organization", "name": "Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/iris-hamming-distance-distributions.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification", "description": "How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -55,123 +55,40 @@
   </div>
 </header>
 <div class="article-outer"><article class="article article-narrow">
-<div class="meta-top"><span>By Alex Borodin &middot; Aug 22, 2023 &middot; 9 min read &middot; Updated: Sep 10, 2023</span><span class="dots">&#8942;</span></div>
-<h1>The Advantages of Biometric Verification &mdash; Enhancing Security</h1>
-<figure><img src="../assets/img/fingerprint-minutiae-cover.jpg" alt="Fingerprint with minutiae extracted by the Iriscan biometric converter" loading="lazy"><figcaption>Minutiae extracted from a NIST sample fingerprint: ridge endings in red, bifurcations in blue.</figcaption></figure>
+<div class="meta-top"><span>By Iriscan team &middot; Aug 22, 2023 &middot; 3 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<h1>Biometric Verification Against Identity Fraud: A Guide for Lenders</h1>
+<figure><img src="../assets/img/far-frr-eer-diagram.svg" alt="False acceptance and false rejection rates plotted against the acceptance threshold" loading="lazy"><figcaption>Every matcher trades false acceptance for false rejection. Where to sit on this curve is a business decision.</figcaption></figure>
 
+<p class="lead">In many markets a national ID card proves little. Cards are forged, bought or borrowed, a person can hold several, and many borrowers have none at all. For a lender this turns into one specific loss: the same person taking loans under different names and never repaying any of them. Biometric verification is the cheapest reliable fix, if it is set up for that problem rather than copied from a bank in a country with good ID.</p>
 
-<h2>Introduction</h2>
-<p>In the modern world of data breaches and cyber threats, organizations continuously seek reliable authentication techniques to safeguard critical information. Biometric verification has emerged as an option for confirming an individual's identity, offering a secure and dependable method.</p>
-<p>By utilizing unique physical and behavioural characteristics, biometric verification adds an additional layer of security against unauthorized access. This article explores the concept of biometric verification, presents examples of its application, and discusses the process of verifying and validating biometric data.</p>
+<h2>Three checks, three different problems</h2>
+<p><b>Is this the account holder?</b> Verification, 1:1. At login or before a payout, compare a selfie with the face enrolled at onboarding. This stops account takeover and someone else collecting the loan.</p>
+<p><b>Is this the person in the document?</b> Compare the selfie with the photo in the ID card or in a digital credential. Useful where documents are reliable; weak where they are not.</p>
+<p><b>Have we seen this person before under another name?</b> Identification, 1:N. Compare a new applicant with every borrower already enrolled. This is the check that stops serial fraud, and the one most onboarding flows skip because it needs a database search rather than a single comparison.</p>
 
-<h2>What is Biometric Verification?</h2>
-<p>The concept of using biometric identification dates back thousands of years. One of the earliest documented uses of biometrics for identification can be traced back to ancient Babylon, where fingerprints were used on clay tablets for business transactions and identification of government individuals. Babylonians would leave imprints of their fingerprints on clay tablets to sign legal contracts, marking one of the earliest forms of biometric identification.</p>
+<h2>Face or iris?</h2>
+<p>Face works on any phone, so it is the natural choice for self-service apps and for 1:1 checks. Its weakness is 1:N at scale: as the database grows, look-alikes and family members start producing false hits, and a skilled fraudster changes appearance.</p>
+<p>Iris needs a scanner, but it separates people far better, which makes it the right tool for de-duplication. A handheld USB scanner costs a few hundred dollars and plugs into the laptop or Android tablet that an agent or branch already uses. A lender with a network of agents can enrol each borrower once by iris and use face on the phone for everything after that.</p>
 
+<h2>Liveness</h2>
+<p>A face check without liveness detection can be beaten with a printed photo or a video on another phone. At minimum, run a passive liveness model on the selfie; for higher-risk actions add a challenge such as "turn your head left", checked from head pose. Iris capture with a dedicated scanner and an operator present is much harder to fool.</p>
 
-<p>Today's biometric verification is an advanced identification procedure that relies on an individual's distinctive physiological and behavioural traits to establish their identity.</p>
-<p>Unlike traditional authentication methods like passwords or PINs, biometric authentication is significantly difficult to replicate, ensuring an unparalleled level of security. Based on the notion that each person possesses unique and irreplaceable characteristics, biometric authentication serves as an excellent option for businesses aiming to strengthen their security measures.</p>
+<h2>Sharing without sharing data</h2>
+<p>Fraudsters move between lenders. A borrower blocked by one microfinance institution goes to the next one. The useful answer is a shared check: can lenders ask "has this person got an open loan elsewhere?" without handing each other names, photos or iris images? Iris codes help here, because they are compact, standard and cannot be turned back into a picture. Our INGRESS project, funded by the EU's NGI ONTOCHAIN programme, built this kind of biometric credit bureau for microlending.</p>
 
-<h2>Examples of Biometric Verification</h2>
-<p>Biometric identification is carried out with the help of three main biometric modalities, which are: facial identification, iris identification, and fingerprint identification technology.</p>
+<h2>Doing it on a small budget</h2>
+<ul>
+<li><b>Onboarding app:</b> face capture, passive liveness and selfie-to-document comparison on the phone with the open-source <a href="https://docs.iriscan.net/sdk.html">Iriscan Biometric SDK</a> (Android, iOS, React Native). No per-check fees, and images do not have to leave the device.</li>
+<li><b>Agent or branch:</b> an iris scanner and the <a href="https://docs.iriscan.net/edge.html">Edge service</a>, which keeps working when the connection drops and syncs later.</li>
+<li><b>Back office:</b> 1:N search with the <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> or the same matcher on your own servers if regulation requires data to stay in the country.</li>
+</ul>
+<p>Start by measuring: enrol a few thousand existing borrowers and run de-duplication against them. The number of duplicates you find is the business case.</p>
 
-<h4>Fingerprint Identification:</h4>
-<p>Fingerprint identification stands as one of the oldest and most widely adopted biometric modalities. Leveraging the distinct patterns of ridges and furrows on an individual's fingertips, this technique offers exceptional accuracy and reliability. Its popularity arises from the uniqueness and permanence of fingerprints, making them a stable biometric trait throughout a person's life.</p>
-<p>The process involves capturing an image of the fingerprint and analyzing minutiae points, which are the unique ridge characteristics. With its established track record in law enforcement and civilian applications, fingerprint identification remains a staple in biometric systems, ensuring secure and efficient identity verification.</p>
-
-
-<p>In 1858, Sir William James Herschel conducted an intriguing experiment, using a handprint as a unique signature by having Rajyadhar Konai place his right hand on a contract for road building materials. The contract was accepted as valid, marking the first official use of biometric identification by a European. Using thumbprints on paper was a security measure to prevent denying the signature later: providing biometric data worked as a psychological deterrent from breaching the obligations, and this effect remains in place till date. Sir Herschel later collected thumbprints</p>
-<p>This sparked Herschel's curiosity, leading him to collect fingerprints from himself and the others &mdash; to be sure they do not change over time. As he assumed the role of Magistrate and Collector at Hooghly in 1877, Herschel implemented fingerprint identification on a wider scale, managing the district criminal court, prison, registration of deeds, and payment of government pensions with this novel system.</p>
-
-
-<h4>Iris Identification:</h4>
-<p>Iris identification relies on the intricate and highly individualized patterns within the iris of the eye. The iris, which is the coloured part encircling the pupil, contains unique features that differentiate one person from another. Using specialized cameras, the system captures the iris pattern and extracts relevant data points for analysis.</p>
-<p>The non-intrusive and contactless nature of iris scanning makes it user-friendly, while its high accuracy and resistance to tampering render it suitable for high-security applications.</p>
-<p>Today, iris recognition technology is used to safeguard facilities such as nuclear power plants in the US, China, Japan, Germany, and Sweden. It is also used to provide safety and security at the CERN's Large Hadron Collider since 2007.</p>
-<p>One innovative method of using iris identification is using the iris as a passport. Amidst the COVID-19 pandemic, the United Arab Emirates has deployed contactless technology to curb the virus's spread. One of these technologies was iris recognition technology. &#1058;ravellers can easily verify their identity without interaction when entering or leaving the country.</p>
-
-<h4>Facial Identification:</h4>
-<p>Facial identification, perhaps the most familiar biometric modality, relies on the distinct facial features that distinguish individuals from one another. This technique captures facial images through cameras and analyzes key facial landmarks, such as the distance between the eyes, nose, and mouth, to create a unique template.</p>
-<p>Facial identification requires minimal cooperation from the subject and can be integrated into various devices like smartphones and surveillance systems. Although it may be sensitive to changes in lighting and pose variations, continuous advancements in facial recognition algorithms have improved its accuracy and made it indispensable in a wide array of applications, from unlocking smartphones to identifying suspects in criminal investigations.</p>
-
-<h2>Verifying Biometric Data</h2>
-<p>Ensuring the accuracy and efficacy of data requires rigorous testing and validation. The verification process includes several critical phases to guarantee the system's reliability and precision.</p>
-<h4>Data Gathering</h4>
-<p>The first step involves obtaining biometric data from the individual in question. Specialized biometric sensors, such as fingerprint scanners, iris scanners, or facial recognition cameras, can accomplish this. The technology records and securely maintains the unique biometric features in a database during data gathering.</p>
-<h4>Design of a Template</h4>
-<p>Through intricate algorithms, the recorded data is then transformed into a mathematical blueprint. This template, securely stored in the database, serves as a digital representation of the individual's biometric traits.</p>
-<h4>Comparison and Matching</h4>
-<p>When a person seeks verification, the biometric system collects new data and converts it into a template. The new template is then compared to the stored template to determine if there is a match. If the templates align within a set level of resemblance, the individual's identity is confirmed.</p>
-
-<h2>How is Biometric Authentication Done?</h2>
-<p>Biometric authentication involves two primary modes: verification and identification.</p>
-<h4>Verification</h4>
-<p>The individual's identification is validated against a system-stored template in this mode. When an employee uses their fingerprint to gain entry to a secure location, the system compares it to the template linked with their registered identification. The individual is granted access if the two templates match.</p>
-<h4>Identification</h4>
-<p>On the other hand, identification mode allows the system to search the full library of templates for a match. This is widely utilised in law enforcement applications where an unknown suspect's data is matched against a large database of potential matches.</p>
-<p>Biometric authentication modalities of verification and identification both play important roles in creating a robust and sophisticated security framework for corporate environments and professional applications.</p>
-<p>Traditional authentication methods simply cannot compete with the precision and dependability provided by biometric approaches. The seamless integration of biometric technologies into corporate infrastructures improves access control, increases data security, and strengthens the overall integrity of sensitive processes.</p>
-
-<h2>Advantages of Biometric Verification</h2>
-<p>Biometric authentication has numerous important advantages over traditional authentication techniques, making it an appealing option for corporations and institutions looking for solid security measures. Among the notable advantages are:</p>
-<h4>Enhanced Security</h4>
-<p>Biometric characteristics are nearly impossible to imitate, lowering the danger of identity theft and unauthorised access. Unlike passwords, which may be exchanged, forgotten, or stolen, biometric data is unique to each individual, reducing security vulnerabilities dramatically.</p>
-<h4>User Convenience</h4>
-<p>Biometric verification offers a seamless and user-friendly experience. Individuals do not need to memorize complex passwords or carry authentication tokens. With a simple scan or recognition process, users can swiftly gain access to secure systems and locations.</p>
-<h4>Increased Accuracy</h4>
-<p>The use of biometric traits ensures a high level of accuracy in confirming an individual's identity. False positives and false negatives are kept to a minimum, providing a reliable means of verification.</p>
-<h4>Scalability</h4>
-<p>Organisations of varied sizes and complexities might benefit from biometric verification solutions. Biometric solutions, whether for a small business or a big corporation, can be adapted to satisfy unique security requirements.</p>
-<h4>Audit Trail and Accountability</h4>
-<p>Biometric systems often come equipped with audit trails, providing a comprehensive record of all access attempts and verifications. This feature enhances accountability and aids investigations in case of security incidents.</p>
-
-<h2>Challenges and Considerations</h2>
-<p>While biometric verification offers significant advantages, it is essential to acknowledge and address potential challenges and considerations:</p>
-<h4>Privacy Concerns</h4>
-<p>Individuals are hesitant to disclose their biometric data for a variety of reasons. Concerns about hygiene and apprehension about being associated with criminal activities add to this negative attitude. People in conflict-torn areas may avoid providing biometrics in order to avoid potential persecution by authorities or unauthorised access to their data.</p>
-<h4>Biometric Spoofing</h4>
-<p>Although biometric traits are challenging to replicate, sophisticated attackers may attempt to spoof biometric systems using high-quality images or recordings. Biometric solutions need to incorporate anti-spoofing measures to mitigate this risk.</p>
-<h4>Cultural and Legal Considerations</h4>
-<p>In some cultures or jurisdictions, certain biometric traits may be considered invasive or objectionable. Organizations operating globally must respect local customs and comply with relevant laws.</p>
-<h4>False Rejection Rates</h4>
-<p>False rejection rates in biometric verification refer to the frequency with which the system incorrectly denies access to an authorized user. When individuals attempt to authenticate their identity, the system may mistakenly fail to recognize them as valid users, leading to a frustrating user experience. This occurrence can be triggered by various factors, such as variations in biometric data due to environmental conditions, sensor quality, or changes in a person's appearance over time.</p>
-<p>Reducing the false rejection rate is crucial to avoid inconveniences and ensure smooth and efficient authentication processes. However, lowering this rate often comes at the cost of an increased risk of false acceptances, where unauthorized individuals may gain access. Hence, striking a balance between minimizing false rejections and maintaining security levels is essential in implementing biometric verification effectively.</p>
-<h4>False Acceptance Rates</h4>
-<p>False acceptance rates in biometric verification pertain to the likelihood of the system incorrectly granting access to an unauthorized individual. This poses a significant security concern as it may result in unauthorized access to sensitive information or restricted areas.</p>
-<p>The false acceptance rate is influenced by factors such as the quality of biometric data, the effectiveness of the matching algorithm, and potential vulnerabilities in the system. Achieving a balance between false rejection rates and false acceptance rates is crucial when it comes to delivering an error-free systems.</p>
-
-<figure><img src="../assets/img/far-frr-eer-diagram.svg" alt="FAR and FRR threshold chart for biometric verification accuracy" loading="lazy"><figcaption>A Graph Representing the Tradeoff Between FAR and FRR</figcaption></figure>
-
-<h4>An example of risks coming true</h4>
-<p>As the Taliban swiftly took control of Afghanistan in August 2021, concerns arose about the capture of US military biometric devices, known as HIIDE, used to gather sensitive data like iris scans, fingerprints, and facial images.</p>
-<p>A great threat was in Afghan government databases, particularly APPS, a US-funded system containing comprehensive data on half a million members of the Afghan National Army and Police. This data included personal information, biometric profiles, military history, and familial relationships, making individuals susceptible to reprisals.</p>
-<p>While the Taliban claimed they wouldn't target previous government or coalition workers, their actions have contradicted these assurances. The risks associated with the collection of biometric data in Afghanistan underscore the importance of securing such sensitive information.</p>
-
-<h2>The Future in Biometric Verification</h2>
-<p>As of 2021, the biometrics system market size was valued at USD 29.09 billion. According to Fortune Business Insights, the global market is expected to grow substantially, reaching USD 76.70 billion by 2029, with a Compound Annual Growth Rate (CAGR) of 13.9% during the forecast period from 2022 to 2029.</p>
-<p>The dominant modality in the biometrics system is fingerprint technology, accounting for approximately 35% of the total market in 2021. Following closely are face and iris recognition, with market shares of approximately 30% and 10%, respectively. Other modalities, such as voice, palm, and vein recognition, have relatively lower market shares.</p>
-
-
-<p>As technology continues to evolve, biometric verification is likely to see significant advancements. Some potential future developments in the field include:</p>
-<h4>Continuous Authentication</h4>
-<p>Rather than a one-time verification, continuous authentication analyzes users' behaviour continuously to ensure ongoing security during their session. This adaptive approach can detect anomalies and potential security threats in real time.</p>
-<h4>Biometric Encryption</h4>
-<p>Advanced encryption techniques applied to biometric templates can ensure that even if the data is compromised, it remains useless to unauthorized individuals. As biometric verification continues to evolve, organizations can expect to witness further advancements and innovations in this field.</p>
-<h4>Improved Accuracy and Speed</h4>
-<p>Advancements in biometric technology and algorithms will likely lead to even higher levels of accuracy and faster verification processes. As hardware and software become more sophisticated, the time required for biometric authentication could be significantly reduced, enhancing user experience and productivity.</p>
-<h4>Behavioral Biometrics</h4>
-<p>In addition to physical traits, behavioural biometrics is an emerging area of interest. This approach involves analyzing an individual's unique behavioural patterns, such as typing speed, mouse movements, or even gait. Combining behavioural biometrics with traditional physical traits can further enhance the accuracy and security of biometric identification systems.</p>
-<h4>3D Facial Recognition</h4>
-<p>Traditional 2D facial recognition systems have shown vulnerabilities to spoofing attempts using photographs or videos. 3D facial recognition, using depth-sensing technology or infrared cameras, can provide more robust verification, as it captures the facial structure and contours, making it harder for fraudsters to replicate.</p>
-<h4>Biometrics in IoT Devices</h4>
-<p>As the Internet of Things (IoT) grows in popularity, including biometric verification in IoT devices can improve security and authentication processes. Biometrics can give an extra layer of security to IoT applications such as smart homes, connected autos, and wearable gadgets.</p>
-
-<h2>Conclusion</h2>
-<p>Biometric verification has proven to be a valuable method for enhancing security in various settings, including individuals, corporations, and institutions. By utilizing unique physical and behavioural attributes, biometric authentication offers a reliable way to confirm identities.</p>
-<p>The advantages of biometric verification, such as improved security, user convenience, and accuracy, make it a compelling choice compared to traditional authentication methods.</p>
-<p>Continuous research and development in biometric verification will likely lead to advancements in accuracy, speed, and versatility as technology progresses. While challenges related to privacy, spoofing, and implementation costs still exist, efforts to address these issues will further promote the adoption of biometric authentication technologies.</p>
-<p>Unlock the power of biometrics with the help of our expert team! Reach out to us today, and let's level up your security with cutting-edge biometric technology and services!</p>
-
-<p style="margin-top:1.5rem"><a class="btn" href="/get-started">Talk to us about biometrics</a></p>
+<aside class="cta">
+<h3>Losing money to duplicate borrowers?</h3>
+<p>We help lenders and fintechs add face and iris verification to onboarding and agent networks, and run a de-duplication audit on your existing base.</p>
+<p><a class="btn" href="/get-started">Discuss your use case</a> <a class="btn ghost" href="https://docs.iriscan.net/sdk.html">Biometric SDK docs</a></p>
+</aside>
 <div class="readnext"><h3>Read next</h3><ul>
 <li><a href="/post/how-does-iris-recognition-work">How Does Iris Recognition Work</a></li>
 <li><a href="/post/the-power-of-the-eye-iris-identification">The Power of the Eye: Iris Identification</a></li>
