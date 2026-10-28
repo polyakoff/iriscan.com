@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/the-power-of-the-eye-iris-identification">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-identification-cosmic-iris-nebula.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Iris Identification at National Scale", "datePublished": "2023-06-15", "dateModified": "2026-10-28", "author": {"@type": "Organization", "name": "Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-identification-cosmic-iris-nebula.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/the-power-of-the-eye-iris-identification", "description": "Why national ID and benefit programmes add iris, where the real cost of a biometric system hides, and how open standards and open source keep a country in control of its own data."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Iris Identification at National Scale", "datePublished": "2023-06-15", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-identification-cosmic-iris-nebula.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/the-power-of-the-eye-iris-identification", "description": "Why national ID and benefit programmes add iris, where the real cost of a biometric system hides, and how open standards and open source keep a country in control of its own data."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -55,11 +55,11 @@
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>By Iriscan team &middot; Jun 15, 2023 &middot; 4 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Jun 15, 2023 &middot; 4 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
 <h1>Iris Identification at National Scale</h1>
 <figure><img src="../assets/img/blog/iris-identification-cosmic-iris-nebula.jpg" alt="Abstract iris artwork" loading="lazy"></figure>
 
-<p class="lead">A national ID or social protection programme has one biometric question that matters more than any other: is this person already in the register under another name? Iris answers it better than most modalities. The harder part is making sure the answer does not come with a twenty-year dependency on one vendor.</p>
+<p class="lead">A national ID or social protection programme has one biometric question that matters more than any other: is this person already in the register under another name? Iris answers it better than most modalities. The harder problem, from what we have seen, is that the answer often comes together with a long dependency on one vendor. This is the reason we started building open-source biometric components.</p>
 
 <h2>Why iris for population registers</h2>
 <p>De-duplication is 1:N search at its most demanding. Every new enrolment is compared with everyone enrolled before, so with tens of millions of records even a tiny false match rate produces a steady flow of false alarms, each one a case for a human adjudicator. Iris codes separate different people with an unusually wide margin, which lets a programme set a strict threshold without rejecting genuine applicants. That is why India's Aadhaar enrols both irises next to ten fingerprints, and why many newer programmes use iris where fingerprints are worn by manual work or age.</p>
@@ -72,15 +72,15 @@
 <li>Scanners are certified only for that vendor's software, so replacing broken devices means buying from the same supplier at the supplier's price.</li>
 <li>Licences are counted per record. The register grows every year; so does the bill.</li>
 </ul>
-<p>None of this is about bad technology. It is about who controls the data. A country that cannot move its own population register to another system without the vendor's help does not fully own it.</p>
+<p>The technology itself may be good. The problem is who controls the data: if a country cannot move its population register to another system without the vendor's help, it does not fully own it.</p>
 
 <h2>What an open setup looks like</h2>
 <p><b>Standard formats everywhere.</b> Iris records in ISO/IEC 19794-6 or 39794-6, fingerprint templates in ISO/IEC 19794-2 or ANSI INCITS 378, faces in 19794-5. Anything stored should be readable by more than one product. Where legacy data is in another format, convert it once and keep the originals. Our open-source <a href="https://docs.iriscan.net/converter.html">Biometric Converter</a> does this for fingerprint templates, and you can <a href="/biometric-data-interchange#demo">try it in the browser</a>.</p>
 <p><b>Open platform, replaceable components.</b> MOSIP, the open-source identity platform now used by more than a dozen countries, is built this way: the platform defines interfaces for biometric SDKs and ABIS, and the country plugs in whichever implementation it chooses. A component that does not perform can be replaced without rebuilding the register.</p>
 <p><b>Open-source engines with paid support.</b> The matching and conversion code that sits at the heart of the register should be inspectable and runnable without a licence server. Support, integration, tuning and certification are where a vendor should earn its money, not in keeping the customer locked in.</p>
 
-<h2>Where Iriscan fits</h2>
-<p>We build the engines as open source and sell the work around them. The <a href="https://docs.iriscan.net/sdk.html">Iriscan Biometric SDK</a> does face, liveness and iris on Android, iOS and the JVM; its face match component is used in <a href="https://docs.iriscan.net/mosip.html">Inji Wallet</a>, MOSIP's reference wallet, to check a selfie against the photo in a credential on the phone itself. The <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> and <a href="https://docs.iriscan.net/edge.html">Edge service</a> handle enrolment and matching with offline field stations.</p>
+<h2>What we do</h2>
+<p>Our model is close to Red Hat's: the engines are open source, and we earn on integration, modification and support. The <a href="https://docs.iriscan.net/sdk.html">Iriscan Biometric SDK</a> does face, liveness and iris on Android, iOS and the JVM; its face match component is used in <a href="https://docs.iriscan.net/mosip.html">Inji Wallet</a>, MOSIP's reference wallet, to check a selfie against the photo in a credential on the phone itself. The <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> and <a href="https://docs.iriscan.net/edge.html">Edge service</a> handle enrolment and matching with offline field stations.</p>
 <p>For governments and integrators we adapt these components to a country's stack, retrain models on representative local data, migrate legacy biometric databases to standard formats and provide long-term support.</p>
 
 <aside class="cta">

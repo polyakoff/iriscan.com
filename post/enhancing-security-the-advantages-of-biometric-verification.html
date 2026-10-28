@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Verification Against Identity Fraud: A Guide for Lenders", "datePublished": "2023-08-22", "dateModified": "2026-10-28", "author": {"@type": "Organization", "name": "Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification", "description": "How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Verification Against Identity Fraud: A Guide for Lenders", "datePublished": "2023-08-22", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification", "description": "How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -55,11 +55,11 @@
   </div>
 </header>
 <div class="article-outer"><article class="article article-narrow">
-<div class="meta-top"><span>By Iriscan team &middot; Aug 22, 2023 &middot; 3 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>By Artem Poliakov, with AI assistance &middot; Aug 22, 2023 &middot; 3 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
 <h1>Biometric Verification Against Identity Fraud: A Guide for Lenders</h1>
 <figure><img src="../assets/img/blog/iris-biometric-abstract-reserve.jpg" alt="Abstract iris artwork" loading="lazy"></figure>
 
-<p class="lead">In many markets a national ID card proves little. Cards are forged, bought or borrowed, a person can hold several, and many borrowers have none at all. For a lender this turns into one specific loss: the same person taking loans under different names and never repaying any of them. Biometric verification is the cheapest reliable fix, if it is set up for that problem rather than copied from a bank in a country with good ID.</p>
+<p class="lead">Iriscan started from a lending problem. In many markets a national ID card proves little: cards are forged, bought or borrowed, one person can hold several, and many borrowers have none at all. For a lender this means one specific loss: the same person takes loans under different names and never repays any of them. Biometric verification is the cheapest reliable fix we know, as long as it is designed for this problem and not copied from a bank in a country with good ID documents.</p>
 
 <h2>Three checks, three different problems</h2>
 <p><b>Is this the account holder?</b> Verification, 1:1. At login or before a payout, compare a selfie with the face enrolled at onboarding. This stops account takeover and someone else collecting the loan.</p>
@@ -76,7 +76,7 @@
 <p>A face check without liveness detection can be beaten with a printed photo or a video on another phone. At minimum, run a passive liveness model on the selfie; for higher-risk actions add a challenge such as "turn your head left", checked from head pose. Iris capture with a dedicated scanner and an operator present is much harder to fool.</p>
 
 <h2>Sharing without sharing data</h2>
-<p>Fraudsters move between lenders. A borrower blocked by one microfinance institution goes to the next one. The useful answer is a shared check: can lenders ask "has this person got an open loan elsewhere?" without handing each other names, photos or iris images? Iris codes help here, because they are compact, standard and cannot be turned back into a picture. Our INGRESS project, funded by the EU's NGI ONTOCHAIN programme, built this kind of biometric credit bureau for microlending.</p>
+<p>Fraudsters move between lenders. A borrower blocked by one microfinance institution goes to the next one. The useful answer is a shared check: can lenders ask "has this person got an open loan elsewhere?" without handing each other names, photos or iris images? Iris codes help here, because they are compact, standard and cannot be turned back into a picture. We worked on this in INGRESS, a microlending project funded by the EU's NGI ONTOCHAIN programme: borrowers were identified by biometrics, and a hash of every loan was written to the public iExec blockchain, so that a credit history could be checked for tampering without disclosing anyone's private data.</p>
 
 <h2>Doing it on a small budget</h2>
 <ul>
@@ -84,7 +84,7 @@
 <li><b>Agent or branch:</b> an iris scanner and the <a href="https://docs.iriscan.net/edge.html">Edge service</a>, which keeps working when the connection drops and syncs later.</li>
 <li><b>Back office:</b> 1:N search with the <a href="https://docs.iriscan.net/cloud-api.html">Cloud Iris API</a> or the same matcher on your own servers if regulation requires data to stay in the country.</li>
 </ul>
-<p>Start by measuring: enrol a few thousand existing borrowers and run de-duplication against them. The number of duplicates you find is the business case.</p>
+<p>Start by measuring: enrol a few thousand existing borrowers and run de-duplication against them. The number of duplicates you find gives you the business case.</p>
 
 <aside class="cta">
 <h3>Losing money to duplicate borrowers?</h3>
