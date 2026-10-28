@@ -1,30 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="Poppins,Arial,sans-serif">
 <rect width="1200" height="675" fill="#17181a"/>
-<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b6b8c1"/></marker></defs>
-<rect x="60" y="200" width="240" height="200" rx="16" fill="#1f2022" stroke="#889ce7" stroke-width="2.5"/>
-<circle cx="100" cy="240" r="20" fill="#889ce7"/><text x="100" y="247" fill="#141416" font-size="20" font-weight="600" text-anchor="middle">1</text>
-<text x="180" y="300" fill="#fff" font-size="28" font-weight="500" text-anchor="middle">Arrive</text>
-<text x="180" y="340" fill="#b6b8c1" font-size="18" text-anchor="middle">patient scanned</text>
-<text x="180" y="366" fill="#b6b8c1" font-size="18" text-anchor="middle">at registration</text>
-<line x1="304" y1="300" x2="336" y2="300" stroke="#b6b8c1" stroke-width="2.5" marker-end="url(#a)"/>
-<rect x="340" y="200" width="240" height="200" rx="16" fill="#1f2022" stroke="#e9c46a" stroke-width="2.5"/>
-<circle cx="380" cy="240" r="20" fill="#e9c46a"/><text x="380" y="247" fill="#141416" font-size="20" font-weight="600" text-anchor="middle">2</text>
-<text x="460" y="300" fill="#fff" font-size="28" font-weight="500" text-anchor="middle">Match</text>
-<text x="460" y="340" fill="#b6b8c1" font-size="18" text-anchor="middle">existing record found</text>
-<text x="460" y="366" fill="#b6b8c1" font-size="18" text-anchor="middle">or one new record</text>
-<line x1="584" y1="300" x2="616" y2="300" stroke="#b6b8c1" stroke-width="2.5" marker-end="url(#a)"/>
-<rect x="620" y="200" width="240" height="200" rx="16" fill="#1f2022" stroke="#fd6262" stroke-width="2.5"/>
-<circle cx="660" cy="240" r="20" fill="#fd6262"/><text x="660" y="247" fill="#141416" font-size="20" font-weight="600" text-anchor="middle">3</text>
-<text x="740" y="300" fill="#fff" font-size="28" font-weight="500" text-anchor="middle">Treat</text>
-<text x="740" y="340" fill="#b6b8c1" font-size="18" text-anchor="middle">identity confirmed for</text>
-<text x="740" y="366" fill="#b6b8c1" font-size="18" text-anchor="middle">drugs, blood, samples</text>
-<line x1="864" y1="300" x2="896" y2="300" stroke="#b6b8c1" stroke-width="2.5" marker-end="url(#a)"/>
-<rect x="900" y="200" width="240" height="200" rx="16" fill="#1f2022" stroke="#7bc47f" stroke-width="2.5"/>
-<circle cx="940" cy="240" r="20" fill="#7bc47f"/><text x="940" y="247" fill="#141416" font-size="20" font-weight="600" text-anchor="middle">4</text>
-<text x="1020" y="300" fill="#fff" font-size="28" font-weight="500" text-anchor="middle">Bill</text>
-<text x="1020" y="340" fill="#b6b8c1" font-size="18" text-anchor="middle">claim carries the</text>
-<text x="1020" y="366" fill="#b6b8c1" font-size="18" text-anchor="middle">verified encounter</text>
-<text x="600" y="130" fill="#fff" font-size="30" font-weight="500" text-anchor="middle">One patient, one record</text>
-<text x="600" y="480" fill="#b6b8c1" font-size="19" text-anchor="middle">The record is found by the person, not by a name, a card or a date of birth.</text>
-<text x="600" y="512" fill="#b6b8c1" font-size="19" text-anchor="middle">Patients who cannot show a document or speak for themselves can still be identified.</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b6b8c1"/></marker><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7bc47f"/></marker></defs>
+<text x="600" y="80" fill="#fff" font-size="30" font-weight="500" text-anchor="middle">Name search versus iris search at the registration desk</text>
+<rect x="60" y="120" width="500" height="470" rx="18" fill="#1f2022" stroke="#2c2e33" stroke-width="2"/>
+<text x="310" y="165" fill="#fff" font-size="22" font-weight="500" text-anchor="middle">Search by name and date of birth</text>
+<rect x="640" y="120" width="500" height="470" rx="18" fill="#1f2022" stroke="#2c2e33" stroke-width="2"/>
+<text x="890" y="165" fill="#fff" font-size="22" font-weight="500" text-anchor="middle">Search by iris</text>
+<rect x="110" y="195" width="400" height="56" rx="10" fill="#17181a" stroke="#3a3c42"/><text x="130" y="230" fill="#d9dbe2" font-size="19" font-weight="400" text-anchor="start">A. Mensah, born 1980</text>
+<text x="130" y="275" fill="#b6b8c1" font-size="15" font-weight="400" text-anchor="start">3 matching records</text>
+<rect x="110" y="292" width="400" height="74" rx="10" fill="#17181a" stroke="#fd6262" stroke-width="2"/>
+<text x="130" y="323" fill="#fff" font-size="18" font-weight="500" text-anchor="start">A. Mensah, 01.01.1980</text><text x="130" y="349" fill="#fd6262" font-size="16" font-weight="400" text-anchor="start">another person</text>
+<rect x="110" y="387" width="400" height="74" rx="10" fill="#17181a" stroke="#e9c46a" stroke-width="2"/>
+<text x="130" y="418" fill="#fff" font-size="18" font-weight="500" text-anchor="start">Ama Mensah, 01.01.1980</text><text x="130" y="444" fill="#e9c46a" font-size="16" font-weight="400" text-anchor="start">duplicate of this patient</text>
+<rect x="110" y="482" width="400" height="74" rx="10" fill="#17181a" stroke="#fd6262" stroke-width="2"/>
+<text x="130" y="513" fill="#fff" font-size="18" font-weight="500" text-anchor="start">A. Mensah, 1980</text><text x="130" y="539" fill="#fd6262" font-size="16" font-weight="400" text-anchor="start">two people in one record</text>
+<circle cx="890" cy="270" r="62" fill="#17181a" stroke="#3a3c42" stroke-width="2"/><ellipse cx="890" cy="270" rx="44.199999999999996" ry="26" fill="none" stroke="#889ce7" stroke-width="2.5"/><circle cx="890" cy="270" r="16.12" fill="none" stroke="#889ce7" stroke-width="2.5"/><circle cx="890" cy="270" r="6.5" fill="#889ce7"/>
+<line x1="890" y1="335" x2="890" y2="395" stroke="#7bc47f" stroke-width="3" marker-end="url(#g)"/>
+<rect x="690" y="405" width="400" height="90" rx="10" fill="#17181a" stroke="#7bc47f" stroke-width="2.5"/>
+<text x="710" y="440" fill="#fff" font-size="19" font-weight="500" text-anchor="start">Patient record #48213</text><text x="710" y="470" fill="#7bc47f" font-size="16" font-weight="400" text-anchor="start">one person, one record, full history</text>
+<text x="890" y="545" fill="#b6b8c1" font-size="17" font-weight="400" text-anchor="middle">Works without a card, a spelling or a date of birth.</text>
 </svg>

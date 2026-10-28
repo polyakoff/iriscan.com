@@ -1,30 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="Poppins,Arial,sans-serif">
 <rect width="1200" height="675" fill="#17181a"/>
-<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b6b8c1"/></marker></defs>
-<rect x="60" y="200" width="240" height="200" rx="16" fill="#1f2022" stroke="#889ce7" stroke-width="2.5"/>
-<circle cx="100" cy="240" r="20" fill="#889ce7"/><text x="100" y="247" fill="#141416" font-size="20" font-weight="600" text-anchor="middle">1</text>
-<text x="180" y="300" fill="#fff" font-size="28" font-weight="500" text-anchor="middle">Audit</text>
-<text x="180" y="340" fill="#b6b8c1" font-size="18" text-anchor="middle">formats, variants</text>
-<text x="180" y="366" fill="#b6b8c1" font-size="18" text-anchor="middle">and quality measured</text>
-<line x1="304" y1="300" x2="336" y2="300" stroke="#b6b8c1" stroke-width="2.5" marker-end="url(#a)"/>
-<rect x="340" y="200" width="240" height="200" rx="16" fill="#1f2022" stroke="#e9c46a" stroke-width="2.5"/>
-<circle cx="380" cy="240" r="20" fill="#e9c46a"/><text x="380" y="247" fill="#141416" font-size="20" font-weight="600" text-anchor="middle">2</text>
-<text x="460" y="300" fill="#fff" font-size="28" font-weight="500" text-anchor="middle">Convert</text>
-<text x="460" y="340" fill="#b6b8c1" font-size="18" text-anchor="middle">images and templates</text>
-<text x="460" y="366" fill="#b6b8c1" font-size="18" text-anchor="middle">to open standards</text>
-<line x1="584" y1="300" x2="616" y2="300" stroke="#b6b8c1" stroke-width="2.5" marker-end="url(#a)"/>
-<rect x="620" y="200" width="240" height="200" rx="16" fill="#1f2022" stroke="#fd6262" stroke-width="2.5"/>
-<circle cx="660" cy="240" r="20" fill="#fd6262"/><text x="660" y="247" fill="#141416" font-size="20" font-weight="600" text-anchor="middle">3</text>
-<text x="740" y="300" fill="#fff" font-size="28" font-weight="500" text-anchor="middle">Verify</text>
-<text x="740" y="340" fill="#b6b8c1" font-size="18" text-anchor="middle">old and new matcher</text>
-<text x="740" y="366" fill="#b6b8c1" font-size="18" text-anchor="middle">compared on a sample</text>
-<line x1="864" y1="300" x2="896" y2="300" stroke="#b6b8c1" stroke-width="2.5" marker-end="url(#a)"/>
-<rect x="900" y="200" width="240" height="200" rx="16" fill="#1f2022" stroke="#7bc47f" stroke-width="2.5"/>
-<circle cx="940" cy="240" r="20" fill="#7bc47f"/><text x="940" y="247" fill="#141416" font-size="20" font-weight="600" text-anchor="middle">4</text>
-<text x="1020" y="300" fill="#fff" font-size="28" font-weight="500" text-anchor="middle">Switch</text>
-<text x="1020" y="340" fill="#b6b8c1" font-size="18" text-anchor="middle">new system goes live,</text>
-<text x="1020" y="366" fill="#b6b8c1" font-size="18" text-anchor="middle">originals archived</text>
-<text x="600" y="130" fill="#fff" font-size="30" font-weight="500" text-anchor="middle">Migrating a biometric database</text>
-<text x="600" y="480" fill="#b6b8c1" font-size="19" text-anchor="middle">Proprietary templates cannot be moved. Images and standard templates can.</text>
-<text x="600" y="512" fill="#b6b8c1" font-size="19" text-anchor="middle">The old system keeps running until the new one gives the same answers.</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b6b8c1"/></marker><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7bc47f"/></marker></defs>
+<text x="600" y="80" fill="#fff" font-size="30" font-weight="500" text-anchor="middle">What moves to the new system, and what does not</text>
+<rect x="60" y="120" width="330" height="470" rx="18" fill="#1f2022" stroke="#2c2e33" stroke-width="2"/><text x="225" y="165" fill="#fff" font-size="22" font-weight="500" text-anchor="middle">Old vendor</text>
+<rect x="810" y="120" width="330" height="470" rx="18" fill="#1f2022" stroke="#2c2e33" stroke-width="2"/><text x="975" y="165" fill="#fff" font-size="22" font-weight="500" text-anchor="middle">New system</text>
+<rect x="90" y="200" width="270" height="64" rx="10" fill="#17181a" stroke="#7bc47f" stroke-width="2"/><text x="225" y="239" fill="#fff" font-size="18" font-weight="500" text-anchor="middle">Raw images</text>
+<rect x="840" y="200" width="270" height="64" rx="10" fill="#17181a" stroke="#7bc47f" stroke-width="2"/><text x="975" y="239" fill="#fff" font-size="18" font-weight="500" text-anchor="middle">Images, ISO containers</text>
+<line x1="372" y1="232" x2="826" y2="232" stroke="#7bc47f" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="600" y="222" fill="#b6b8c1" font-size="15" font-weight="400" text-anchor="middle">converted to a standard container</text>
+<rect x="90" y="295" width="270" height="64" rx="10" fill="#17181a" stroke="#7bc47f" stroke-width="2"/><text x="225" y="334" fill="#fff" font-size="18" font-weight="500" text-anchor="middle">Standard templates</text>
+<rect x="840" y="295" width="270" height="64" rx="10" fill="#17181a" stroke="#7bc47f" stroke-width="2"/><text x="975" y="334" fill="#fff" font-size="18" font-weight="500" text-anchor="middle">ISO / ANSI templates</text>
+<line x1="372" y1="327" x2="826" y2="327" stroke="#7bc47f" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="600" y="317" fill="#b6b8c1" font-size="15" font-weight="400" text-anchor="middle">variants normalized</text>
+<rect x="90" y="390" width="270" height="64" rx="10" fill="#17181a" stroke="#fd6262" stroke-width="2"/><text x="225" y="429" fill="#fff" font-size="18" font-weight="500" text-anchor="middle">Proprietary templates</text>
+<rect x="840" y="390" width="270" height="64" rx="10" fill="#17181a" stroke="#fd6262" stroke-width="2"/><text x="975" y="429" fill="#fff" font-size="18" font-weight="500" text-anchor="middle">New templates</text>
+<line x1="372" y1="422" x2="450" y2="422" stroke="#fd6262" stroke-width="2.5" stroke-dasharray="8 7"/><text x="472" y="431" fill="#fd6262" font-size="26" font-weight="600" text-anchor="middle">✕</text>
+<path d="M1112 232 C 1185 232, 1185 422, 1124 422" fill="none" stroke="#b6b8c1" stroke-width="2" stroke-dasharray="4 6" marker-end="url(#a)"/>
+<text x="500" y="420" fill="#fd6262" font-size="15" font-weight="400" text-anchor="start">unreadable by another matcher</text>
+<text x="500" y="442" fill="#b6b8c1" font-size="15" font-weight="400" text-anchor="start">new ones are extracted from the images</text>
+<rect x="90" y="485" width="270" height="64" rx="10" fill="#17181a" stroke="#e9c46a" stroke-width="2"/><text x="225" y="524" fill="#fff" font-size="18" font-weight="500" text-anchor="middle">Biographic data in files</text>
+<rect x="840" y="485" width="270" height="64" rx="10" fill="#17181a" stroke="#e9c46a" stroke-width="2"/><text x="975" y="524" fill="#fff" font-size="18" font-weight="500" text-anchor="middle">Separate, encrypted store</text>
+<line x1="372" y1="517" x2="826" y2="517" stroke="#e9c46a" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="600" y="507" fill="#b6b8c1" font-size="15" font-weight="400" text-anchor="middle">separated and minimized</text>
+<text x="600" y="630" fill="#b6b8c1" font-size="18" font-weight="400" text-anchor="middle">Keep the original images: they are the only thing that makes the next migration possible.</text>
 </svg>
