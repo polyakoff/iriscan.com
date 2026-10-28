@@ -18,9 +18,9 @@
 <meta property="og:title" content="Biometric Authentication: Modalities, Templates and Lock-in | Iriscan">
 <meta property="og:description" content="How face, fingerprint and iris authentication work, what a biometric template is, why template formats decide who controls your system, and how to stay vendor-neutral.">
 <meta property="og:url" content="https://www.iriscan.com/post/biometric-authentication">
-<meta property="og:image" content="https://www.iriscan.com/assets/img/fingerprint-minutiae-cover.jpg">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/biometric-fingerprint-scan-blue.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Authentication: Modalities, Templates and Lock-in", "datePublished": "2023-11-17", "dateModified": "2026-10-28", "author": {"@type": "Organization", "name": "Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/fingerprint-minutiae-cover.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-authentication", "description": "How face, fingerprint and iris authentication work, what a biometric template is, why template formats decide who controls your system, and how to stay vendor-neutral."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Authentication: Modalities, Templates and Lock-in", "datePublished": "2023-11-17", "dateModified": "2026-10-28", "author": {"@type": "Organization", "name": "Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/biometric-fingerprint-scan-blue.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-authentication", "description": "How face, fingerprint and iris authentication work, what a biometric template is, why template formats decide who controls your system, and how to stay vendor-neutral."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -57,7 +57,7 @@
 <div class="article-outer"><article class="article">
 <div class="meta-top"><span>By Iriscan team &middot; Nov 17, 2023 &middot; 4 min read &middot; Updated: Oct 28, 2026</span><span class="dots">&#8942;</span></div>
 <h1>Biometric Authentication: Modalities, Templates and Lock-in</h1>
-<figure><img src="../assets/img/fingerprint-minutiae-cover.jpg" alt="Fingerprint with minutiae extracted by the Iriscan biometric converter" loading="lazy"><figcaption>Minutiae extracted from a NIST sample fingerprint: ridge endings in red, bifurcations in blue.</figcaption></figure>
+<figure><img src="../assets/img/biometric-fingerprint-scan-blue.jpg" alt="Abstract fingerprint scan" loading="lazy"></figure>
 
 <p class="lead">Biometric authentication checks who someone is by something they are, not something they know or carry. Every system does it the same way: capture a sample, reduce it to a template, compare templates. The modality you choose decides accuracy and cost. The template format you choose decides whether you can ever change suppliers.</p>
 
@@ -67,9 +67,13 @@
 <p><b>Iris.</b> The most distinctive of the three. A near-infrared camera captures the iris texture, which is encoded into a bit string and compared by Hamming distance. Best for de-duplicating large populations, contactless, stable over life. Needs a dedicated scanner. (Details: <a href="/post/how-does-iris-recognition-work">how iris recognition works</a>.)</p>
 <p>Voice, vein and behavioural biometrics exist and have their niches, but national ID, banking and humanitarian programmes are built almost entirely on these three, often combined.</p>
 
+<figure><img src="../assets/img/biometrics-market-2025-analyst-estimates.jpg" alt="Global biometrics market size and fingerprint share in 2025 according to four market research firms" loading="lazy"><figcaption>Fingerprint still takes roughly a third of biometrics revenue; analysts differ on the rest.</figcaption></figure>
+
 <h2>Templates, not images</h2>
 <p>After enrolment, a biometric system mostly works with templates. A fingerprint template is a list of minutiae; an iris template is a bit string with a mask; a face template is an embedding. Templates are small, fast to compare, and cannot be turned back into the original image, which makes them the safer thing to store and exchange.</p>
 <p>That raises the question that decides the long-term cost of the system: in what format are the templates stored?</p>
+
+<figure><img src="../assets/img/fingerprint-minutiae-cover.jpg" alt="Fingerprint with minutiae extracted by the Iriscan biometric converter" loading="lazy"><figcaption>A fingerprint template is a list of minutiae: ridge endings (red) and bifurcations (blue) from a NIST sample.</figcaption></figure>
 
 <h2>Where lock-in comes from</h2>
 <p>Many vendors store templates in a proprietary format that only their own matcher reads. As long as you stay, it works. If you want a better matcher, a cheaper scanner or a second supplier, you find that your database is useless to anyone else. You either re-enrol everyone or keep paying.</p>
