@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261029a">
+<link rel="stylesheet" href="../assets/style.css?v=20261029b">
 <link rel="canonical" href="https://www.iriscan.com/post/biometric-database-migration-vendor-lock">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
@@ -20,7 +20,7 @@
 <meta property="og:url" content="https://www.iriscan.com/post/biometric-database-migration-vendor-lock">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/biometric-database-migration.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Migrating a Biometric Database Without Losing Identities or Getting Locked In", "datePublished": "2026-10-08", "dateModified": "2026-10-08", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/biometric-database-migration.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-database-migration-vendor-lock", "description": "Why biometric database migrations are hard, what HART and the ICAO move to ISO/IEC 39794 show, and how to audit, convert and verify before switching vendors."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Migrating a Biometric Database Without Losing Identities or Getting Locked In", "datePublished": "2026-08-06", "dateModified": "2026-08-06", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/biometric-database-migration.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/biometric-database-migration-vendor-lock", "description": "Why biometric database migrations are hard, what HART and the ICAO move to ISO/IEC 39794 show, and how to audit, convert and verify before switching vendors."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -40,8 +40,15 @@
           <a href="/solutions/government">Elections &amp; borders</a>
         </div>
       </div>
-      <a href="/services">Services</a>
-      <a href="/iris-recognition-software">Iris Recognition Software</a>
+      <div class="has-sub">
+        <a href="/iris-recognition-software">Products</a>
+        <div class="sub">
+          <a href="/iris-recognition-software">Iris recognition software</a>
+          <a href="/biometrics-identity-verification-system">Identity verification system</a>
+          <a href="/biometric-data-interchange">Biometric data conversion</a>
+          <a href="/services">Consulting &amp; integration</a>
+        </div>
+      </div>
       <div class="has-sub">
         <a href="/post/iriscan-becomes-the-official-reseller-of-cardlogix">Devices</a>
         <div class="sub">
@@ -52,23 +59,21 @@
           <a href="/post/vista-ey2h-handheld-dual-iris-camera">Vista EY2H</a>
         </div>
       </div>
+      <a href="/pricing">Pricing</a>
       <div class="has-sub">
-        <a href="/blog">More</a>
+        <a href="/blog">Resources</a>
         <div class="sub">
-          <a href="/biometric-data-interchange">Biometric Data Conversion</a>
-          <a href="/biometrics-identity-verification-system">Biometrics Identity Verification System</a>
           <a href="/blog">Blog</a>
+          <a href="https://docs.iriscan.net/">Documentation</a>
           <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
         </div>
       </div>
-      <a href="/pricing">Pricing</a>
-      <a href="https://docs.iriscan.net/">Docs</a>
       <a class="btn" href="/get-started">Contact us</a>
     </nav>
   </div>
 </header>
 <div class="article-outer"><article class="article">
-<div class="meta-top"><span>Oct 8, 2026 &middot; 5 min read</span><span class="dots">&#8942;</span></div>
+<div class="meta-top"><span>Aug 6, 2026 &middot; 5 min read</span></div>
 <h1>Migrating a Biometric Database Without Losing Identities or Getting Locked In</h1>
 
 <p class="lead">Who owns a national biometric database? On paper, the government or the institution that collected it. In practice, often the vendor whose matcher is the only software able to read it. This becomes visible at the worst moment: when the contract ends, when the hardware has to be replaced or when a new standard arrives. Where a biometric register is the main defense against duplicate and fake identities, losing part of it in a migration is not an option. Below I describe what makes these migrations hard and how to plan one.</p>
@@ -117,8 +122,7 @@
 <aside class="cta">
 <h3>Planning a change of biometric vendor?</h3>
 <p>We audit biometric databases, convert them to open standards and verify the result before switch-over, on your premises or as a service.</p>
-<p class="cta-kit">Small team? Start with the <a href="/pricing#starter">$1,000 starter kit</a>: two iris scanners, three months of cloud enrollment and remote setup.</p>
-<p><a class="btn" href="/get-started">Plan an audit</a> <a class="btn ghost" href="/solutions/data-migration">Migration solutions</a></p>
+<p><a class="btn" href="/get-started?interest=bdi">Plan an audit</a> <a class="btn ghost" href="/solutions/data-migration">Migration solutions</a></p>
 </aside>
 <div class="readnext"><h3>Read next</h3><ul>
 <li><a href="/solutions/data-migration">Biometric database migration</a></li>
@@ -141,11 +145,11 @@
       </ul>
     </div>
     <div>
-      <p style="margin-bottom:.6rem;color:#fff">Follow Us On:</p>
+      <p style="margin-bottom:.6rem;color:#fff">Follow us</p>
       <p class="socials">
         <a href="https://www.linkedin.com/company/iriscan"><img src="../assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
         <a href="https://www.facebook.com/iriscan.net/"><img src="../assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
-        <a href="https://twitter.com/IriscanNet"><img src="../assets/img/social-twitter.png" alt="Iriscan Twitter profile"></a>
+        <a href="https://twitter.com/IriscanNet"><img src="../assets/img/social-x.png" alt="Iriscan on X"></a>
       </p>
       <p class="copyright">&copy; 2019&ndash;<span class="yr">2026</span> Biometric<br>Technologies O&Uuml;</p>
     </div>

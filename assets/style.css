@@ -609,3 +609,8 @@ nav.menu{font-size:.9rem}
 .cta .cta-kit{color:var(--muted);font-size:.95rem}
 .price-note{color:var(--muted);font-size:.9rem;margin-top:1rem}
 @media(max-width:860px){.sol-cards.three{grid-template-columns:1fr}.kit{grid-template-columns:1fr;padding:1.5rem 1.3rem}}
+
+.price-card .plan-name{font-family:Poppins,sans-serif;color:var(--label);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.85rem;margin-bottom:.3rem}
+.sol-card .who{color:var(--label);font-size:.85rem;margin-top:.8rem}
+select{width:100%;background:var(--bg);color:#fff;border:1px solid #6e7178;border-radius:4px;padding:.7rem .8rem;font:inherit;margin-bottom:1rem}
+select:focus{outline:2px solid var(--accent);outline-offset:1px}
