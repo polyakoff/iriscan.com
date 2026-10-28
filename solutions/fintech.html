@@ -104,7 +104,7 @@
 
 <h2>Deployment</h2>
 <div class="sol-cards two">
-<div class="sol-card"><h3>Hardware</h3><p>Monocular USB iris scanners from a few hundred dollars, dual-iris cameras for branches, rugged <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID</a> tablets for the field. Face on any smartphone.</p></div>
+<div class="sol-card"><h3>Hardware</h3><p>Monocular USB iris scanners from under $100, dual-iris cameras for branches, rugged <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID</a> tablets for the field. Face on any smartphone.</p></div>
 <div class="sol-card"><h3>Where the data lives</h3><p>Our <a href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a> for a quick start, or the same matcher on your servers if regulation requires data to stay in the country. Iris and face images are stored in ISO formats, so any other vendor can build its own templates from them, and you are not tied to us.</p></div>
 </div>
 
@@ -112,7 +112,7 @@
 <p>We recommend a short pilot: enroll a few thousand existing borrowers at several agents and run de-duplication against them. In a few weeks you get the number of duplicate identities in your portfolio, the false rejection rate on your own population and hardware, and the cost per check. New applicants are enrolled at the same time, so you can compare their repayment with borrowers who joined before. This gives you the business case before any large investment.</p>
 
 <h2>Next: a shared check between lenders</h2>
-<p>Fraudsters move between lenders, and one lender's database cannot see that. When several lenders use the same identification, they can ask "does this person have an open loan elsewhere?" without exchanging names, photos or iris images. We built a prototype of such a biometric bureau in the EU-funded <a href="/post/web3-biometric-bureau-verifiable-credit-history">INGRESS project</a>. It makes sense once several lenders in a market take part, and the template enrolled in your pilot is the same one it will use.</p>
+<p>Fraudsters move between lenders, and one lender's database cannot see that. When several lenders use the same identification, they can ask "does this person have an open loan elsewhere?" without exchanging names, photos or iris images. In the EU-funded <a href="/post/web3-biometric-bureau-verifiable-credit-history">INGRESS project</a> we built its first part, a biometric bureau that issues verifiable credentials bound to a person; the shared credit check is the next part of the design. It makes sense once several lenders in a market take part, and the template enrolled in your pilot is the same one it will use.</p>
 
 <figure class="sol-fig"><img src="/assets/img/biometric-credit-bureau-flow.jpg" alt="Biometric credit bureau flow between the bureau, the borrower and the lender" loading="lazy"><figcaption>The next step: a shared bureau lets lenders check for open loans without sharing personal data.</figcaption></figure>
 
