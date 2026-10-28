@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" font-family="Poppins,Arial,sans-serif">
+<rect width="760" height="440" fill="#17181a" rx="10"/>
+<g stroke="#2c2d31" stroke-width="1">
+<line x1="90" y1="60" x2="90" y2="360"/><line x1="90" y1="360" x2="700" y2="360"/>
+<line x1="90" y1="135" x2="700" y2="135" stroke-dasharray="4 6" opacity=".5"/>
+</g>
+<text x="60" y="140" fill="#b6b8c1" font-size="16">1.0</text>
+<text x="60" y="365" fill="#b6b8c1" font-size="16">0.0</text>
+<text x="395" y="400" fill="#b6b8c1" font-size="16" text-anchor="middle">acceptance threshold</text>
+<path d="M100 135 C 220 138, 300 200, 395 330 C 420 352, 450 358, 480 359 L 690 360" fill="none" stroke="#fd6262" stroke-width="3"/>
+<path d="M100 359 C 300 358, 340 352, 395 330 C 470 295, 560 180, 690 140" fill="none" stroke="#889ce7" stroke-width="3"/>
+<circle cx="395" cy="330" r="6" fill="#fff"/>
+<text x="180" y="200" fill="#fd6262" font-size="18">FAR — False Acceptance Rate</text>
+<text x="360" y="250" fill="#889ce7" font-size="18">FRR — False Rejection Rate</text>
+<text x="410" y="315" fill="#fff" font-size="16">EER — Equal Error Rate</text>
+</svg>
