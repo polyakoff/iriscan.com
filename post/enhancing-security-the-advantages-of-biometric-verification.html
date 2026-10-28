@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Biometric Verification Against Identity Fraud: A Guide for Lenders | Iriscan</title>
-<meta name="description" content="How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget.">
+<meta name="description" content="How lenders and fintechs use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
@@ -16,11 +16,11 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
 <meta property="og:title" content="Biometric Verification Against Identity Fraud: A Guide for Lenders | Iriscan">
-<meta property="og:description" content="How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget.">
+<meta property="og:description" content="How lenders and fintechs use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget.">
 <meta property="og:url" content="https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Verification Against Identity Fraud: A Guide for Lenders", "datePublished": "2026-08-04", "dateModified": "2026-08-04", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification", "description": "How lenders and fintechs in markets with weak ID documents use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Biometric Verification Against Identity Fraud: A Guide for Lenders", "datePublished": "2026-08-04", "dateModified": "2026-08-04", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification", "description": "How lenders and fintechs use face and iris verification to stop duplicate and fake borrowers, and how to do it on a small budget."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -71,7 +71,7 @@
 <h1>Biometric Verification Against Identity Fraud: A Guide for Lenders</h1>
 <figure><img src="../assets/img/blog/iris-biometric-abstract-reserve.jpg" alt="Abstract iris artwork" loading="lazy"></figure>
 
-<p class="lead">Iriscan started from a lending problem. Consider a microfinance company in a country where a national ID card proves little: cards are forged, bought or borrowed, one person can hold several, and many borrowers have none at all. The loss here is very specific: the same person takes loans under different names and never repays any of them. Biometric verification is the cheapest reliable fix we know, as long as it is designed for this problem and not copied from a bank in a country with good ID documents.</p>
+<p class="lead">Iriscan started from a lending problem. Consider a microfinance company whose borrowers often have no ID card, or have one that is easy to borrow or buy. The loss here is very specific: the same person takes loans under different names and never repays any of them. Biometric verification is the cheapest reliable fix we know, as long as it is designed for this problem and not copied from a bank onboarding flow built for a different one.</p>
 
 <h2>Three checks, three different problems</h2>
 <p><b>Is this the account holder?</b> This is verification, 1:1. At login or before a payout, a selfie is compared with the face enrolled at onboarding. It stops account takeover and someone else collecting the loan.</p>
@@ -87,8 +87,10 @@
 <h2>Liveness</h2>
 <p>A face check without liveness detection can be passed with a printed photo or with a video played on another phone. At minimum, a passive liveness model should run on the selfie. For higher-risk actions, add a challenge such as "turn your head left", checked from the head pose. Iris capture with a dedicated scanner and an operator present is much harder to fool.</p>
 
-<h2>Sharing without sharing data</h2>
-<p>Fraudsters move between lenders: a borrower blocked by one microfinance institution goes to the next one. How can lenders ask "does this person have an open loan elsewhere?" without handing each other names, photos or iris images? This is the question we worked on in INGRESS, a project funded by the EU's NGI ONTOCHAIN program. INGRESS had two services. A biometric bureau issued W3C Verifiable Credentials bound to the borrower's biometrics, so a person who lost a private key could prove their identity and get a new one. A credit bureau kept the loan history and wrote a hash of every loan to the public iExec blockchain. This way a credit history could be checked for tampering without disclosing anyone's private data.</p>
+<h2>The deterrent works from day one</h2>
+<p>The strongest effect of biometrics does not need a large database. In a field experiment in Malawi, the riskiest borrowers who were fingerprinted at application repaid 92% of their loans two months after the due date, against 67% for those who were not. The lender shared data with nobody. Borrowers simply knew that they would be recognized under any name, so a default could not be left behind. Ghana's national health insurer saw the same thing: an official called its biometric system psychologically a deterrent. For a lender this means that the effect does not depend on the size of the database, and that it is worth telling borrowers about the scan openly.</p>
+<h2>Later: sharing without sharing data</h2>
+<p>Fraudsters move between lenders: a borrower blocked by one microfinance institution goes to the next one, and one lender's database cannot see that. A shared check needs several lenders on the same system, so it is the second step, not the first. How can lenders ask "does this person have an open loan elsewhere?" without handing each other names, photos or iris images? This is the question we worked on in INGRESS, a project funded by the EU's NGI ONTOCHAIN program. INGRESS had two services. A biometric bureau issued W3C Verifiable Credentials bound to the borrower's biometrics, so a person who lost a private key could prove their identity and get a new one. A credit bureau kept the loan history and wrote a hash of every loan to the public iExec blockchain. This way a credit history could be checked for tampering without disclosing anyone's private data.</p>
 
 <h2>Doing it on a small budget</h2>
 <ul>
