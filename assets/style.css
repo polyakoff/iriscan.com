@@ -662,7 +662,7 @@ body.centered .prose ul{margin-left:auto;margin-right:auto}
 
 /* home: manifesto */
 .manifesto-band{padding-bottom:0}
-.manifesto{font-family:Poppins,sans-serif;font-weight:300;color:#fff;font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.2;max-width:16em;margin:0}
+.manifesto-band p.manifesto{font-family:Poppins,sans-serif;font-weight:300;color:#fff;font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.2;max-width:16em;margin:0}
 .manifesto-band .lead-big{margin-top:1.4rem;max-width:36em}
 .manifesto-band .lead-big a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35)}
 
