@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="/assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="/assets/style.css?v=20261029g">
+<link rel="stylesheet" href="/assets/style.css?v=20261029h">
 <link rel="canonical" href="https://www.iriscan.com/pricing">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Iriscan">
@@ -87,6 +87,7 @@
 <section><div class="wrap sol">
 
 <h2 id="cloud">Cloud iris enrollment and identification API pricing</h2>
+<p class="cur-switch" id="cur-switch">Prices in <button type="button" data-cur="USD">USD</button><button type="button" data-cur="EUR">EUR</button></p>
 <p class="sol-intro">You pay for the people in your register, not for scans. De-duplication at every enrollment, identification checks and operator accounts are included.</p>
 <div class="grid g3 plans">
 <div class="card price-card"><div class="plan-name">Free</div><div class="price">$0</div>
@@ -148,7 +149,7 @@
 <div class="sol-card"><h3>Can we move to our own servers later?</h3><p>Yes. The same matcher runs on premises when regulation or volume requires it.</p></div>
 <div class="sol-card"><h3>Which scanners work?</h3><p>The scanners we supply, and most off-the-shelf iris scanners that produce standard images. Ask us about the model you already have.</p></div>
 <div class="sol-card"><h3>Who counts as a person?</h3><p>Everyone enrolled in your register during the month. People you delete stop counting from the next month.</p></div>
-<div class="sol-card"><h3>Do prices include VAT?</h3><p>No. Prices are in US dollars and exclude VAT. Delivery of devices is quoted for your country.</p></div>
+<div class="sol-card"><h3>Do prices include VAT?</h3><p>No. Prices exclude VAT. They are in US dollars, and in euros for customers in the EU. Delivery of devices is quoted for your country.</p></div>
 </div>
 
 <aside class="cta">
@@ -186,11 +187,12 @@
 <script src="/assets/fx.js" defer></script>
 <div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>Allow analytics cookies? <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
 <script>(function(){var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();})();</script>
+<script src="/assets/currency.js" defer></script>
 <script src="/assets/consent.js" defer></script>
 <script>(function(){var i=document.getElementById('calc-n'),o=document.getElementById('calc-out');if(!i||!o)return;
 var T=[[50000,0.004],[200000,0.002],[750000,0.001],[Infinity,0.0005]];
 function price(n){if(n<=1000)return 0;var r=n,p=0;for(var k=0;k<T.length&&r>0;k++){var m=Math.min(r,T[k][0]);p+=m*T[k][1];r-=m;}return Math.max(99,Math.round(p));}
-function f(x){return '$'+x.toLocaleString('en-US');}
+function f(x){return (window.IRISCAN_CUR==='EUR'?'\u20ac':'$')+x.toLocaleString('en-US');}
 function upd(){var n=Math.max(0,Math.floor(+i.value||0)),p=price(n);o.textContent=p===0?'Free':f(p)+' a month'+(n?' \u00b7 about '+(p*12/n<0.01?'under 1 cent':f(Math.round(p*1200/n)/100))+' per person a year':'');}
-i.addEventListener('input',upd);upd();})();</script>
+i.addEventListener('input',upd);upd();document.addEventListener('iriscan:currency',upd);})();</script>
 </body></html>
