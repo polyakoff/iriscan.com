@@ -5,17 +5,17 @@
 <script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Biometric Data Conversion | Iriscan</title>
+<title>Biometric Data Conversion: ISO 19794-6 Iris and 19794-2 Fingerprint | Iriscan</title>
 <meta name="description" content="A system enabling end-users to examine biometric file format structures and the metadata included with them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="assets/style.css?v=20261029e">
+<link rel="stylesheet" href="assets/style.css?v=20261029f">
 <link rel="canonical" href="https://www.iriscan.com/biometric-data-interchange">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Iriscan">
-<meta property="og:title" content="Biometric Data Conversion | Iriscan">
+<meta property="og:title" content="Biometric Data Conversion: ISO 19794-6 Iris and 19794-2 Fingerprint | Iriscan">
 <meta property="og:description" content="A system enabling end-users to examine biometric file format structures and the metadata included with them.">
 <meta property="og:url" content="https://www.iriscan.com/biometric-data-interchange">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/online-wsq-biometric-data-conversion-logo.jpg">
@@ -82,6 +82,7 @@
         <div class="sub">
           <a href="/iris-recognition-software">Iris recognition software</a>
           <a href="/iris-recognition-sdk">Iris recognition SDK &amp; API</a>
+          <a href="/iris-deduplication">Iris de-duplication (1:N)</a>
           <a href="/biometrics-identity-verification-system">Identity verification system</a>
           <a href="/biometric-data-interchange">Biometric data conversion</a>
           <a href="/services">Consulting &amp; integration</a>
@@ -134,6 +135,19 @@
 <div class="img-tile pxwin"><div class="px-media px-wide fx-band" style="background-image:url(assets/img/iriscan-red-particle-wave-background.jpg)"></div><h2>Right to data portability</h2></div>
 </div></section>
 
+<section><div class="wrap prose">
+<h2>Iris records: ISO/IEC 19794-6</h2>
+<p>Iris images travel between systems in ISO/IEC 19794-6 records. A record starts with a general header (the format identifier <code>IIR</code>, the version and the number of irises) and then holds one representation per eye: capture date and time, the capture device, quality scores, the eye label, the image type and the image itself with its size and compression. Because the image is kept rather than a vendor template, any matcher can enroll from it again, which is what makes a register portable.</p>
+<p>The 2011 edition added compact image types, cropped and cropped-and-masked, that keep an iris image small enough for a smart card or a slow link while it stays usable for matching. Our open-source <a href="/iris-recognition-sdk">iris recognition SDK</a> reads and writes these records:</p>
+<pre><code>val record = sdk.io().readRecord(bytes) as IsoRecord19794_6   // also reads 19794-2
+val eye = record.data.first()                                 // header + image of one iris
+println("${eye.header.eyeLabel}, ${eye.header.imageType}")
+val out = sdk.io().writeRecord(record)</code></pre>
+
+<h2>ISO/IEC 19794-6 vs 39794-6</h2>
+<p>ISO/IEC 39794-6 is the successor. It carries the same kind of data, but encodes it in an extensible format (ASN.1 binary or XML), so new fields can be added later without breaking older readers, and it fixes ambiguities of the fixed binary layout. ICAO is moving travel documents to the 39794 series, and new procurements increasingly ask for it. Most deployed registers still hold 19794 data, so a migration usually means converting records in bulk while keeping the images untouched. We do these conversions for iris, fingerprint and face data, on your premises or in the cloud.</p>
+<p><a class="btn" href="/get-started">Request a conversion</a></p>
+</div></section>
 <section id="demo"><div class="wrap">
 <div class="bdi-head">
 <h2>Conversion demonstration</h2>
@@ -224,7 +238,7 @@
   </div>
 </footer>
 <script src="assets/fx.js" defer></script>
-<div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>We use cookies only for anonymous visit statistics (Google Analytics), and only if you agree. <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
+<div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>Allow analytics cookies? <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
 <script>(function(){var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();})();</script>
 <script src="/assets/consent.js" defer></script>
 </body></html>

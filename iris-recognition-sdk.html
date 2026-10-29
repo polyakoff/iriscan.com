@@ -5,17 +5,17 @@
 <script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Iris Recognition SDK and API | Iriscan</title>
+<title>Open-Source Iris Recognition SDK for Android and iOS | Iriscan</title>
 <meta name="description" content="Open-source iris recognition SDK for Android, iOS and JVM: segmentation, ISO/IEC 29794-6 quality, encoding and 1:1 or 1:N matching. Plus a cloud API with de-duplication.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="assets/style.css?v=20261029e">
+<link rel="stylesheet" href="assets/style.css?v=20261029f">
 <link rel="canonical" href="https://www.iriscan.com/iris-recognition-sdk">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Iriscan">
-<meta property="og:title" content="Iris Recognition SDK and API | Iriscan">
+<meta property="og:title" content="Open-Source Iris Recognition SDK for Android and iOS | Iriscan">
 <meta property="og:description" content="Open-source iris recognition SDK for Android, iOS and JVM: segmentation, ISO/IEC 29794-6 quality, encoding and 1:1 or 1:N matching. Plus a cloud API with de-duplication.">
 <meta property="og:url" content="https://www.iriscan.com/iris-recognition-sdk">
 <meta property="og:image" content="https://www.iriscan.com/assets/img/iris-recognition-options/iris-recognition-option-01-natural-iris-closeup.jpg">
@@ -45,6 +45,7 @@
         <div class="sub">
           <a href="/iris-recognition-software">Iris recognition software</a>
           <a href="/iris-recognition-sdk">Iris recognition SDK &amp; API</a>
+          <a href="/iris-deduplication">Iris de-duplication (1:N)</a>
           <a href="/biometrics-identity-verification-system">Identity verification system</a>
           <a href="/biometric-data-interchange">Biometric data conversion</a>
           <a href="/services">Consulting &amp; integration</a>
@@ -74,7 +75,7 @@
   </div>
 </header>
 <section class="hero"><div class="wrap">
-<h1>Iris Recognition SDK and API</h1>
+<h1>Open-source iris recognition SDK for Android, iOS and JVM</h1>
 <p class="lead" style="max-width:46rem">Add iris enrollment, verification and 1:N identification to your app or back end. Run our open-source SDK on the device or your own server, or let the cloud API keep the gallery and catch duplicate enrollments for you.</p>
 <p style="margin-top:1.4rem"><a class="btn" href="https://github.com/biometric-technologies/biometric-sdk">SDK on GitHub</a> &nbsp; <a class="btn" href="/get-started">Talk to us about the API</a></p>
 </div></section>
@@ -109,6 +110,16 @@ val score = sdk.iris().matcher().score(template, enrolled)       // 0.0 to 1.0
 val best  = sdk.iris().matcher().identify(template, gallery)     // 1:N, null if nobody matches</code></pre>
 <p>Initialization, image formats and the template format are described in the <a href="https://github.com/biometric-technologies/biometric-sdk#readme">README</a>.</p>
 
+<h2>Iris recognition on Android</h2>
+<p>Add the dependency from Maven Central and call the SDK from Kotlin or Java. A USB iris scanner connects to the phone or tablet over USB OTG; the SDK takes the image from the scanner's driver and does the rest on the device, without a network connection.</p>
+<pre><code>dependencies {
+    implementation("net.iriscan:biometric-sdk-android:&lt;version&gt;")
+}</code></pre>
+
+<h2>Iris recognition on iOS</h2>
+<p>The same code is published as the <code>BiometricSdk</code> pod and is called from Swift. Images from the camera or from a <code>CGImage</code> go through the same pipeline as on Android, so templates created on one platform match templates from the other.</p>
+<pre><code>pod 'BiometricSdk'</code></pre>
+
 <h2>Accuracy</h2>
 <p>On the public CASIA-Iris-Interval dataset (393 eyes, 2,639 images, all genuine and impostor pairs) the current version reaches:</p>
 <ul>
@@ -118,8 +129,16 @@ val best  = sdk.iris().matcher().identify(template, gallery)     // 1:N, null if
 </ul>
 <p>Results depend on the camera, lighting and the people you enroll. The SDK includes the benchmark we use, so you can run it on images from your own scanners and pick the threshold that fits your false match budget.</p>
 
-<h2>Hardware</h2>
+<h2>Supported USB iris scanners</h2>
 <p>The SDK works with near-infrared images from dedicated iris cameras. We supply and support <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY2</a>, <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a> and the <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID tablet</a>, and can help you choose a device for field enrollment.</p>
+
+<h2>Questions</h2>
+<h3>How big is an iris template?</h3>
+<p>1,032 bytes per eye: an 8-byte header, a 4,096-bit iris code and a 4,096-bit mask of valid bits. A register of a million people with both eyes enrolled fits in about 2 GB of memory.</p>
+<h3>Can I store templates in a standard format?</h3>
+<p>Yes. The SDK reads and writes ISO/IEC 19794-6 iris image records, so you can keep the images in a standard container and re-create templates when the algorithm improves.</p>
+<h3>Does it need a network connection?</h3>
+<p>No. Enrollment, quality checks and matching run on the device or your server. The <a href="/iris-deduplication">cloud de-duplication service</a> is optional.</p>
 
 <h2>Where it is used</h2>
 <p>Customer identification for <a href="/solutions/fintech">lenders and microfinance</a>, patient and member identification in <a href="/solutions/health-insurance">health insurance</a> and <a href="/solutions/healthcare">hospitals</a>, de-duplication of <a href="/solutions/government">voter and beneficiary registers</a>, and <a href="/solutions/data-migration">migration</a> away from closed biometric systems.</p>
@@ -154,7 +173,7 @@ val best  = sdk.iris().matcher().identify(template, gallery)     // 1:N, null if
     </div>
   </div>
 </footer>
-<div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>We use cookies only for anonymous visit statistics (Google Analytics), and only if you agree. <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
+<div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>Allow analytics cookies? <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
 <script>(function(){var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();})();</script>
 <script src="/assets/consent.js" defer></script>
 </body></html>

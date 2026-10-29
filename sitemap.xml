@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://www.iriscan.com/biometric-data-interchange</loc><lastmod>2026-07-26</lastmod></url>
+<url><loc>https://www.iriscan.com/biometric-data-interchange</loc><lastmod>2026-10-29</lastmod></url>
 <url><loc>https://www.iriscan.com/biometrics-identity-verification-system</loc><lastmod>2026-07-26</lastmod></url>
-<url><loc>https://www.iriscan.com/blog</loc><lastmod>2026-07-26</lastmod></url>
+<url><loc>https://www.iriscan.com/blog</loc><lastmod>2026-10-29</lastmod></url>
 <url><loc>https://www.iriscan.com/privacy</loc><lastmod>2026-10-28</lastmod></url>
 <url><loc>https://www.iriscan.com/eula</loc><lastmod>2026-07-26</lastmod></url>
 <url><loc>https://www.iriscan.com/get-started</loc><lastmod>2026-10-29</lastmod></url>
 <url><loc>https://www.iriscan.com/</loc><lastmod>2026-10-29</lastmod></url>
-<url><loc>https://www.iriscan.com/iris-recognition-software</loc><lastmod>2026-07-26</lastmod></url>
+<url><loc>https://www.iriscan.com/iris-recognition-software</loc><lastmod>2026-10-29</lastmod></url>
 <url><loc>https://www.iriscan.com/iris-recognition-sdk</loc><lastmod>2026-10-29</lastmod></url>
 <url><loc>https://www.iriscan.com/services</loc><lastmod>2026-10-29</lastmod></url>
 <url><loc>https://www.iriscan.com/post/biometric-authentication</loc><lastmod>2026-08-04</lastmod></url>
-<url><loc>https://www.iriscan.com/post/biometrics-in-the-humanitarian-sector</loc><lastmod>2026-07-26</lastmod></url>
+<url><loc>https://www.iriscan.com/post/biometrics-in-the-humanitarian-sector</loc><lastmod>2026-10-29</lastmod></url>
 <url><loc>https://www.iriscan.com/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device</loc><lastmod>2026-07-26</lastmod></url>
 <url><loc>https://www.iriscan.com/post/demystifying-biometric-security-what-is-iris-scanning</loc><lastmod>2026-10-04</lastmod></url>
 <url><loc>https://www.iriscan.com/post/enhancing-security-the-advantages-of-biometric-verification</loc><lastmod>2026-10-17</lastmod></url>
@@ -20,11 +20,11 @@
 <url><loc>https://www.iriscan.com/post/iriscan-becomes-the-official-reseller-of-cardlogix</loc><lastmod>2026-07-26</lastmod></url>
 <url><loc>https://www.iriscan.com/post/the-manifest-highlights-iriscan</loc><lastmod>2026-07-26</lastmod></url>
 <url><loc>https://www.iriscan.com/post/the-power-of-the-eye-iris-identification</loc><lastmod>2026-08-12</lastmod></url>
-<url><loc>https://www.iriscan.com/post/vista-ey2-02-ey2p-dual-iris-face-camera</loc><lastmod>2026-07-26</lastmod></url>
-<url><loc>https://www.iriscan.com/post/vista-ey2-dual-iris-and-face-camera</loc><lastmod>2026-07-26</lastmod></url>
-<url><loc>https://www.iriscan.com/post/vista-ey2h-handheld-dual-iris-camera</loc><lastmod>2026-07-26</lastmod></url>
-<url><loc>https://www.iriscan.com/post/vista-fa2-single-iris-face-camera</loc><lastmod>2026-07-26</lastmod></url>
-<url><loc>https://www.iriscan.com/solutions/fintech</loc><lastmod>2026-10-28</lastmod></url>
+<url><loc>https://www.iriscan.com/post/vista-ey2-02-ey2p-dual-iris-face-camera</loc><lastmod>2026-10-29</lastmod></url>
+<url><loc>https://www.iriscan.com/post/vista-ey2-dual-iris-and-face-camera</loc><lastmod>2026-10-29</lastmod></url>
+<url><loc>https://www.iriscan.com/post/vista-ey2h-handheld-dual-iris-camera</loc><lastmod>2026-10-29</lastmod></url>
+<url><loc>https://www.iriscan.com/post/vista-fa2-single-iris-face-camera</loc><lastmod>2026-10-29</lastmod></url>
+<url><loc>https://www.iriscan.com/solutions/fintech</loc><lastmod>2026-10-29</lastmod></url>
 <url><loc>https://www.iriscan.com/post/biometric-credit-bureau</loc><lastmod>2026-09-03</lastmod></url>
 <url><loc>https://www.iriscan.com/post/web3-biometric-bureau-verifiable-credit-history</loc><lastmod>2026-07-31</lastmod></url>
 <url><loc>https://www.iriscan.com/solutions/health-insurance</loc><lastmod>2026-10-28</lastmod></url>
@@ -38,4 +38,8 @@
 <url><loc>https://www.iriscan.com/solutions/government</loc><lastmod>2026-10-28</lastmod></url>
 <url><loc>https://www.iriscan.com/post/biometrics-elections-border-control</loc><lastmod>2026-08-23</lastmod></url>
 <url><loc>https://www.iriscan.com/pricing</loc><lastmod>2026-10-29</lastmod></url>
+<url><loc>https://www.iriscan.com/iris-deduplication</loc><lastmod>2026-10-29</lastmod></url>
+<url><loc>https://www.iriscan.com/post/iris-image-quality-iso-29794-6</loc><lastmod>2026-10-29</lastmod></url>
+<url><loc>https://www.iriscan.com/post/open-source-iris-recognition-libraries</loc><lastmod>2026-10-29</lastmod></url>
+<url><loc>https://www.iriscan.com/post/vista-iris-cameras-compared</loc><lastmod>2026-10-29</lastmod></url>
 </urlset>

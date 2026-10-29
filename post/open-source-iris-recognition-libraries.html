@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open-Source Iris Recognition Libraries Compared | Iriscan</title>
+<meta name="description" content="open-iris, OSIRIS, USIT, Masek and the Iriscan SDK compared by language, platform, segmentation and license, and how to choose for server or on-device iris recognition.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/img/iriscan-logo-icon.png">
+<link rel="stylesheet" href="../assets/style.css?v=20261029f">
+<link rel="canonical" href="https://www.iriscan.com/post/open-source-iris-recognition-libraries">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iriscan">
+<meta property="og:title" content="Open-Source Iris Recognition Libraries Compared | Iriscan">
+<meta property="og:description" content="open-iris, OSIRIS, USIT, Masek and the Iriscan SDK compared by language, platform, segmentation and license, and how to choose for server or on-device iris recognition.">
+<meta property="og:url" content="https://www.iriscan.com/post/open-source-iris-recognition-libraries">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Open-Source Iris Recognition Libraries Compared: open-iris, OSIRIS, USIT and a Kotlin SDK", "datePublished": "2026-10-29", "dateModified": "2026-10-29", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-biometric-abstract-reserve.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/open-source-iris-recognition-libraries", "description": "open-iris, OSIRIS, USIT, Masek and the Iriscan SDK compared by language, platform, segmentation and license, and how to choose for server or on-device iris recognition."}</script>
+</head>
+<body class="post-page">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+    <input type="checkbox" id="navtoggle">
+    <label class="burger" for="navtoggle">&#9776;</label>
+    <nav class="menu">
+      <div class="has-sub">
+        <a href="/solutions/fintech">Solutions</a>
+        <div class="sub">
+          <a href="/solutions/fintech">Fintech &amp; microfinance</a>
+          <a href="/solutions/health-insurance">Health insurance</a>
+          <a href="/solutions/insurance">Insurance</a>
+          <a href="/solutions/healthcare">Hospitals &amp; medical records</a>
+          <a href="/solutions/data-migration">Database migration</a>
+          <a href="/solutions/government">Elections &amp; borders</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/iris-recognition-software">Products</a>
+        <div class="sub">
+          <a href="/iris-recognition-software">Iris recognition software</a>
+          <a href="/iris-recognition-sdk">Iris recognition SDK &amp; API</a>
+          <a href="/iris-deduplication">Iris de-duplication (1:N)</a>
+          <a href="/biometrics-identity-verification-system">Identity verification system</a>
+          <a href="/biometric-data-interchange">Biometric data conversion</a>
+          <a href="/services">Consulting &amp; integration</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/post/iriscan-becomes-the-official-reseller-of-cardlogix">Devices</a>
+        <div class="sub">
+          <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID Tablet</a>
+          <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a>
+          <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY-2</a>
+          <a href="/post/vista-ey2-02-ey2p-dual-iris-face-camera">Vista EY2-02 (EY2P)</a>
+          <a href="/post/vista-ey2h-handheld-dual-iris-camera">Vista EY2H</a>
+        </div>
+      </div>
+      <a href="/pricing">Pricing</a>
+      <div class="has-sub">
+        <a href="/blog">Resources</a>
+        <div class="sub">
+          <a href="/blog">Blog</a>
+          <a href="https://docs.iriscan.net/">Documentation</a>
+          <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
+        </div>
+      </div>
+      <a class="btn" href="/get-started">Contact us</a>
+    </nav>
+  </div>
+</header>
+<div class="article-outer"><article class="article">
+<div class="meta-top"><span>Oct 29, 2026 &middot; 5 min read</span></div>
+<h1>Open-Source Iris Recognition Libraries Compared: open-iris, OSIRIS, USIT and a Kotlin SDK</h1>
+<figure><img src="../assets/img/blog/iris-biometric-abstract-reserve.jpg" alt="Abstract iris pattern" loading="lazy"></figure>
+<p class="lead">If you want to add iris recognition to a product without licensing a closed engine, there are a handful of open-source starting points. They differ more than their names suggest: some are research toolkits for running experiments on datasets, one is a modern Python pipeline built for servers, and few run on a phone. Here is how they compare, including our own SDK, so you can pick by where your code has to run.</p>
+
+<h2>The candidates</h2>
+<h3>open-iris</h3>
+<p>Released by Worldcoin in 2023 under the MIT license. A Python pipeline with a neural-network segmentation model, normalization, Gabor-based encoding and Hamming-distance matching, packaged on PyPI. It is well engineered and well documented, and it is the obvious choice for a Python back end. It targets servers, and the segmentation model needs a runtime that is heavier than a phone app usually wants.</p>
+<h3>OSIRIS</h3>
+<p>The Open Source for IRIS reference system, written in C++ on OpenCV by researchers of the BioSecure network. It implements the classic chain of segmentation, normalization and Gabor encoding and is widely used as a baseline in papers. Good for reproducing published results; it is a research tool rather than a library for an application.</p>
+<h3>USIT</h3>
+<p>The University of Salzburg Iris Toolkit, a C++ collection of several segmentation, feature extraction and comparison algorithms. Its strength is breadth: you can compare methods side by side on the same images. Check its license before using it in a commercial product.</p>
+<h3>Masek's MATLAB implementation</h3>
+<p>Libor Masek's 2003 implementation of the Daugman approach is where many people first read iris recognition code. Useful for learning; not something to deploy.</p>
+<h3>Iriscan Biometric SDK</h3>
+<p>Our library, under GPL-3.0. Kotlin Multiplatform, so the same code runs on Android, iOS and the JVM: segmentation with separate pupil and iris circles, eyelid and reflection masks, log-Gabor encoding, masked Hamming matching for 1:1 and 1:N, image quality per ISO/IEC 29794-6 and ISO/IEC 19794-6 records. It is built to run on the device next to the scanner, offline.</p>
+
+<h2>Side by side</h2>
+<div class="tbl"><table>
+<tr><th></th><th>Language</th><th>Runs on</th><th>Segmentation</th><th>License</th><th>Best for</th></tr>
+<tr><td>open-iris</td><td>Python</td><td>Servers</td><td>Neural network</td><td>MIT</td><td>Python back ends</td></tr>
+<tr><td>OSIRIS</td><td>C++</td><td>Desktop, servers</td><td>Classic</td><td>Open source (research)</td><td>Baselines in research</td></tr>
+<tr><td>USIT</td><td>C++</td><td>Desktop</td><td>Several algorithms</td><td>Check before commercial use</td><td>Comparing methods</td></tr>
+<tr><td>Masek</td><td>MATLAB</td><td>Desktop</td><td>Classic</td><td>Academic code</td><td>Learning</td></tr>
+<tr><td>Iriscan SDK</td><td>Kotlin</td><td>Android, iOS, JVM</td><td>Classic, tuned</td><td>GPL-3.0</td><td>On-device apps</td></tr>
+</table></div>
+
+<h2>How to choose</h2>
+<ul>
+<li><b>Where must matching run?</b> If images can go to a server, open-iris in Python is a strong option. If enrollment happens on a tablet in a village without a connection, you need something that runs on the device.</li>
+<li><b>Do you need 1:N?</b> Verification against one record is easy with any of them. De-duplicating a register of hundreds of thousands needs a fast in-memory search and a threshold set for the gallery size; see <a href="/iris-deduplication">iris de-duplication</a>.</li>
+<li><b>Can you ship GPL code?</b> If not, MIT-licensed open-iris, or a commercial license for our SDK, are the paths. Talk to us about the latter.</li>
+<li><b>Measure on your own images.</b> Published accuracy depends on the dataset. Run any candidate on images from the scanner you will deploy. Our SDK includes the benchmark we use on CASIA-Iris-Interval, where it reaches an equal error rate of 4.2%.</li>
+</ul>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with the help of AI.</p>
+
+<aside class="cta">
+<h3>Building on iris recognition?</h3>
+<p>The SDK is open source; the cloud de-duplication service and on-premises deployments we provide for pilots. Tell us whom you need to identify, how many people and on what hardware, and we will propose a setup.</p>
+<p><a class="btn" href="/get-started">Talk to an engineer</a> <a class="btn ghost" href="/iris-recognition-sdk">See the SDK</a></p>
+</aside>
+<div class="readnext"><h3>Read next</h3><ul>
+<li><a href="/iris-recognition-sdk">Open-source iris recognition SDK for Android and iOS</a></li>
+<li><a href="/post/iris-image-quality-iso-29794-6">ISO/IEC 29794-6 iris image quality</a></li>
+<li><a href="/post/how-does-iris-recognition-work">How Iris Recognition Works</a></li>
+</ul></div>
+</article></div>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+      <p style="margin-top:1.6rem">Biometric Technologies O&Uuml;<br><a href="mailto:info@iriscan.net">info@iriscan.net</a><br>Estonia, Tallinn, Ahtri 12, 10151</p>
+    </div>
+    <div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/eula">EULA</a></li>
+        <li><a class="btn" style="margin-top:1rem" href="/get-started">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="margin-bottom:.6rem;color:#fff">Follow us</p>
+      <p class="socials">
+        <a href="https://www.linkedin.com/company/iriscan"><img src="../assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
+        <a href="https://www.facebook.com/iriscan.net/"><img src="../assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
+        <a href="https://twitter.com/IriscanNet"><img src="../assets/img/social-x.png" alt="Iriscan on X"></a>
+      </p>
+      <p class="copyright">&copy; 2019&ndash;<span class="yr">2026</span> Biometric<br>Technologies O&Uuml;</p>
+    </div>
+  </div>
+</footer>
+<div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>Allow analytics cookies? <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
+<script>(function(){var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();})();</script>
+<script src="/assets/consent.js" defer></script>
+</body></html>

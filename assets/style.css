@@ -622,10 +622,16 @@ nav.menu{font-size:.9rem}
 select{width:100%;background:var(--bg);color:#fff;border:1px solid #6e7178;border-radius:4px;padding:.7rem .8rem;font:inherit;margin-bottom:1rem}
 select:focus{outline:2px solid var(--accent);outline-offset:1px}
 #ckbar #ckyes{border-color:var(--accent);color:#fff}
-#ckbar{max-width:380px;flex-wrap:wrap}
+#ckbar{max-width:none;flex-wrap:nowrap;white-space:nowrap}
 .prose pre{background:#141518;border:1px solid var(--line);border-radius:8px;padding:1rem 1.1rem;overflow-x:auto;margin:1rem 0;font-size:.85rem;line-height:1.55}
 .prose code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em}
 .prose pre code{color:#d6d8de}
 body.centered .prose pre{max-width:820px;margin:1rem auto}
 body.centered .hero .lead{margin-left:auto;margin-right:auto}
 body.centered .prose ul{margin-left:auto;margin-right:auto}
+.article table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.95rem}
+.article th,.article td{border:1px solid var(--line);padding:.55rem .75rem;text-align:left;vertical-align:top;color:var(--muted)}
+.article th{color:#fff;font-weight:600;background:#17181b}
+.article pre{background:#141518;border:1px solid var(--line);border-radius:8px;padding:1rem 1.1rem;overflow-x:auto;margin:1rem 0;font-size:.85rem;line-height:1.55}
+.article code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em}
+.article .tbl{overflow-x:auto}
