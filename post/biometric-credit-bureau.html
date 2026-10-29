@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261029f">
+<link rel="stylesheet" href="../assets/style.css?v=20261029g">
 <link rel="canonical" href="https://www.iriscan.com/post/biometric-credit-bureau">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
@@ -32,31 +32,33 @@
       <div class="has-sub">
         <a href="/solutions/fintech">Solutions</a>
         <div class="sub">
-          <a href="/solutions/fintech">Fintech &amp; microfinance</a>
+          <a href="/solutions/fintech">Lenders &amp; microfinance</a>
           <a href="/solutions/health-insurance">Health insurance</a>
-          <a href="/solutions/insurance">Insurance</a>
-          <a href="/solutions/healthcare">Hospitals &amp; medical records</a>
+          <a href="/solutions/insurance">Life &amp; funeral insurance</a>
+          <a href="/solutions/healthcare">Hospitals &amp; clinics</a>
+          <a href="/solutions/humanitarian">NGOs &amp; aid programs</a>
+          <a href="/solutions/government">Elections &amp; public registers</a>
           <a href="/solutions/data-migration">Database migration</a>
-          <a href="/solutions/government">Elections &amp; borders</a>
         </div>
       </div>
       <div class="has-sub">
         <a href="/iris-recognition-software">Products</a>
         <div class="sub">
           <a href="/iris-recognition-software">Iris recognition software</a>
-          <a href="/iris-recognition-sdk">Iris recognition SDK &amp; API</a>
           <a href="/iris-deduplication">Iris de-duplication (1:N)</a>
+          <a href="/iris-recognition-sdk">Iris recognition SDK &amp; API</a>
           <a href="/biometrics-identity-verification-system">Identity verification system</a>
           <a href="/biometric-data-interchange">Biometric data conversion</a>
           <a href="/services">Consulting &amp; integration</a>
         </div>
       </div>
       <div class="has-sub">
-        <a href="/post/iriscan-becomes-the-official-reseller-of-cardlogix">Devices</a>
+        <a href="/post/vista-iris-cameras-compared">Devices</a>
         <div class="sub">
-          <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID Tablet</a>
+          <a href="/post/vista-iris-cameras-compared">Compare iris cameras</a>
+          <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID tablet</a>
           <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a>
-          <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY-2</a>
+          <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY2</a>
           <a href="/post/vista-ey2-02-ey2p-dual-iris-face-camera">Vista EY2-02 (EY2P)</a>
           <a href="/post/vista-ey2h-handheld-dual-iris-camera">Vista EY2H</a>
         </div>
@@ -67,7 +69,7 @@
         <div class="sub">
           <a href="/blog">Blog</a>
           <a href="https://docs.iriscan.net/">Documentation</a>
-          <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
+          <a href="https://github.com/biometric-technologies">Open source on GitHub</a>
         </div>
       </div>
       <a class="btn" href="/get-started">Contact us</a>
@@ -101,19 +103,19 @@
 <p>We started building this model in INGRESS, a project funded by the EU's NGI ONTOCHAIN program: we built prototypes of a biometric bureau that issues verifiable credentials and of a credit bureau that keeps loan records and anchors them on a public blockchain. The architecture is described in a <a href="/post/web3-biometric-bureau-verifiable-credit-history">separate article</a>, so here I only note the main point: a bureau like this can be shared by competing lenders, because none of them has to trust the others with personal data.</p>
 
 <h2>Why iris and not fingerprint</h2>
-<p>The Malawi study used fingerprints, and they worked. Still, farmers, construction workers and market traders often have worn fingerprints, which leads to failed captures exactly in the population that needs credit most. Iris does not wear out, it is contactless, and it separates people very well in large databases. This is important for a bureau, where every new enrollment is compared with everyone enrolled before. A monocular USB iris scanner costs less than &euro;100 from Indian manufacturers and around &euro;170 from Western distributors, and connects to a laptop or an Android phone, so it fits the budget of an agent network.</p>
+<p>The Malawi study used fingerprints, and they worked. Still, farmers, construction workers and market traders often have worn fingerprints, which leads to failed captures exactly in the population that needs credit most. Iris does not wear out, it is contactless, and it separates people very well in large databases. This is important for a bureau, where every new enrollment is compared with everyone enrolled before. A monocular USB iris scanner costs less than $110 from Indian manufacturers and around $190 from Western distributors, and connects to a laptop or an Android phone, so it fits the budget of an agent network.</p>
 
 <h2>What it takes to start</h2>
 <p>A bureau does not have to start at national scale. One lender with a network of agents can enroll its own borrowers and run de-duplication on its portfolio. When a second lender joins, the shared check starts to pay off for both of them. The technical parts already exist: the open-source <a href="https://docs.iriscan.net/sdk">Iriscan Biometric SDK</a> for capture and matching, the <a href="https://docs.iriscan.net/edge">Edge service</a> for offline agents, and the <a href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a> or an on-premises deployment for the bureau itself.</p>
 
 <p class="sources">Sources: <a href="https://povertyactionlab.org/node/1584">J-PAL, Borrower Responses to Fingerprinting for Loan Enforcement in Malawi</a>; <a href="https://www.worldbank.org/en/news/press-release/2025/07/16/mobile-phone-technology-powers-saving-surge-in-developing-economies">World Bank, Global Findex 2025</a>; <a href="https://blogs.worldbank.org/en/digital-development/850-million-people-globally-dont-have-id-why-matters-and-what-we-can-do-about">World Bank, 850 million people globally don't have ID</a>; <a href="https://nairametrics.com/2026/07/30/fraud-watchlist-expands-by-38-as-banks-flag-13117-bvns-in-2025/">Nairametrics, BVN fraud watchlist 2025</a>.</p>
 
-<p class="byline-bottom">Artem Poliakov, CEO of Iriscan. Written with the help of AI.</p>
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan.</p>
 
 <aside class="cta">
 <h3>Building credit for people without documents?</h3>
 <p>We help lenders and fintechs set up biometric onboarding, de-duplication and a shared bureau, starting with a pilot on your own portfolio.</p>
-<p class="cta-kit">For a small team there is a <a href="/pricing#starter">&euro;990 starter kit</a> with two scanners, three months of cloud enrollment and setup.</p>
+<p class="cta-kit">For a small team there is a <a href="/pricing#starter">$990 starter kit</a> with two scanners, three months of cloud enrollment and setup.</p>
 <p><a class="btn" href="/get-started?interest=pilot">Discuss a pilot</a> <a class="btn ghost" href="/solutions/fintech">Fintech solutions</a></p>
 </aside>
 <div class="readnext"><h3>Read next</h3><ul>

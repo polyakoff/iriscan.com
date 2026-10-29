@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beneficiary De-duplication with Iris Biometrics: A Guide for NGOs | Iriscan</title>
+<meta name="description" content="How beneficiary de-duplication with iris biometrics works in aid programs: registration and review, accuracy at scale, offline work, data protection, costs and a checklist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/img/iriscan-logo-icon.png">
+<link rel="stylesheet" href="../assets/style.css?v=20261029g">
+<link rel="canonical" href="https://www.iriscan.com/post/beneficiary-deduplication-iris-guide-ngos">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Iriscan">
+<meta property="og:title" content="Beneficiary De-duplication with Iris Biometrics: A Guide for NGOs | Iriscan">
+<meta property="og:description" content="How beneficiary de-duplication with iris biometrics works in aid programs: registration and review, accuracy at scale, offline work, data protection, costs and a checklist.">
+<meta property="og:url" content="https://www.iriscan.com/post/beneficiary-deduplication-iris-guide-ngos">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/natural-human-iris-closeup.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Beneficiary De-duplication with Iris Biometrics: a Guide for NGOs", "datePublished": "2026-10-29", "dateModified": "2026-10-29", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/natural-human-iris-closeup.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/beneficiary-deduplication-iris-guide-ngos", "description": "How beneficiary de-duplication with iris biometrics works in aid programs: registration and review, accuracy at scale, offline work, data protection, costs and a checklist."}</script>
+</head>
+<body class="post-page">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+    <input type="checkbox" id="navtoggle">
+    <label class="burger" for="navtoggle">&#9776;</label>
+    <nav class="menu">
+      <div class="has-sub">
+        <a href="/solutions/fintech">Solutions</a>
+        <div class="sub">
+          <a href="/solutions/fintech">Lenders &amp; microfinance</a>
+          <a href="/solutions/health-insurance">Health insurance</a>
+          <a href="/solutions/insurance">Life &amp; funeral insurance</a>
+          <a href="/solutions/healthcare">Hospitals &amp; clinics</a>
+          <a href="/solutions/humanitarian">NGOs &amp; aid programs</a>
+          <a href="/solutions/government">Elections &amp; public registers</a>
+          <a href="/solutions/data-migration">Database migration</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/iris-recognition-software">Products</a>
+        <div class="sub">
+          <a href="/iris-recognition-software">Iris recognition software</a>
+          <a href="/iris-deduplication">Iris de-duplication (1:N)</a>
+          <a href="/iris-recognition-sdk">Iris recognition SDK &amp; API</a>
+          <a href="/biometrics-identity-verification-system">Identity verification system</a>
+          <a href="/biometric-data-interchange">Biometric data conversion</a>
+          <a href="/services">Consulting &amp; integration</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/post/vista-iris-cameras-compared">Devices</a>
+        <div class="sub">
+          <a href="/post/vista-iris-cameras-compared">Compare iris cameras</a>
+          <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID tablet</a>
+          <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a>
+          <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY2</a>
+          <a href="/post/vista-ey2-02-ey2p-dual-iris-face-camera">Vista EY2-02 (EY2P)</a>
+          <a href="/post/vista-ey2h-handheld-dual-iris-camera">Vista EY2H</a>
+        </div>
+      </div>
+      <a href="/pricing">Pricing</a>
+      <div class="has-sub">
+        <a href="/blog">Resources</a>
+        <div class="sub">
+          <a href="/blog">Blog</a>
+          <a href="https://docs.iriscan.net/">Documentation</a>
+          <a href="https://github.com/biometric-technologies">Open source on GitHub</a>
+        </div>
+      </div>
+      <a class="btn" href="/get-started">Contact us</a>
+    </nav>
+  </div>
+</header>
+<div class="article-outer"><article class="article">
+<div class="meta-top"><span>Oct 29, 2026 &middot; 7 min read</span></div>
+<h1>Beneficiary De-duplication with Iris Biometrics: a Guide for NGOs</h1>
+<figure><img src="../assets/img/natural-human-iris-closeup.jpg" alt="Close-up of a human iris" loading="lazy"></figure>
+<p class="lead">Every aid program that registers people runs into the same question sooner or later: is this person already on our list? A name, a card or a phone number cannot answer it reliably. This guide explains how beneficiary de-duplication with iris biometrics works in practice, what it takes in the field, how to keep it accurate as the program grows, and how to protect the people whose data you collect.</p>
+
+<h2>Where duplicates come from</h2>
+<p>Duplicates rarely start as fraud. A household moves and registers again at a new site. Two teams spell a name differently. A card is lost and the person registers anew rather than wait for a replacement. Some duplicates are deliberate, but from the list alone you cannot tell which is which, and every one of them uses up assistance meant for someone else. Checking names and documents catches only the simplest cases, and many of the people a program serves have no documents at all.</p>
+
+<h2>How it works</h2>
+<p>De-duplication compares each new person with everyone already registered. With iris biometrics the steps are:</p>
+<ul>
+<li><b>Capture.</b> A team member holds a USB iris scanner in front of the person's eyes for a few seconds. The image is checked for quality on the spot, so a blurred capture is retaken immediately.</li>
+<li><b>Search.</b> The iris template is compared with every template in the program, a 1:N search. On a laptop or a server this takes well under a second, even for hundreds of thousands of people.</li>
+<li><b>Review.</b> If there is no match, the person is registered. If there is one, the team sees the existing record. A possible duplicate should go to a person who decides with the family in front of them; the system finds the match, people make the decision.</li>
+<li><b>Verify.</b> At distribution, a short scan confirms that the person collecting assistance is the person registered. Lost cards stop being a problem.</li>
+</ul>
+
+<h2>Why iris for this</h2>
+<p>Three things make iris a good fit for registration in the field. It is contactless, which matters for hygiene and for people who are uneasy about being touched. It works for people whose fingerprints are worn by farm or manual work, which is common among the adults many programs serve. And it is accurate enough for large 1:N searches, where a modality with more false matches would flag too many innocent people as duplicates. Face recognition is easier to capture with a phone, but it needs more care at scale, because relatives and lookalikes produce close scores.</p>
+
+<h2>Keeping it accurate as you grow</h2>
+<p>The chance of a false match grows with the size of the register: every new person is compared with everyone. Two practices keep it under control. Capture both eyes at registration, because two independent irises agreeing is far stronger evidence than one. And set the match threshold for the size of your program, using images from your own scanners during a pilot, rather than relying on a vendor's default. A review step for every flagged match covers the rest.</p>
+
+<h2>Working offline</h2>
+<p>Registration often happens where the connection is poor. The scanner and the matching software should keep working on the laptop or tablet without a network, keep a local copy of the register the team needs, and synchronize when a connection returns. Two teams in different places may register the same person on the same day; the synchronization step has to find those cases too and send them to review.</p>
+
+<h2>Protecting the people in the register</h2>
+<p>People who depend on assistance are rarely in a position to say no to registration, which puts the responsibility on the program. Before you start, write down:</p>
+<ul>
+<li>what you collect and why, and whether you need images or only templates;</li>
+<li>who can access the data, and that it is not shared with third parties;</li>
+<li>how long it is kept and how it is deleted when the program ends or a person asks;</li>
+<li>where it is stored: your own servers, a partner's data center or a provider's cloud, and in which country;</li>
+<li>how people are informed, and what happens if someone cannot or does not want to be scanned.</li>
+</ul>
+<p>Store biometric data in open ISO formats so that the register is not locked into one supplier, and so that you can move or delete it on your own terms.</p>
+
+<h2>What it costs</h2>
+<p>Hardware is modest: a USB iris scanner costs a few hundred dollars and connects to equipment teams already carry. With our cloud, the first 1,000 people are free, and after that you pay per person in the register: $0.004 a month for each of the first 50,000, less above that, from $99 a month, with 40% off for registered non-profits. A pilot of six months for up to 50,000 people costs $2,500. See <a href="/pricing">pricing</a> for details and a calculator.</p>
+
+<h2>A checklist before you start</h2>
+<ul>
+<li>Know the size of the program and the number of registration sites.</li>
+<li>Agree who reviews possible duplicates and how families are told.</li>
+<li>Write the data protection policy above and share it with your partners.</li>
+<li>Run a pilot in one area and measure: share of duplicates found, retakes, time per registration.</li>
+<li>Decide where the data lives before you scale.</li>
+</ul>
+
+<p class="byline-bottom">Artem Poliakov, CEO of Iriscan.</p>
+
+<aside class="cta">
+<h3>Planning a registration?</h3>
+<p>Tell us about your program: how many people, where you register them and what you distribute. We will propose a pilot with success criteria agreed in advance.</p>
+<p><a class="btn" href="/get-started?interest=pilot">Plan a pilot</a> <a class="btn ghost" href="/solutions/humanitarian">NGOs and aid programs</a></p>
+</aside>
+<div class="readnext"><h3>Read next</h3><ul>
+<li><a href="/solutions/humanitarian">NGOs and aid programs</a></li>
+<li><a href="/post/biometrics-in-the-humanitarian-sector">Biometrics in the humanitarian sector</a></li>
+<li><a href="/iris-deduplication">Iris de-duplication (1:N)</a></li>
+</ul></div>
+</article></div>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+      <p style="margin-top:1.6rem">Biometric Technologies O&Uuml;<br><a href="mailto:info@iriscan.net">info@iriscan.net</a><br>Estonia, Tallinn, Ahtri 12, 10151</p>
+    </div>
+    <div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/eula">EULA</a></li>
+        <li><a class="btn" style="margin-top:1rem" href="/get-started">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="margin-bottom:.6rem;color:#fff">Follow us</p>
+      <p class="socials">
+        <a href="https://www.linkedin.com/company/iriscan"><img src="../assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
+        <a href="https://www.facebook.com/iriscan.net/"><img src="../assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
+        <a href="https://twitter.com/IriscanNet"><img src="../assets/img/social-x.png" alt="Iriscan on X"></a>
+      </p>
+      <p class="copyright">&copy; 2019&ndash;<span class="yr">2026</span> Biometric<br>Technologies O&Uuml;</p>
+    </div>
+  </div>
+</footer>
+<div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>Allow analytics cookies? <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
+<script>(function(){var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();})();</script>
+<script src="/assets/consent.js" defer></script>
+</body></html>
