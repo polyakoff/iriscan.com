@@ -3,7 +3,7 @@
    Google Analytics loads only after the visitor accepts. */
 (function () {
   var GA_ID = '';     // Google Analytics 4 measurement ID, e.g. 'G-XXXXXXXXXX'
-  var CF_TOKEN = '';  // Cloudflare Web Analytics site token
+  var CF_TOKEN = 'f89a9f45080e4acd8270363247924fef';  // Cloudflare Web Analytics site token
   var KEY = 'ck-consent';
 
   function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
