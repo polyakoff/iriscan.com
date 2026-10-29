@@ -528,10 +528,17 @@ nav.menu{font-size:.9rem}
 .sub a{padding:.5rem 1rem;color:var(--muted);font-size:.9rem;white-space:nowrap}
 .sub a:hover{color:#fff;background:rgba(255,255,255,.05);text-decoration:none}
 .has-sub:hover .sub{display:flex}
-@media(max-width:900px){
-  .has-sub{display:block}
-  .sub{display:flex;position:static;border:0;padding:.2rem 0 .2rem 1rem;background:transparent;min-width:0}
-  .sub a{white-space:normal;overflow-wrap:anywhere}
+/* mobile menu: one scrollable column, sections with their links indented */
+@media(max-width:1100px){
+  nav.menu{flex-wrap:nowrap;gap:0;padding:.6rem 20px 1.2rem;overscroll-behavior:contain}
+  nav.menu>a,.has-sub>a{display:block;width:100%;padding:.7rem 0;font-size:1rem;color:#fff}
+  .has-sub{display:block;width:100%;border-bottom:1px solid var(--line)}
+  nav.menu>a:not(.btn){border-bottom:1px solid var(--line)}
+  .sub,.has-sub:hover .sub{display:flex;position:static;border:0;border-radius:0;padding:0 0 .6rem 1rem;
+    background:transparent;min-width:0}
+  .sub a{white-space:normal;overflow-wrap:anywhere;padding:.45rem 0;font-size:.95rem}
+  .sub a:hover{background:transparent}
+  nav.menu a.btn{margin-top:1rem;align-self:stretch;text-align:center}
 }
 
 /* read next block in posts */
