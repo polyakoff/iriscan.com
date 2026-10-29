@@ -1,14 +1,10 @@
-/* Prices are written in US dollars. Visitors in the EU see the same amounts in euros.
-   The choice can be changed on the pricing page and is remembered in this browser. */
+/* Prices are written in US dollars. Visitors in the EU see the same amounts in euros. */
 (function () {
   var EU = /^(Europe\/(Amsterdam|Athens|Berlin|Bratislava|Brussels|Bucharest|Budapest|Busingen|Copenhagen|Dublin|Helsinki|Lisbon|Ljubljana|Luxembourg|Madrid|Malta|Mariehamn|Nicosia|Paris|Prague|Riga|Rome|Sofia|Stockholm|Tallinn|Vienna|Vilnius|Warsaw|Zagreb)|Asia\/(Nicosia|Famagusta)|Atlantic\/(Canary|Madeira|Azores))$/;
-  var cur = null;
-  try { cur = localStorage.getItem('cur'); } catch (e) {}
-  if (cur !== 'EUR' && cur !== 'USD') {
-    var tz = '';
-    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-    cur = EU.test(tz) ? 'EUR' : 'USD';
-  }
+  var tz = '';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  var cur = EU.test(tz) ? 'EUR' : 'USD';
+  try { localStorage.removeItem('cur'); } catch (e) {}
   window.IRISCAN_CUR = cur;
   window.iriscanMoney = function (s) { return cur === 'EUR' ? String(s).replace(/\$(?=\d)/g, '€') : String(s); };
 
@@ -31,16 +27,6 @@
 
   function init() {
     convert(document.body);
-    var sw = document.getElementById('cur-switch');
-    if (sw) {
-      sw.querySelectorAll('button').forEach(function (b) {
-        b.setAttribute('aria-pressed', b.dataset.cur === cur ? 'true' : 'false');
-        b.onclick = function () {
-          try { localStorage.setItem('cur', b.dataset.cur); } catch (e) {}
-          location.reload();
-        };
-      });
-    }
     document.dispatchEvent(new Event('iriscan:currency'));
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();

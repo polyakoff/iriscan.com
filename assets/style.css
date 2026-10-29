@@ -659,6 +659,3 @@ body.centered .prose ul{margin-left:auto;margin-right:auto}
 .calc-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
 .calc input{width:12rem;max-width:100%;padding:.6rem .8rem;border-radius:6px;border:1px solid var(--line);background:#101114;color:#fff;font:inherit;font-size:1.1rem}
 .calc output{font-size:1.3rem;color:#fff}
-.cur-switch{display:flex;align-items:center;gap:.4rem;color:var(--muted);font-size:.9rem;margin:-.4rem 0 1rem}
-.cur-switch button{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:5px;padding:.2rem .6rem;font:inherit;cursor:pointer}
-.cur-switch button[aria-pressed="true"]{border-color:var(--accent);color:#fff}
