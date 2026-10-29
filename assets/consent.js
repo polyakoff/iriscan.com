@@ -2,7 +2,7 @@
    Cloudflare Web Analytics sets no cookies and runs for everyone.
    Google Analytics loads only after the visitor accepts. */
 (function () {
-  var GA_ID = '';     // Google Analytics 4 measurement ID, e.g. 'G-XXXXXXXXXX'
+  var GA_ID = 'G-YL74MQQ1SR';     // Google Analytics 4 measurement ID, e.g. 'G-XXXXXXXXXX'
   var CF_TOKEN = 'f89a9f45080e4acd8270363247924fef';  // Cloudflare Web Analytics site token
   var KEY = 'ck-consent';
 
