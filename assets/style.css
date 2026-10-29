@@ -621,3 +621,5 @@ nav.menu{font-size:.9rem}
 .sol-card .who{color:var(--label);font-size:.85rem;margin-top:.8rem}
 select{width:100%;background:var(--bg);color:#fff;border:1px solid #6e7178;border-radius:4px;padding:.7rem .8rem;font:inherit;margin-bottom:1rem}
 select:focus{outline:2px solid var(--accent);outline-offset:1px}
+#ckbar #ckyes{border-color:var(--accent);color:#fff}
+#ckbar{max-width:380px;flex-wrap:wrap}

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="assets/style.css?v=20261029c">
+<link rel="stylesheet" href="assets/style.css?v=20261029d">
 <link rel="canonical" href="https://www.iriscan.com/privacy">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Iriscan">
@@ -75,7 +75,7 @@
 <h1 style="font-size:clamp(2rem,8vw,3rem);max-width:none">Privacy Policy</h1>
 </div></section>
 <section><div class="wrap prose">
-<p>Effective date: 28 October 2026.</p>
+<p>Effective date: 29 October 2026.</p>
 <p>This policy explains what personal data Biometric Technologies O&Uuml; collects when you visit www.iriscan.com and docs.iriscan.net or contact us, why we do it and what rights you have. We keep it short because we collect very little.</p>
 
 <h3>Who we are</h3>
@@ -83,12 +83,20 @@
 
 <h3>What we collect and why</h3>
 <p><b>When you send us a message.</b> The contact form asks for your first and last name, company, email address and message. We use them only to answer your request and to discuss a possible cooperation. The legal basis is steps taken at your request before entering into a contract and our legitimate interest in answering business inquiries (GDPR Art. 6(1)(b) and (f)). The same applies when you write to us by email.</p>
-<p><b>When you browse the site.</b> The site is a static website. We do not use analytics, advertising or tracking cookies, and we do not build profiles of visitors. Like any web server, the hosting provider receives your IP address and technical request data to deliver the pages and to protect the service. The legal basis is our legitimate interest in operating a secure website (GDPR Art. 6(1)(f)).</p>
+<p><b>When you browse the site.</b> The site is a static website. Like any web server, the hosting provider receives your IP address and technical request data to deliver the pages and to protect the service. The legal basis is our legitimate interest in operating a secure website (GDPR Art. 6(1)(f)). We do not use advertising cookies and we do not build profiles of visitors.</p>
+<p id="cookies"><b>Visit statistics.</b> To understand which pages are useful and where visitors come from, we count visits in two ways:</p>
+<ul>
+<li><b>Cloudflare Web Analytics</b> counts page views, referrers, countries and page load times without cookies and without identifying you. The legal basis is our legitimate interest in improving the site (GDPR Art. 6(1)(f)).</li>
+<li><b>Google Analytics</b> runs only if you click &ldquo;Accept&rdquo; in the cookie banner. It sets cookies (<code>_ga</code>, <code>_ga_*</code>, kept for up to 13 months) to tell repeat visits apart. Google signals and ad personalisation are switched off. The legal basis is your consent (GDPR Art. 6(1)(a)); you can withdraw it at any time with the &ldquo;Cookie settings&rdquo; link at the bottom of every page.</li>
+</ul>
+<p>Your choice in the banner is stored in your browser&rsquo;s local storage, not in a cookie.</p>
 <p><b>When you try the converter demo.</b> The fingerprint converter on the <a href="/biometric-data-interchange">biometric data conversion page</a> runs entirely in your browser. Files you open there are processed on your device and are not uploaded to us.</p>
 
 <h3>Service providers</h3>
 <ul>
 <li><b>GitHub Pages</b> (GitHub, Inc., USA) hosts the website and receives request data such as IP addresses. Content is delivered through a content delivery network.</li>
+<li><b>Cloudflare</b> (Cloudflare, Inc., USA) provides cookieless visit statistics.</li>
+<li><b>Google Analytics</b> (Google Ireland Ltd. and Google LLC, USA) provides visit statistics if you consent.</li>
 <li><b>Web3Forms</b> (Web3Creative, India) forwards contact form submissions to our mailbox. According to the provider, submissions are not stored, and server logs are deleted periodically. Data is processed in the United States.</li>
 <li><b>Google Fonts</b> (Google, USA and Ireland) delivers the fonts used on the site, so your browser sends your IP address to Google when a page loads.</li>
 <li><b>YouTube</b> (Google). Video previews load thumbnails from Google servers. The video itself loads from youtube-nocookie.com only after you click play, and from then on Google's privacy policy applies.</li>
@@ -137,8 +145,7 @@
     </div>
   </div>
 </footer>
-<div id="ckbar" hidden><span>We use minimal cookies. <a href="/privacy">Privacy</a></span><button id="ckok" aria-label="Accept">OK</button></div>
-<script>(function(){try{var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();
-if(!localStorage.getItem('ck-ok')){var b=document.getElementById('ckbar');b.hidden=false;
-document.getElementById('ckok').onclick=function(){localStorage.setItem('ck-ok','1');b.hidden=true};}}catch(e){}})();</script>
+<div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>We use cookies only for anonymous visit statistics (Google Analytics), and only if you agree. <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
+<script>(function(){var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();})();</script>
+<script src="/assets/consent.js" defer></script>
 </body></html>
