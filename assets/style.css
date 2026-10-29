@@ -659,3 +659,9 @@ body.centered .prose ul{margin-left:auto;margin-right:auto}
 .calc-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
 .calc input{width:12rem;max-width:100%;padding:.6rem .8rem;border-radius:6px;border:1px solid var(--line);background:#101114;color:#fff;font:inherit;font-size:1.1rem}
 .calc output{font-size:1.3rem;color:#fff}
+
+/* home: manifesto */
+.manifesto-band{padding-bottom:0}
+.manifesto{font-family:Poppins,sans-serif;font-weight:300;color:#fff;font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.2;max-width:16em;margin:0}
+.manifesto-band .lead-big{margin-top:1.4rem;max-width:36em}
+.manifesto-band .lead-big a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35)}
