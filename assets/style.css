@@ -134,7 +134,8 @@ section{padding:6.5rem 0}
 .price-card ul{list-style:none;margin-top:.4rem}
 .price-card li{padding:.45rem 0;color:var(--muted);font-size:1rem}
 .price-card li b{display:block;font-family:"Poppins",sans-serif;color:var(--label);font-weight:600;font-size:1.1rem}
-.price-card .btn{margin-top:auto}
+.price-card .btn{margin-top:auto;align-self:stretch;text-align:center}
+.price-card ul{margin-bottom:1.6rem}
 
 /* blog cards */
 .blog{padding-top:3rem}
