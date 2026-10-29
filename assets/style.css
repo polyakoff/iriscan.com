@@ -665,3 +665,13 @@ body.centered .prose ul{margin-left:auto;margin-right:auto}
 .manifesto{font-family:Poppins,sans-serif;font-weight:300;color:#fff;font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.2;max-width:16em;margin:0}
 .manifesto-band .lead-big{margin-top:1.4rem;max-width:36em}
 .manifesto-band .lead-big a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35)}
+
+/* article tables become stacked cards on phones */
+@media(max-width:620px){
+.article .tbl table,.article .tbl tbody,.article .tbl tr,.article .tbl td{display:block;width:100%}
+.article .tbl tr.thead{display:none}
+.article .tbl tr{border:1px solid var(--line);border-radius:8px;margin:0 0 .9rem;padding:.4rem 0;background:#141518}
+.article .tbl td{border:0;padding:.35rem .9rem}
+.article .tbl td:first-child{color:#fff;font-weight:600;font-size:1.02rem}
+.article .tbl td[data-label]:not([data-label=""])::before{content:attr(data-label);display:block;font-size:.75rem;letter-spacing:.03em;text-transform:uppercase;color:var(--label);margin-bottom:.1rem}
+}

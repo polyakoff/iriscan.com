@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261030b">
+<link rel="stylesheet" href="../assets/style.css?v=20261030c">
 <link rel="canonical" href="https://www.iriscan.com/post/iris-image-quality-iso-29794-6">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
@@ -104,18 +104,18 @@
 <p>A focus measure from the high-frequency energy of the iris region. Out-of-focus images are the most common failure with handheld capture. Our score runs from 0 to 100 and we require at least 50.</p>
 
 <h2>The thresholds in one table</h2>
-<table>
-<tr><th>Component</th><th>Default for enrollment</th></tr>
-<tr><td>Usable iris area</td><td>&ge; 70%</td></tr>
-<tr><td>Iris–sclera contrast</td><td>&ge; 5</td></tr>
-<tr><td>Iris–pupil contrast</td><td>&ge; 30</td></tr>
-<tr><td>Grey scale utilisation</td><td>&ge; 6 bits</td></tr>
-<tr><td>Iris radius</td><td>&ge; 75 px</td></tr>
-<tr><td>Pupil–iris ratio</td><td>20–70</td></tr>
-<tr><td>Iris–pupil concentricity</td><td>&ge; 90</td></tr>
-<tr><td>Margin adequacy</td><td>&ge; 80</td></tr>
-<tr><td>Sharpness</td><td>&ge; 50</td></tr>
-</table>
+<div class="tbl"><table>
+<tr class="thead"><th>Component</th><th>Default for enrollment</th></tr>
+<tr><td data-label="Component">Usable iris area</td><td data-label="Default for enrollment">&ge; 70%</td></tr>
+<tr><td data-label="Component">Iris–sclera contrast</td><td data-label="Default for enrollment">&ge; 5</td></tr>
+<tr><td data-label="Component">Iris–pupil contrast</td><td data-label="Default for enrollment">&ge; 30</td></tr>
+<tr><td data-label="Component">Grey scale utilisation</td><td data-label="Default for enrollment">&ge; 6 bits</td></tr>
+<tr><td data-label="Component">Iris radius</td><td data-label="Default for enrollment">&ge; 75 px</td></tr>
+<tr><td data-label="Component">Pupil–iris ratio</td><td data-label="Default for enrollment">20–70</td></tr>
+<tr><td data-label="Component">Iris–pupil concentricity</td><td data-label="Default for enrollment">&ge; 90</td></tr>
+<tr><td data-label="Component">Margin adequacy</td><td data-label="Default for enrollment">&ge; 80</td></tr>
+<tr><td data-label="Component">Sharpness</td><td data-label="Default for enrollment">&ge; 50</td></tr>
+</table></div>
 <p>These are starting points, not the standard's verdict. Scanners differ in optics and illumination, so we log the scores during a pilot and adjust the limits to the share of retakes the operators can live with. Verification at a later visit can be more lenient than enrollment.</p>
 
 <h2>One score or many</h2>
