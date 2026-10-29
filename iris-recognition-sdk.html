@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>if(/\.html$/.test(location.pathname))history.replaceState(null,"",location.pathname.replace(/(index)?\.html$/,"")+location.search+location.hash)</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iris Recognition SDK and API | Iriscan</title>
+<meta name="description" content="Open-source iris recognition SDK for Android, iOS and JVM: segmentation, ISO/IEC 29794-6 quality, encoding and 1:1 or 1:N matching. Plus a cloud API with de-duplication.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/iriscan-logo-icon.png">
+<link rel="stylesheet" href="assets/style.css?v=20261029e">
+<link rel="canonical" href="https://www.iriscan.com/iris-recognition-sdk">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Iriscan">
+<meta property="og:title" content="Iris Recognition SDK and API | Iriscan">
+<meta property="og:description" content="Open-source iris recognition SDK for Android, iOS and JVM: segmentation, ISO/IEC 29794-6 quality, encoding and 1:1 or 1:N matching. Plus a cloud API with de-duplication.">
+<meta property="og:url" content="https://www.iriscan.com/iris-recognition-sdk">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/iris-recognition-options/iris-recognition-option-01-natural-iris-closeup.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Iriscan Biometric SDK", "applicationCategory": "DeveloperApplication", "operatingSystem": "Android, iOS, JVM", "softwareVersion": "0.7.0", "license": "https://www.gnu.org/licenses/gpl-3.0.html", "url": "https://www.iriscan.com/iris-recognition-sdk", "downloadUrl": "https://github.com/biometric-technologies/biometric-sdk", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Iriscan", "legalName": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}}</script>
+</head>
+<body class="centered">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+    <input type="checkbox" id="navtoggle">
+    <label class="burger" for="navtoggle">&#9776;</label>
+    <nav class="menu">
+      <div class="has-sub">
+        <a href="/solutions/fintech">Solutions</a>
+        <div class="sub">
+          <a href="/solutions/fintech">Fintech &amp; microfinance</a>
+          <a href="/solutions/health-insurance">Health insurance</a>
+          <a href="/solutions/insurance">Insurance</a>
+          <a href="/solutions/healthcare">Hospitals &amp; medical records</a>
+          <a href="/solutions/data-migration">Database migration</a>
+          <a href="/solutions/government">Elections &amp; borders</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/iris-recognition-software">Products</a>
+        <div class="sub">
+          <a href="/iris-recognition-software">Iris recognition software</a>
+          <a href="/iris-recognition-sdk">Iris recognition SDK &amp; API</a>
+          <a href="/biometrics-identity-verification-system">Identity verification system</a>
+          <a href="/biometric-data-interchange">Biometric data conversion</a>
+          <a href="/services">Consulting &amp; integration</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a href="/post/iriscan-becomes-the-official-reseller-of-cardlogix">Devices</a>
+        <div class="sub">
+          <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID Tablet</a>
+          <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a>
+          <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY-2</a>
+          <a href="/post/vista-ey2-02-ey2p-dual-iris-face-camera">Vista EY2-02 (EY2P)</a>
+          <a href="/post/vista-ey2h-handheld-dual-iris-camera">Vista EY2H</a>
+        </div>
+      </div>
+      <a href="/pricing">Pricing</a>
+      <div class="has-sub">
+        <a href="/blog">Resources</a>
+        <div class="sub">
+          <a href="/blog">Blog</a>
+          <a href="https://docs.iriscan.net/">Documentation</a>
+          <a href="/post/biometrics-in-the-humanitarian-sector">Biometrics for humanitarians</a>
+        </div>
+      </div>
+      <a class="btn" href="/get-started">Contact us</a>
+    </nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap">
+<h1>Iris Recognition SDK and API</h1>
+<p class="lead" style="max-width:46rem">Add iris enrollment, verification and 1:N identification to your app or back end. Run our open-source SDK on the device or your own server, or let the cloud API keep the gallery and catch duplicate enrollments for you.</p>
+<p style="margin-top:1.4rem"><a class="btn" href="https://github.com/biometric-technologies/biometric-sdk">SDK on GitHub</a> &nbsp; <a class="btn" href="/get-started">Talk to us about the API</a></p>
+</div></section>
+<section><div class="wrap prose">
+
+<h2>Two ways to integrate</h2>
+<h3>Biometric SDK</h3>
+<p>A Kotlin Multiplatform library for Android, iOS and the JVM. Everything runs locally: no images leave the device unless you send them. It is open source under GPL-3.0 and published on Maven Central (<code>net.iriscan:biometric-sdk</code>) and CocoaPods (<code>BiometricSdk</code>). If GPL does not suit your product, <a href="/get-started">ask us</a> about other terms.</p>
+<h3>Cloud Iris API</h3>
+<p>A REST service built on the same algorithm. You send eye images; it stores the templates in a separate gallery for your organization, refuses to enroll the same iris twice under different names, and searches the whole gallery in a fraction of a second. Each response includes per-eye image quality so you can ask for a retake on the spot. See the <a href="https://docs.iriscan.net">API documentation</a> and <a href="/pricing">pricing</a>.</p>
+
+<h2>What the SDK does</h2>
+<ul>
+<li><b>Segmentation.</b> Finds the pupil and iris boundaries as two circles with independent centers, removes specular reflections and masks the eyelids and lashes.</li>
+<li><b>Encoding.</b> Unwraps the iris with the rubber-sheet model and encodes it with log-Gabor filters into a 4,096-bit iris code with a mask of valid bits.</li>
+<li><b>Matching.</b> Masked Hamming distance with rotation compensation, for 1:1 verification and 1:N identification.</li>
+<li><b>Quality.</b> Usable iris area, sharpness, contrast, pupil-to-iris ratio, iris size and margins, following the components of ISO/IEC 29794-6, to reject a bad capture before it gets into your database.</li>
+<li><b>Standards.</b> Reads and writes ISO/IEC 19794-6 iris records and ISO/IEC 19794-2 fingerprint minutiae.</li>
+<li><b>Face.</b> Face detection, alignment and matching, and a passive liveness check against printed and screen photos.</li>
+</ul>
+
+<h2>Code</h2>
+<pre><code>val sdk = BiometricSdkFactory.getInstance()!!
+
+val eye = sdk.io().readImage(bytes)
+val quality = sdk.iris().quality().assess(eye)          // ask for a retake if it is poor
+
+val template = sdk.iris().encoder().extractAndEncode(eye)
+
+val same  = sdk.iris().matcher().matches(template, enrolled)     // 1:1
+val score = sdk.iris().matcher().score(template, enrolled)       // 0.0 to 1.0
+val best  = sdk.iris().matcher().identify(template, gallery)     // 1:N, null if nobody matches</code></pre>
+<p>Initialization, image formats and the template format are described in the <a href="https://github.com/biometric-technologies/biometric-sdk#readme">README</a>.</p>
+
+<h2>Accuracy</h2>
+<p>On the public CASIA-Iris-Interval dataset (393 eyes, 2,639 images, all genuine and impostor pairs) the current version reaches:</p>
+<ul>
+<li>Equal error rate: <b>4.2%</b></li>
+<li>False non-match rate at a false match rate of 0.1%: <b>5.0%</b></li>
+<li>Failure to enroll: <b>0.11%</b></li>
+</ul>
+<p>Results depend on the camera, lighting and the people you enroll. The SDK includes the benchmark we use, so you can run it on images from your own scanners and pick the threshold that fits your false match budget.</p>
+
+<h2>Hardware</h2>
+<p>The SDK works with near-infrared images from dedicated iris cameras. We supply and support <a href="/post/vista-ey2-dual-iris-and-face-camera">Vista EY2</a>, <a href="/post/vista-fa2-single-iris-face-camera">Vista FA2</a> and the <a href="/post/biosid-biometric-mobile-enrollment-and-verification-tablet-device">BIOSID tablet</a>, and can help you choose a device for field enrollment.</p>
+
+<h2>Where it is used</h2>
+<p>Customer identification for <a href="/solutions/fintech">lenders and microfinance</a>, patient and member identification in <a href="/solutions/health-insurance">health insurance</a> and <a href="/solutions/healthcare">hospitals</a>, de-duplication of <a href="/solutions/government">voter and beneficiary registers</a>, and <a href="/solutions/data-migration">migration</a> away from closed biometric systems.</p>
+
+<h2>Start</h2>
+<p>Developers can start with the SDK today. For the cloud API, a pilot or help with integration, write to us and tell us about your use case and volumes.</p>
+<p style="margin-top:1rem"><a class="btn" href="/get-started">Contact us</a></p>
+</div></section>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <a class="brand" href="/"><svg class="brand-icon" viewBox="37.65 43.294 511.585 511.598" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M536.34 219.06c-21.16 64.09-66.99 116.98-126.25 147.41-1.93-39.3-12.98-78.7-33.99-115.1-21.01-36.38-49.62-65.68-82.65-86.98-56-36.11-124.74-49.37-190.87-35.61C181.54 40.09 314.45 15.9 421.32 77.6c24.26 14 45.35 31.37 63.03 51.2 23.61 26.48 41.15 57.31 51.99 90.26z" fill="#5cc8ff"/><path d="M176.78 366.45c-3.29 66.55 19.62 132.7 64.57 183.09-25.98-5.39-51.55-14.96-75.79-28.96C58.7 458.9 13.21 331.71 50.51 218.98c5.39-16.31 12.52-32.31 21.45-47.76 8.92-15.46 19.2-29.62 30.62-42.44 66.13-13.75 134.87-.5 190.87 35.61-33.06 21.3-61.66 50.57-82.67 86.98-21.02 36.4-32.07 75.81-34 115.08z" fill="#1c77c3"/><path d="M514.93 426.97c-37.9 65.68-100.54 108.15-169.36 122.51-33.97 7.09-69.46 7.32-104.22.06-44.95-50.39-67.86-116.54-64.57-183.09 34.99 17.97 74.64 28.1 116.66 28.1s81.67-10.13 116.64-28.08c59.27-30.43 105.1-83.32 126.25-147.41 22 66.76 16.51 142.25-21.4 207.91z" fill="#0a328f"/></svg><span>IRISCAN</span></a>
+      <p style="margin-top:1.6rem">Biometric Technologies O&Uuml;<br><a href="mailto:info@iriscan.net">info@iriscan.net</a><br>Estonia, Tallinn, Ahtri 12, 10151</p>
+    </div>
+    <div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/eula">EULA</a></li>
+        <li><a class="btn" style="margin-top:1rem" href="/get-started">Contact us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="margin-bottom:.6rem;color:#fff">Follow us</p>
+      <p class="socials">
+        <a href="https://www.linkedin.com/company/iriscan"><img src="assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
+        <a href="https://www.facebook.com/iriscan.net/"><img src="assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
+        <a href="https://twitter.com/IriscanNet"><img src="assets/img/social-x.png" alt="Iriscan on X"></a>
+      </p>
+      <p class="copyright">&copy; 2019&ndash;<span class="yr">2026</span> Biometric<br>Technologies O&Uuml;</p>
+    </div>
+  </div>
+</footer>
+<div id="ckbar" hidden role="dialog" aria-label="Cookie consent"><span>We use cookies only for anonymous visit statistics (Google Analytics), and only if you agree. <a href="/privacy#cookies">Privacy</a></span><button id="ckno">Decline</button><button id="ckyes">Accept</button></div>
+<script>(function(){var y=document.querySelectorAll('.yr');for(var i=0;i<y.length;i++)y[i].textContent=new Date().getFullYear();})();</script>
+<script src="/assets/consent.js" defer></script>
+</body></html>

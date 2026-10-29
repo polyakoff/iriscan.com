@@ -623,3 +623,9 @@ select{width:100%;background:var(--bg);color:#fff;border:1px solid #6e7178;borde
 select:focus{outline:2px solid var(--accent);outline-offset:1px}
 #ckbar #ckyes{border-color:var(--accent);color:#fff}
 #ckbar{max-width:380px;flex-wrap:wrap}
+.prose pre{background:#141518;border:1px solid var(--line);border-radius:8px;padding:1rem 1.1rem;overflow-x:auto;margin:1rem 0;font-size:.85rem;line-height:1.55}
+.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em}
+.prose pre code{color:#d6d8de}
+body.centered .prose pre{max-width:820px;margin:1rem auto}
+body.centered .hero .lead{margin-left:auto;margin-right:auto}
+body.centered .prose ul{margin-left:auto;margin-right:auto}
