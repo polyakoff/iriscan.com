@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   fetch:
@@ -25,3 +26,10 @@ jobs:
           if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
           git commit -m "Blog photos from Unsplash"
           git push
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+        id: commit
+      - name: Rebuild GitHub Pages
+        if: steps.commit.outputs.pushed == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages rebuild request failed; the next push rebuilds the site"

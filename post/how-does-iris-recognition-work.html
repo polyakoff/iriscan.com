@@ -11,16 +11,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261029h">
+<link rel="stylesheet" href="../assets/style.css?v=20261029i">
 <link rel="canonical" href="https://www.iriscan.com/post/how-does-iris-recognition-work">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
 <meta property="og:title" content="How Does Iris Recognition Work? Step by Step | Iriscan">
 <meta property="og:description" content="From an eye image to a match decision: capture, segmentation, unwrapping, encoding and comparison, and the choices that matter when you deploy it.">
 <meta property="og:url" content="https://www.iriscan.com/post/how-does-iris-recognition-work">
-<meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-recognition-device-tabletop-vista-ey2.jpg">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/blog/golden-iris-macro.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How Iris Recognition Works", "datePublished": "2026-09-08", "dateModified": "2026-09-08", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-recognition-device-tabletop-vista-ey2.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/how-does-iris-recognition-work", "description": "From an eye image to a match decision: capture, segmentation, unwrapping, encoding and comparison, and the choices that matter when you deploy it."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How Iris Recognition Works", "datePublished": "2026-09-08", "dateModified": "2026-09-08", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/golden-iris-macro.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/how-does-iris-recognition-work", "description": "From an eye image to a match decision: capture, segmentation, unwrapping, encoding and comparison, and the choices that matter when you deploy it."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -79,7 +79,7 @@
 <div class="article-outer"><article class="article">
 <div class="meta-top"><span>Sep 8, 2026 &middot; 5 min read</span></div>
 <h1>How Iris Recognition Works</h1>
-<figure><img src="../assets/img/blog/iris-recognition-device-tabletop-vista-ey2.jpg" alt="Vista EY2 iris recognition camera on a desk" loading="lazy"></figure>
+<figure class="hero-photo"><img src="../assets/img/blog/golden-iris-macro.jpg" alt="Macro photo of a golden-brown iris" width="1200" height="750"><figcaption class="credit">Photo: <a href="https://unsplash.com/@budanovamrus?utm_source=iriscan&amp;utm_medium=referral" rel="nofollow noopener">Maria Budanova</a> / <a href="https://unsplash.com/?utm_source=iriscan&amp;utm_medium=referral" rel="nofollow noopener">Unsplash</a></figcaption></figure>
 
 <p class="lead">How does a machine recognize a person by the eye? The approach has not changed much since John Daugman described it in the 1990s, and our Cloud Iris API follows it too. The system takes a near-infrared picture of the eye, finds the iris, unrolls it into a rectangle, turns its texture into bits and compares these bits with the bits of other people. Each step is simple to describe. The accuracy of the whole system depends on how carefully each one is implemented, so below I go through them one by one.</p>
 

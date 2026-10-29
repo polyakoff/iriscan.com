@@ -11,16 +11,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="../assets/style.css?v=20261029h">
+<link rel="stylesheet" href="../assets/style.css?v=20261029i">
 <link rel="canonical" href="https://www.iriscan.com/post/iris-authentication-a-biometric-security-solution">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Iriscan">
 <meta property="og:title" content="Iris Authentication: How Accurate It Is and How to Tune It | Iriscan">
 <meta property="og:description" content="Why iris has so few false matches, what decides the error rates in a real system, and how to set the threshold for verification and for 1:N search.">
 <meta property="og:url" content="https://www.iriscan.com/post/iris-authentication-a-biometric-security-solution">
-<meta property="og:image" content="https://www.iriscan.com/assets/img/blog/iris-authentication-professional-woman-portrait.jpg">
+<meta property="og:image" content="https://www.iriscan.com/assets/img/blog/asian-woman-portrait-eyes.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Iris Authentication: How Accurate It Is and How to Tune It", "datePublished": "2026-08-26", "dateModified": "2026-08-26", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/iris-authentication-professional-woman-portrait.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/iris-authentication-a-biometric-security-solution", "description": "Why iris has so few false matches, what decides the error rates in a real system, and how to set the threshold for verification and for 1:N search."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Iris Authentication: How Accurate It Is and How to Tune It", "datePublished": "2026-08-26", "dateModified": "2026-08-26", "author": {"@type": "Person", "name": "Artem Poliakov", "jobTitle": "CEO, Iriscan", "url": "https://www.iriscan.com"}, "publisher": {"@type": "Organization", "name": "Biometric Technologies OÜ", "url": "https://www.iriscan.com"}, "image": "https://www.iriscan.com/assets/img/blog/asian-woman-portrait-eyes.jpg", "mainEntityOfPage": "https://www.iriscan.com/post/iris-authentication-a-biometric-security-solution", "description": "Why iris has so few false matches, what decides the error rates in a real system, and how to set the threshold for verification and for 1:N search."}</script>
 </head>
 <body class="post-page">
 <header>
@@ -79,7 +79,7 @@
 <div class="article-outer"><article class="article">
 <div class="meta-top"><span>Aug 26, 2026 &middot; 5 min read</span></div>
 <h1>Iris Authentication: How Accurate It Is and How to Tune It</h1>
-<figure><img src="../assets/img/blog/iris-authentication-professional-woman-portrait.jpg" alt="Portrait of a woman for an article on iris authentication" loading="lazy"></figure>
+<figure class="hero-photo"><img src="../assets/img/blog/asian-woman-portrait-eyes.jpg" alt="Portrait of a young woman with dark eyes" width="1200" height="750"><figcaption class="credit">Photo: <a href="https://unsplash.com/@rameez_remy?utm_source=iriscan&amp;utm_medium=referral" rel="nofollow noopener">Rameez Remy</a> / <a href="https://unsplash.com/?utm_source=iriscan&amp;utm_medium=referral" rel="nofollow noopener">Unsplash</a></figcaption></figure>
 
 <p class="lead">Why do the largest identity programs, from India's Aadhaar to the UAE border control, rely on iris? The answer is statistical. Iris separates different people with a margin that other common biometric modalities do not have, and this is what allows searching a database of millions without drowning in false matches. Below I explain where this margin comes from, what reduces it in real deployments and which settings are in your hands.</p>
 
