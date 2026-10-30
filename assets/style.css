@@ -675,3 +675,17 @@ body.centered .prose ul{margin-left:auto;margin-right:auto}
 .article .tbl td:first-child{color:#fff;font-weight:600;font-size:1.02rem}
 .article .tbl td[data-label]:not([data-label=""])::before{content:attr(data-label);display:block;font-size:.75rem;letter-spacing:.03em;text-transform:uppercase;color:var(--label);margin-bottom:.1rem}
 }
+
+/* tables in product pages (.prose), same look as in articles */
+.prose .tbl{overflow-x:auto;margin:1.2rem 0}
+body.centered .prose .tbl{max-width:820px;margin-left:auto;margin-right:auto}
+.prose .tbl table{width:100%;border-collapse:collapse;font-size:.95rem}
+.prose .tbl th,.prose .tbl td{border:1px solid var(--line);padding:.6rem .8rem;text-align:left;vertical-align:top;color:var(--muted)}
+.prose .tbl th{color:#fff;font-weight:600;background:#17181b}
+@media(max-width:620px){
+.prose .tbl table,.prose .tbl tbody,.prose .tbl tr,.prose .tbl td{display:block;width:100%}
+.prose .tbl tr:first-child{display:none}
+.prose .tbl tr{border:1px solid var(--line);border-radius:8px;margin:0 0 .8rem;padding:.4rem 0;background:#141518}
+.prose .tbl td{border:0;padding:.3rem .9rem}
+.prose .tbl td:first-child{color:#fff}
+}

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="assets/style.css?v=20261030d">
+<link rel="stylesheet" href="assets/style.css?v=20261030e">
 <link rel="canonical" href="https://www.iriscan.com/iris-recognition-sdk">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Iriscan">
@@ -47,6 +47,7 @@
           <a href="/iris-recognition-software">Iris recognition software</a>
           <a href="/iris-deduplication">Iris de-duplication (1:N)</a>
           <a href="/iris-recognition-sdk">Iris recognition SDK &amp; API</a>
+          <a href="/commercial-license">Commercial licence</a>
           <a href="/biometrics-identity-verification-system">Identity verification system</a>
           <a href="/biometric-data-interchange">Biometric data conversion</a>
           <a href="/services">Consulting &amp; integration</a>
@@ -85,7 +86,7 @@
 
 <h2>Two ways to integrate</h2>
 <h3>Biometric SDK</h3>
-<p>A Kotlin Multiplatform library for Android, iOS and the JVM. Everything runs locally: no images leave the device unless you send them. It is open source under GPL-3.0 and published on Maven Central (<code>net.iriscan:biometric-sdk</code>) and CocoaPods (<code>BiometricSdk</code>). If GPL does not suit your product, <a href="/get-started">ask us</a> about other terms.</p>
+<p>A Kotlin Multiplatform library for Android, iOS and the JVM. Everything runs locally: no images leave the device unless you send them. It is open source under GPL-3.0 (a <a href="/commercial-license">commercial licence</a> is available for closed-source products) and published on Maven Central (<code>net.iriscan:biometric-sdk</code>) and CocoaPods (<code>BiometricSdk</code>). If GPL does not suit your product, <a href="/get-started">ask us</a> about other terms.</p>
 <h3>Cloud Iris API</h3>
 <p>A REST service built on the same algorithm. You send eye images; it stores the templates in a separate gallery for your organization, refuses to enroll the same iris twice under different names, and searches the whole gallery in a fraction of a second. Each response includes per-eye image quality so you can ask for a retake on the spot. See the <a href="https://docs.iriscan.net">API documentation</a> and <a href="/pricing">pricing</a>.</p>
 
@@ -146,7 +147,7 @@ val best  = sdk.iris().matcher().identify(template, gallery)     // 1:N, null if
 <p>Customer identification for <a href="/solutions/fintech">lenders and microfinance</a>, patient and member identification in <a href="/solutions/health-insurance">health insurance</a> and <a href="/solutions/healthcare">hospitals</a>, de-duplication of <a href="/solutions/government">voter and beneficiary registers</a>, and <a href="/solutions/data-migration">migration</a> away from closed biometric systems.</p>
 
 <h2>Start</h2>
-<p>Developers can start with the SDK today. For the cloud API, a pilot or help with integration, write to us and tell us about your use case and volumes.</p>
+<p>Developers can start with the SDK today. To ship it inside a closed-source product, see the <a href="/commercial-license">commercial licence</a>. For the cloud API, a pilot or help with integration, write to us and tell us about your use case and volumes.</p>
 <p style="margin-top:1rem"><a class="btn" href="/get-started">Contact us</a></p>
 </div></section>
 
@@ -161,6 +162,7 @@ val best  = sdk.iris().matcher().identify(template, gallery)     // 1:N, null if
         <li><a href="/">Home</a></li>
         <li><a href="/privacy">Privacy Policy</a></li>
         <li><a href="/eula">EULA</a></li>
+        <li><a href="/commercial-license">Commercial licence</a></li>
         <li><a class="btn" style="margin-top:1rem" href="/get-started">Contact us</a></li>
       </ul>
     </div>
