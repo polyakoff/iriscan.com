@@ -82,11 +82,24 @@
 <div class="wrap">
 <p class="sol-eyebrow">Solutions · MOSIP</p>
 <h1 class="anim a-left">Iriscan components for MOSIP</h1>
-<p class="lead lead-big anim a-left" style="--d:.2s">Our face match SDK runs inside Inji Wallet, MOSIP's reference wallet, and is listed on the MOSIP marketplace as compliant. The same open-source code base brings iris enrollment, matching and 1:N de-duplication to a MOSIP registry, on your servers.</p>
+<p class="lead lead-big anim a-left" style="--d:.2s">MOSIP is the free, open-source platform that a growing number of countries use to build their national ID systems. Iriscan makes biometric components for it: our face match SDK already runs inside Inji Wallet, MOSIP's reference wallet, and the same open-source code base brings iris enrollment, matching and 1:N de-duplication to a MOSIP registry, on your servers.</p>
 <p class="sol-actions"><a class="btn" href="/get-started?interest=sdk">Talk about your deployment</a> <a class="btn ghost" href="https://marketplace.mosip.io/products/257" rel="noopener">See the marketplace listing</a></p>
 </div></section>
 
 <section><div class="wrap sol">
+
+<h2>What MOSIP is, for people outside the ID world</h2>
+<p>Every country needs a register of its residents: who is who, with a unique number per person, so that passports, voting rolls, bank accounts, pensions and health insurance can all point to the same person. Building such a system from scratch used to mean a multi-year contract with one vendor, and a register the country could not change or even fully inspect afterwards.</p>
+<p>MOSIP, the Modular Open Source Identity Platform, is the open-source answer to that. It was started in 2018 at the International Institute of Information Technology Bangalore, is funded by philanthropic foundations rather than by vendors, and is recognised as a digital public good. A government takes the code for free, picks the pieces it needs, and has a local system integrator put them together. MOSIP reports 14 national rollouts and engagements with 32 countries, among them the Philippines, Morocco, Ethiopia, Sri Lanka, Uganda, Nigeria and Togo. Several of these registers now hold tens of millions of people each.</p>
+<p>The platform is called "modular" because the parts that do the hard work are plugged in, not built in. Three of those parts are biometric, and they are what this page is about:</p>
+<div class="tbl"><table>
+<tr class="thead"><th>MOSIP term</th><th>What it means in plain words</th></tr>
+<tr><td data-label="Term"><b>Bio-SDK</b></td><td data-label="Meaning">The software library that looks at a face, iris or fingerprint image, checks that it is good enough, turns it into a compact template and compares two templates. MOSIP defines the interface; vendors such as Iriscan supply the engine.</td></tr>
+<tr><td data-label="Term"><b>ABIS</b></td><td data-label="Meaning">Automated Biometric Identification System: the server that holds the templates of everyone already registered and answers one question for each new enrollment, "is this person already in the register under another name?" This is what stops duplicate and fraudulent IDs.</td></tr>
+<tr><td data-label="Term"><b>SBI</b></td><td data-label="Meaning">Secure Biometric Interface: the standard way a camera or fingerprint scanner talks to the registration software, so any certified device works with any MOSIP deployment.</td></tr>
+<tr><td data-label="Term"><b>Inji</b></td><td data-label="Meaning">MOSIP's wallet app. A resident keeps a verified copy of their ID on the phone and proves it is theirs with a selfie, matched on the phone against the photo in the credential.</td></tr>
+</table></div>
+<p>MOSIP tests and lists compatible components on its <a href="https://marketplace.mosip.io/" rel="noopener">marketplace</a>, so a country or an integrator can see which vendors' parts fit before they commit. If you want the long version, MOSIP's own <a href="https://docs.mosip.io/" rel="noopener">documentation</a> is open too.</p>
 
 <h2>Where we stand with MOSIP</h2>
 <div class="tbl"><table>
@@ -108,7 +121,7 @@
 <h2>How the pieces fit</h2>
 <ol class="sol-steps">
 <li><b>Registration client.</b> Officers enroll with MOSIP's registration client and an SBI-compliant iris camera; the SDK checks image quality (ISO/IEC 29794-6) before the packet is created.</li>
-<li><b>Registration processor.</b> The packet goes to our ABIS over MOSIP's message queue. The ABIS inserts the iris templates and returns duplicate candidates for an officer to adjudicate.</li>
+<li><b>Registration processor.</b> MOSIP's back office checks the enrollment packet and sends the biometrics to our ABIS over its message queue. The ABIS inserts the iris templates and returns duplicate candidates for an officer to adjudicate.</li>
 <li><b>Authentication and wallets.</b> For 1:1 checks the same SDK runs on a server or on the phone, as it already does for face in Inji Wallet.</li>
 </ol>
 
