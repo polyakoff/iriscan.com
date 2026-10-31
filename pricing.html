@@ -206,7 +206,7 @@
 <script src="/assets/consent.js" defer></script>
 <script>(function(){var i=document.getElementById('calc-n'),o=document.getElementById('calc-out');if(!i||!o)return;
 var T=[[50000,0.004],[200000,0.002],[750000,0.001],[Infinity,0.0005]];
-function price(n){if(n<=0)return 0;var r=n,p=0;for(var k=0;k<T.length&&r>0;k++){var m=Math.min(r,T[k][0]);p+=m*T[k][1];r-=m;}return Math.max(99,Math.round(p));}
+function price(n){if(n<=0)return 0;if(n<=25000)return 99;var r=n,p=0;for(var k=0;k<T.length&&r>0;k++){var m=Math.min(r,T[k][0]);p+=m*T[k][1];r-=m;}return Math.max(99,Math.round(p));}
 function f(x){return (window.IRISCAN_CUR==='EUR'?'\u20ac':'$')+x.toLocaleString('en-US');}
 function upd(){var n=Math.max(0,Math.floor(+i.value||0)),p=price(n);o.textContent=p===0?'\u2014':f(p)+' a month'+(n?' \u00b7 about '+(p*12/n<0.01?'under 1 cent':f(Math.round(p*1200/n)/100))+' per person a year':'');}
 i.addEventListener('input',upd);upd();document.addEventListener('iriscan:currency',upd);
