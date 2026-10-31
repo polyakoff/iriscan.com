@@ -694,3 +694,4 @@ body.centered .prose .tbl{max-width:820px;margin-left:auto;margin-right:auto}
 .prose .tbl td,.sol .tbl td{border:0;padding:.3rem .9rem}
 .prose .tbl td:first-child,.sol .tbl td:first-child{color:#fff}
 }
+.fig-credit{display:block;font-size:.78rem;opacity:.75;margin-top:.25rem}
