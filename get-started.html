@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/img/iriscan-logo-icon.png">
-<link rel="stylesheet" href="assets/style.css?v=20261031a">
+<link rel="stylesheet" href="assets/style.css?v=20261031b">
 <link rel="canonical" href="https://www.iriscan.com/get-started">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Iriscan">
@@ -93,7 +93,7 @@
 <label for="in">I am interested in</label>
 <select id="in" name="Interest">
 <option value="Starter kit">Starter kit ($990)</option>
-<option value="Free API key">Free API key (up to 1,000 people)</option>
+<option value="Trial">14-day trial of the cloud (Starter, $29/mo after)</option>
 <option value="Cloud plan">Cloud enrollment</option>
 <option value="Pilot">Pilot for a program ($2,500)</option>
 <option value="Devices">Scanners and devices</option>
@@ -116,8 +116,8 @@
 <div><label for="pp">How many people will you identify?</label>
 <select id="pp" name="People">
 <option value="">Choose</option>
-<option>Up to 1,000</option>
-<option>1,000 to 30,000</option>
+<option>Up to 2,000</option>
+<option>2,000 to 30,000</option>
 <option>30,000 to 500,000</option>
 <option>More than 500,000</option>
 </select></div>
@@ -176,5 +176,5 @@
   });
 })();
 </script>
-<script>(function(){var m=location.search.match(/[?&]interest=(\w+)/);if(!m)return;var map={kit:'Starter kit',plan:'Cloud plan',pilot:'Pilot',devices:'Devices',sdk:'SDK or integration',license:'Commercial licence',bdi:'Data conversion',consulting:'Consulting'};var v=map[m[1]];if(v)document.getElementById('in').value=v;})();</script>
+<script>(function(){var m=location.search.match(/[?&]interest=(\w+)/);if(!m)return;var map={kit:'Starter kit',trial:'Trial',plan:'Cloud plan',pilot:'Pilot',devices:'Devices',sdk:'SDK or integration',license:'Commercial licence',bdi:'Data conversion',consulting:'Consulting'};var v=map[m[1]];if(v)document.getElementById('in').value=v;})();</script>
 </body></html>

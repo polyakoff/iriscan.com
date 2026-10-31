@@ -659,6 +659,10 @@ body.centered .prose ul{margin-left:auto;margin-right:auto}
 .calc-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
 .calc input{width:12rem;max-width:100%;padding:.6rem .8rem;border-radius:6px;border:1px solid var(--line);background:#101114;color:#fff;font:inherit;font-size:1.1rem}
 .calc output{font-size:1.3rem;color:#fff}
+.calc-grid span{display:flex;flex-direction:column;gap:.3rem}
+.calc-grid small{color:var(--muted);font-size:.85rem;max-width:16rem}
+.calc-grid input{width:9rem}
+#fraud output{display:block;margin-top:1rem}
 
 /* home: manifesto */
 .manifesto-band{padding-bottom:0}
