@@ -8,6 +8,13 @@
   window.IRISCAN_CUR = cur;
   window.iriscanMoney = function (s) { return cur === 'EUR' ? String(s).replace(/\$(?=\d)/g, '€') : String(s); };
 
+  // Only our prices switch to euros; amounts quoted from reports and articles stay as written.
+  var PRICE = '[data-cur], .price-card, .plans, .plans-mini, .kit, .calc, .cta-kit, .price-note';
+  function convertAll() {
+    if (cur !== 'EUR') return;
+    var roots = document.body.hasAttribute('data-cur') ? [document.body] : [].slice.call(document.querySelectorAll(PRICE));
+    roots.forEach(convert);
+  }
   function convert(root) {
     if (cur !== 'EUR') return;
     var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
@@ -20,13 +27,13 @@
     var list = [], n;
     while ((n = w.nextNode())) list.push(n);
     list.forEach(function (t) { t.nodeValue = t.nodeValue.replace(/\$(?=\d)/g, '€'); });
-    document.querySelectorAll('[aria-label*="$"]').forEach(function (e) {
+    root.querySelectorAll('[aria-label*="$"]').forEach(function (e) {
       e.setAttribute('aria-label', e.getAttribute('aria-label').replace(/\$(?=\d)/g, '€'));
     });
   }
 
   function init() {
-    convert(document.body);
+    convertAll();
     document.dispatchEvent(new Event('iriscan:currency'));
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
