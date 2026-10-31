@@ -14,7 +14,7 @@
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/style.css?v=20261031i">
+<link rel="stylesheet" href="/assets/style.css?v=20261031j">
 <link rel="preload" as="image" href="/assets/img/iriscan-particle-wave-background.webp" fetchpriority="high">
 <link rel="canonical" href="https://www.iriscan.com/pricing">
 <meta property="og:type" content="website">
@@ -96,18 +96,6 @@
 <h2 id="cloud">Cloud iris enrollment and identification API pricing</h2>
 <p class="sol-intro">You pay for the people in your register, not for scans. De-duplication at every enrollment, identification checks and operator accounts are included.</p>
 
-<div class="calc" id="fraud">
-<label for="fr-n">What do duplicates cost you a month?</label>
-<div class="calc-row calc-grid"><span><label for="fr-n"><small>People in your register</small></label><input type="number" id="fr-n" value="5000" min="0" step="100" inputmode="numeric"></span><span><label for="fr-l"><small>Average amount per person at risk, $ (a loan, a claim, a payout)</small></label><input type="number" id="fr-l" value="300" min="0" step="50" inputmode="numeric"></span><span><label for="fr-p"><small>Share per year that goes to someone already in your register under another name, %</small></label><input type="number" id="fr-p" value="1" min="0" max="100" step="0.5" inputmode="decimal"></span></div>
-<output id="fr-out" for="fr-n fr-l fr-p"></output>
-<p class="price-note">The 1% is your figure to replace; a lender, an insurer or a hospital knows it better than any vendor. For scale, in a field trial in Malawi, fingerprinting borrowers at loan time raised repayment among the riskiest group from 67% to 92% (<a href="https://www.povertyactionlab.org/evaluation/borrower-responses-fingerprinting-loan-enforcement-malawi" rel="noopener">J-PAL</a>). Our plans are priced so that stopping one duplicate loan a month pays for the year.</p>
-</div>
-<div class="sol-card proof-card"><p class="lbl">What others saved with biometric checks</p><ul class="proof">
-<li><b>67% &rarr; 92%</b> repayment among the riskiest borrowers in Malawi once they were fingerprinted, in a randomized trial (<a href="https://www.povertyactionlab.org/evaluation/borrower-responses-fingerprinting-loan-enforcement-malawi" rel="noopener">J-PAL</a>)</li>
-<li><b>41% and 47% less leakage</b> in a public jobs program and in pensions in India with biometric smartcards: about $40 million a year saved on $6.3 million spent, in a randomized trial (<a href="https://www.povertyactionlab.org/sites/default/files/publication/smartcards-for-smarter-payments.pdf" rel="noopener">J-PAL</a>)</li>
-<li><b>$1.4 million a month</b> saved on food aid in the Dadaab and Kakuma refugee camps in Kenya after biometric checks at distributions cut the number of people collecting rations by 21% (<a href="https://documents.wfp.org/stellent/groups/public/documents/reports/wfp277842.pdf" rel="noopener">WFP and UNHCR audit</a>)</li>
-<li><b>18% &rarr; 0.03%</b> duplicate patient records at Atlantic Health in the US after biometric patient identification (<a href="https://www.imprivata.com/sites/imprivata/files/2022-03/PS-CS-Atlantic-Health-Sysytem-0222.pdf" rel="noopener">vendor case study</a>)</li>
-</ul></div>
 <div class="grid g3 plans">
 <div class="card price-card"><div class="plan-name">Cloud</div><div class="price">from $99/mo</div>
 <ul class="tiers"><li><b>People in the register</b>Up to 25,000 for $99, then per person per month:
@@ -127,6 +115,20 @@
 <div class="calc-row"><input type="number" id="calc-n" value="30000" min="0" step="1000" inputmode="numeric"><output id="calc-out" for="calc-n"></output></div>
 <p class="price-note">Examples: up to 25,000 people cost $99 a month, 30,000 cost $120, 100,000 cost $300, 500,000 cost $850 and 1,500,000 cost $1,600. Registered non-profits and UN agencies get 40% off.</p>
 </div>
+
+<h2 id="payoff">Does it pay off?</h2>
+<div class="calc" id="fraud">
+<div class="calc-title">What do duplicates cost you a month?</div>
+<div class="calc-row calc-grid"><span><label for="fr-n"><small>People in your register</small></label><input type="number" id="fr-n" value="5000" min="0" step="100" inputmode="numeric"></span><span><label for="fr-l"><small>Average amount per person at risk, $ (a loan, a claim, a payout)</small></label><input type="number" id="fr-l" value="300" min="0" step="50" inputmode="numeric"></span><span><label for="fr-p"><small>Share per year that goes to someone already in your register under another name, %</small></label><input type="number" id="fr-p" value="1" min="0" max="100" step="0.5" inputmode="decimal"></span></div>
+<output id="fr-out" for="fr-n fr-l fr-p"></output>
+<p class="price-note">The 1% is your figure to replace; a lender, an insurer or a hospital knows it better than any vendor. For scale, in a field trial in Malawi, fingerprinting borrowers at loan time raised repayment among the riskiest group from 67% to 92% (<a href="https://www.povertyactionlab.org/evaluation/borrower-responses-fingerprinting-loan-enforcement-malawi" rel="noopener">J-PAL</a>). Our plans are priced so that stopping one duplicate loan a month pays for the year.</p>
+</div>
+<div class="sol-card proof-card"><p class="lbl">What others saved with biometric checks</p><ul class="proof">
+<li><b>67% &rarr; 92%</b> repayment among the riskiest borrowers in Malawi once they were fingerprinted, in a randomized trial (<a href="https://www.povertyactionlab.org/evaluation/borrower-responses-fingerprinting-loan-enforcement-malawi" rel="noopener">J-PAL</a>)</li>
+<li><b>41% and 47% less leakage</b> in a public jobs program and in pensions in India with biometric smartcards: about $40 million a year saved on $6.3 million spent, in a randomized trial (<a href="https://www.povertyactionlab.org/sites/default/files/publication/smartcards-for-smarter-payments.pdf" rel="noopener">J-PAL</a>)</li>
+<li><b>$1.4 million a month</b> saved on food aid in the Dadaab and Kakuma refugee camps in Kenya after biometric checks at distributions cut the number of people collecting rations by 21% (<a href="https://documents.wfp.org/stellent/groups/public/documents/reports/wfp277842.pdf" rel="noopener">WFP and UNHCR audit</a>)</li>
+<li><b>18% &rarr; 0.03%</b> duplicate patient records at Atlantic Health in the US after biometric patient identification (<a href="https://www.imprivata.com/sites/imprivata/files/2022-03/PS-CS-Atlantic-Health-Sysytem-0222.pdf" rel="noopener">vendor case study</a>)</li>
+</ul></div>
 
 <h2 id="starter">Starter kit &middot; $590</h2>
 <div class="kit">
