@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.iriscan.com/sitemap.xml
+Disallow: /preview-blue
