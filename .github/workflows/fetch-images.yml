@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - assets/img/blog/sources.json
+      - assets/img/scanners/sources.json
 
 permissions:
   contents: write
@@ -17,14 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Download images
-        run: python3 tools/fetch_images.py
+        run: |
+          python3 tools/fetch_images.py
+          python3 tools/fetch_scanner_images.py
       - name: Commit
         run: |
           git config user.name "Artem Poliakov"
           git config user.email "artem@iriscan.net"
-          git add assets/img/blog
+          git add assets/img/blog assets/img/scanners
           if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
-          git commit -m "Blog photos from Unsplash"
+          git commit -m "Photos for the blog and the scanners page"
           git push
           echo "pushed=1" >> "$GITHUB_OUTPUT"
         id: commit
