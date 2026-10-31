@@ -10,7 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="/assets/img/iriscan-logo-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/style.css?v=20261031b">
 <link rel="canonical" href="https://www.iriscan.com/pricing">
 <meta property="og:type" content="website">
@@ -82,7 +84,7 @@
 <div class="wrap">
 <p class="sol-eyebrow">Pricing</p>
 <h1 class="anim a-left">Start small, grow when it works</h1>
-<p class="lead lead-big anim a-left" style="--d:.2s">Pay for the people in your register, not for scans. Priced to cost a lender far less than the duplicate loans it stops: $29 a month for a small register, a starter kit with scanners, and pilots for larger programs.</p>
+<p class="lead lead-big anim a-left" style="--d:.2s">Pay for the people in your register, not for scans. Priced to cost far less than the duplicate loans, patient files or claims it stops: $29 a month for a small register, a starter kit with scanners, and pilots for larger programs.</p>
 <p class="sol-actions"><a class="btn" href="#cloud">Cloud prices</a> <a class="btn ghost" href="#starter">Starter kit</a> <a class="btn ghost" href="#pilot">Pilot</a></p>
 </div></section>
 
@@ -92,14 +94,14 @@
 <p class="sol-intro">You pay for the people in your register, not for scans. De-duplication at every enrollment, identification checks and operator accounts are included.</p>
 
 <div class="calc" id="fraud">
-<label for="fr-n">What do duplicate borrowers cost you a month?</label>
-<div class="calc-row calc-grid"><span><small>Active borrowers</small><input type="number" id="fr-n" value="2000" min="0" step="100" inputmode="numeric"></span><span><small>Average loan, $</small><input type="number" id="fr-l" value="300" min="0" step="50" inputmode="numeric"></span><span><small>Loans per year to someone already in default under another name, %</small><input type="number" id="fr-p" value="1" min="0" max="100" step="0.5" inputmode="decimal"></span></div>
+<label for="fr-n">What do duplicates cost you a month?</label>
+<div class="calc-row calc-grid"><span><small>People in your register</small><input type="number" id="fr-n" value="2000" min="0" step="100" inputmode="numeric"></span><span><small>Average amount per person at risk, $ (a loan, a claim, a payout)</small><input type="number" id="fr-l" value="300" min="0" step="50" inputmode="numeric"></span><span><small>Share per year that goes to someone already in your register under another name, %</small><input type="number" id="fr-p" value="1" min="0" max="100" step="0.5" inputmode="decimal"></span></div>
 <output id="fr-out" for="fr-n fr-l fr-p"></output>
-<p class="price-note">The 1% is your figure to replace; most lenders know it better than any vendor. For scale, in a field trial in Malawi, fingerprinting borrowers at loan time raised repayment among the riskiest group from 67% to 92% (<a href="https://www.povertyactionlab.org/evaluation/borrower-responses-fingerprinting-loan-enforcement-malawi" rel="noopener">J-PAL</a>). Our plans are priced so that stopping one duplicate loan a month pays for the year.</p>
+<p class="price-note">The 1% is your figure to replace; a lender, an insurer or a hospital knows it better than any vendor. For scale, in a field trial in Malawi, fingerprinting borrowers at loan time raised repayment among the riskiest group from 67% to 92% (<a href="https://www.povertyactionlab.org/evaluation/borrower-responses-fingerprinting-loan-enforcement-malawi" rel="noopener">J-PAL</a>). Our plans are priced so that stopping one duplicate loan a month pays for the year.</p>
 </div>
 <div class="grid g3 plans">
 <div class="card price-card"><div class="plan-name">Starter</div><div class="price">$29/mo</div>
-<ul><li><b>People in the register</b>Up to 2,000</li><li><b>Checks</b>Included</li><li><b>Trial</b>14 days free, no card</li><li><b>Good for</b>A lender or clinic with one or two branches</li></ul>
+<ul><li><b>People in the register</b>Up to 2,000</li><li><b>Checks</b>Included</li><li><b>Trial</b>14 days free, no card</li><li><b>Good for</b>A lender, clinic or program with one or two branches</li></ul>
 <a class="btn" href="/get-started?interest=trial">Start a trial</a></div>
 <div class="card price-card"><div class="plan-name">Pay as you grow</div><div class="price">from $99/mo</div>
 <ul class="tiers"><li><b>Per person per month, above 2,000 people</b>
@@ -208,6 +210,6 @@ function f(x){return (window.IRISCAN_CUR==='EUR'?'\u20ac':'$')+x.toLocaleString(
 function upd(){var n=Math.max(0,Math.floor(+i.value||0)),p=price(n);o.textContent=p===0?'\u2014':f(p)+' a month'+(n?' \u00b7 about '+(p*12/n<0.01?'under 1 cent':f(Math.round(p*1200/n)/100))+' per person a year':'');}
 i.addEventListener('input',upd);upd();document.addEventListener('iriscan:currency',upd);
 var fn=document.getElementById('fr-n'),fl=document.getElementById('fr-l'),fp=document.getElementById('fr-p'),fo=document.getElementById('fr-out');
-function fr(){if(!fn)return;var n=Math.max(0,+fn.value||0),l=Math.max(0,+fl.value||0),q=Math.max(0,+fp.value||0)/100,loss=Math.round(n*l*q/12),pr=price(n);if(!n||!loss){fo.textContent='';return;}fo.textContent='About '+f(loss)+' a month lost to duplicate borrowers. Your plan: '+f(pr)+' a month'+(pr&&loss>pr?', '+Math.round(loss/pr)+' times less.':'.');}
+function fr(){if(!fn)return;var n=Math.max(0,+fn.value||0),l=Math.max(0,+fl.value||0),q=Math.max(0,+fp.value||0)/100,loss=Math.round(n*l*q/12),pr=price(n);if(!n||!loss){fo.textContent='';return;}fo.textContent='About '+f(loss)+' a month lost to duplicates. Your plan: '+f(pr)+' a month'+(pr&&loss>pr?', '+Math.round(loss/pr)+' times less.':'.');}
 [fn,fl,fp].forEach(function(e){if(e)e.addEventListener('input',fr);});fr();document.addEventListener('iriscan:currency',fr);})();</script>
 </body></html>
