@@ -10,7 +10,7 @@
   --btn:#1c77c3;
   --btn-hover:#2687d6;
   --accent-ink:#141416;
-  --label:#889ce7;
+  --label:#8cc4ec;
   --max:1120px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -721,3 +721,7 @@ body.centered .prose .tbl{max-width:820px;margin-left:auto;margin-right:auto}
 /* in-page links land below the sticky header */
 [id]{scroll-margin-top:110px}
 .calc .calc-title{display:block;color:#fff;font-weight:600;margin-bottom:.7rem}
+
+/* plain lists inside sections */
+.sol>ul:not([class]),.sol>ol:not([class]){margin:.6rem 0 1.2rem 1.3rem;padding:0}
+.sol>ul:not([class]) li,.sol>ol:not([class]) li{margin:.25rem 0}
