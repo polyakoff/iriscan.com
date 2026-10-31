@@ -484,13 +484,13 @@ figcaption{color:var(--muted);font-size:.85rem;font-style:italic;margin-top:.5re
 .rv .who b{display:block;color:var(--label);font-weight:600}
 
 /* ---- partner / press strip — live: plain bg, big logos, badge taller ---- */
-.partners{padding:7rem 0 9rem}
+.partners{padding:2.5rem 0 3rem}
 .partner-row{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.partner{min-height:170px;flex:1 1 0;display:flex;align-items:center;justify-content:center}
-.partner a{display:flex;align-items:center;justify-content:center;width:100%;min-height:170px}
+.partner{min-height:90px;flex:1 1 0;display:flex;align-items:center;justify-content:center}
+.partner a{display:flex;align-items:center;justify-content:center;width:100%;min-height:90px}
 /* render at native resolution — no upscaling (the source PNGs are small) */
 .partner img{width:auto;height:auto;max-width:100%;max-height:64px;border-radius:0}
-.partner img.tall{max-height:168px}
+.partner img.tall{max-height:90px}
 .partner img.partner-light{
   filter:grayscale(1) saturate(0) brightness(1.9) contrast(1.08) drop-shadow(0 0 14px rgba(255,255,255,.16));
 }
