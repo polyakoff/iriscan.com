@@ -9,11 +9,13 @@
 <meta name="description" content="Iris recognition pricing in US dollars: the cloud from $99 a month for up to 25,000 people with a 14-day trial, then per person in your register, a $590 starter kit with a scanner and a $2,500 pilot.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/style.css?v=20261031h">
+<link rel="stylesheet" href="/assets/style.css?v=20261031i">
+<link rel="preload" as="image" href="/assets/img/iriscan-particle-wave-background.webp" fetchpriority="high">
 <link rel="canonical" href="https://www.iriscan.com/pricing">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Iriscan">
@@ -81,7 +83,7 @@
   </div>
 </header>
 <section class="hero pxwin sol-hero">
-<div class="px-media fx-hero" style="background-image:url(/assets/img/iriscan-particle-wave-background.jpg)"></div>
+<div class="px-media fx-hero" style="background-image:url(/assets/img/iriscan-particle-wave-background.webp)"></div>
 <div class="wrap">
 <p class="sol-eyebrow">Pricing</p>
 <h1 class="anim a-left">Start small, grow when it works</h1>
@@ -96,7 +98,7 @@
 
 <div class="calc" id="fraud">
 <label for="fr-n">What do duplicates cost you a month?</label>
-<div class="calc-row calc-grid"><span><small>People in your register</small><input type="number" id="fr-n" value="5000" min="0" step="100" inputmode="numeric"></span><span><small>Average amount per person at risk, $ (a loan, a claim, a payout)</small><input type="number" id="fr-l" value="300" min="0" step="50" inputmode="numeric"></span><span><small>Share per year that goes to someone already in your register under another name, %</small><input type="number" id="fr-p" value="1" min="0" max="100" step="0.5" inputmode="decimal"></span></div>
+<div class="calc-row calc-grid"><span><label for="fr-n"><small>People in your register</small></label><input type="number" id="fr-n" value="5000" min="0" step="100" inputmode="numeric"></span><span><label for="fr-l"><small>Average amount per person at risk, $ (a loan, a claim, a payout)</small></label><input type="number" id="fr-l" value="300" min="0" step="50" inputmode="numeric"></span><span><label for="fr-p"><small>Share per year that goes to someone already in your register under another name, %</small></label><input type="number" id="fr-p" value="1" min="0" max="100" step="0.5" inputmode="decimal"></span></div>
 <output id="fr-out" for="fr-n fr-l fr-p"></output>
 <p class="price-note">The 1% is your figure to replace; a lender, an insurer or a hospital knows it better than any vendor. For scale, in a field trial in Malawi, fingerprinting borrowers at loan time raised repayment among the riskiest group from 67% to 92% (<a href="https://www.povertyactionlab.org/evaluation/borrower-responses-fingerprinting-loan-enforcement-malawi" rel="noopener">J-PAL</a>). Our plans are priced so that stopping one duplicate loan a month pays for the year.</p>
 </div>
@@ -198,9 +200,9 @@
     <div>
       <p style="margin-bottom:.6rem;color:#fff">Follow us</p>
       <p class="socials">
-        <a href="https://www.linkedin.com/company/iriscan"><img src="/assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
-        <a href="https://www.facebook.com/iriscan.net/"><img src="/assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
-        <a href="https://twitter.com/IriscanNet"><img src="/assets/img/social-x.png" alt="Iriscan on X"></a>
+        <a href="https://www.linkedin.com/company/iriscan"><img loading="lazy" decoding="async" src="/assets/img/social-linkedin.png" alt="Iriscan LinkedIn company profile"></a>
+        <a href="https://www.facebook.com/iriscan.net/"><img loading="lazy" decoding="async" src="/assets/img/social-facebook.png" alt="Iriscan Facebook page"></a>
+        <a href="https://twitter.com/IriscanNet"><img loading="lazy" decoding="async" src="/assets/img/social-x.png" alt="Iriscan on X"></a>
       </p>
       <p class="copyright">&copy; 2019&ndash;<span class="yr">2026</span> Biometric<br>Technologies O&Uuml;</p>
     </div>
