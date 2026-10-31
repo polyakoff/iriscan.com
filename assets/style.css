@@ -725,3 +725,11 @@ body.centered .prose .tbl{max-width:820px;margin-left:auto;margin-right:auto}
 /* plain lists inside sections */
 .sol>ul:not([class]),.sol>ol:not([class]){margin:.6rem 0 1.2rem 1.3rem;padding:0}
 .sol>ul:not([class]) li,.sol>ol:not([class]) li{margin:.25rem 0}
+
+/* math: two cards, then the evidence across */
+.sol-cards.three.math{grid-template-columns:1fr 1fr}
+.math .sol-card:nth-child(3){grid-column:1/-1}
+.math .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.math .proof li{border-top:0;padding:0}
+@media(max-width:900px){.math .proof{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.sol-cards.three.math{grid-template-columns:1fr}.math .proof{grid-template-columns:1fr}}
