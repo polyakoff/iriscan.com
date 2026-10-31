@@ -657,7 +657,7 @@ body.centered .prose ul{margin-left:auto;margin-right:auto}
 .pw-row b{color:#fff;font-weight:600;white-space:nowrap}
 @media(max-width:520px){.pw-row{grid-template-columns:1fr auto}.pw-row .pw-track{grid-column:1/-1;grid-row:2}}
 .price-card ul.tiers span{display:block;color:var(--muted);font-size:.95rem;line-height:1.7}
-.calc{margin:2rem 0 0;padding:1.4rem 1.6rem;border:1px solid var(--line);border-radius:10px;background:#17181b}
+.calc{margin:2rem 0 2.6rem;padding:1.4rem 1.6rem;border:1px solid var(--line);border-radius:10px;background:#17181b}
 .calc label{display:block;color:#fff;font-weight:600;margin-bottom:.7rem}
 .calc-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
 .calc input{width:12rem;max-width:100%;padding:.6rem .8rem;border-radius:6px;border:1px solid var(--line);background:#101114;color:#fff;font:inherit;font-size:1.1rem}
