@@ -72,7 +72,7 @@
         <a href="/blog">Resources</a>
         <div class="sub">
           <a href="/blog">Blog</a>
-          <a href="https://docs.iriscan.net/">Documentation</a>
+          <a href="https://docs.iriscan.com/">Documentation</a>
           <a href="https://github.com/biometric-technologies">Open source on GitHub</a>
         </div>
       </div>
@@ -112,9 +112,9 @@
 <h2>How this maps to our components</h2>
 <p>In a real deployment these steps are split between hardware and software, and this split decides a lot about cost and vendor lock. In our stack it looks as follows:</p>
 <ul>
-<li><b>Capture</b> happens on the scanner and in its driver. Our <a href="https://docs.iriscan.net/edge">Edge service</a> works with Iritech scanners and gives a web page a local API for live preview, quality score and capture.</li>
-<li><b>Segmentation, unwrapping and encoding</b> can run on the edge device, on a phone or on a server. The open-source <a href="https://docs.iriscan.net/sdk">Iriscan Biometric SDK</a> does it on Android, iOS and the JVM.</li>
-<li><b>Comparison</b> against a database runs where the database is. The <a href="https://docs.iriscan.net/cloud-api">Cloud Iris API</a> enrolls left and right eyes of each person and offers 1:N search and 1:1 verification. The Edge service keeps an encrypted local copy, so matching works offline as well.</li>
+<li><b>Capture</b> happens on the scanner and in its driver. Our <a href="https://docs.iriscan.com/edge">Edge service</a> works with Iritech scanners and gives a web page a local API for live preview, quality score and capture.</li>
+<li><b>Segmentation, unwrapping and encoding</b> can run on the edge device, on a phone or on a server. The open-source <a href="https://docs.iriscan.com/sdk">Iriscan Biometric SDK</a> does it on Android, iOS and the JVM.</li>
+<li><b>Comparison</b> against a database runs where the database is. The <a href="https://docs.iriscan.com/cloud-api">Cloud Iris API</a> enrolls left and right eyes of each person and offers 1:N search and 1:1 verification. The Edge service keeps an encrypted local copy, so matching works offline as well.</li>
 </ul>
 <p>Whatever runs where, we recommend keeping templates in a standard record format, ISO/IEC 19794-6 or its successor 39794-6. If templates are stored in a vendor's own format, changing the matcher later means re-enrolling everyone.</p>
 
@@ -124,7 +124,7 @@
 <h3>Building on iris recognition?</h3>
 <p>The SDK and the converter are open source, the Cloud Iris API and Edge service we provide for pilots. Write us whom you need to identify, how many people and on what hardware, and we will propose a setup.</p>
 <p class="cta-kit">For a small team there is a <a href="/pricing#starter">$990 starter kit</a> with two scanners, three months of cloud enrollment and setup.</p>
-<p><a class="btn" href="/get-started">Talk to an engineer</a> <a class="btn ghost" href="https://docs.iriscan.net/cloud-api">Read the API docs</a></p>
+<p><a class="btn" href="/get-started">Talk to an engineer</a> <a class="btn ghost" href="https://docs.iriscan.com/cloud-api">Read the API docs</a></p>
 </aside>
 <div class="readnext"><h3>Read next</h3><ul>
 <li><a href="/post/the-power-of-the-eye-iris-identification">The Power of the Eye: Iris Identification</a></li>
